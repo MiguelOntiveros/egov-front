@@ -11,12 +11,6 @@
     width: 16rem;
 }
 
-@media screen and (min-width: 500px) and (max-width: 800px) {
-    .img-size {
-        width: 16rem;
-    }
-}
-
 @media screen and (min-width: 300px) and (max-width: 500px) {
     .img-size {
         width: 15rem;

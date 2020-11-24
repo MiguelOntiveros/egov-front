@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Usuario } from '../../interfaces/Usuario';
 import { DataService } from '../../services/data.service';
+import { Contratista } from 'src/app/interfaces/Contratista';
+import { ContratistaServiceService } from 'src/app/services/contratista-service.service';
 
 @Component({
   selector: 'app-terminos',
@@ -12,10 +14,15 @@ import { DataService } from '../../services/data.service';
 })
 export class TerminosComponent implements OnInit {
 
-  constructor() {
+  contratistas: Contratista[];
+
+  constructor(private ContratistaService: ContratistaServiceService) {
    }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.ContratistaService.getContratista().subscribe((Temp)=>{
+      this.contratistas = Temp;
+    })
   }
 
 }
