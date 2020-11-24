@@ -1,3 +1,388 @@
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background-color:transparent;
+    padding: 1vw;
+    font-family: "Segoe IU", sans-serif;
+    color:white;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: auto;
+        padding-left: 3px;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/**********
+iPad 3
+**********/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    .img-size {
+        width: auto;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+    /* Styles */
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    .img-size {
+        width: auto;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    /* Styles */
+}
+
+/* iPhone 6, 7, 8 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    /* Styles */
+}
+
+/* iPhone 6+, 7+, 8+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    /* Styles */
+}
+
+/* iPhone X ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+    /* Styles */
+}
+
+/* iPhone XS Max, XR ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+    /* Styles */
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+    /* Styles */
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+    /* Styles */
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+    /* Styles */
+}
+
 @media screen and (min-width: 300px) and (max-width: 500px) {
     .img-size {
         width: 15rem;
