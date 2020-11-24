@@ -16,6 +16,7 @@ import { TablasComponent } from './pages/tablas/tablas.component';
 
 
 const routes: Routes = [
+  {path: 'index', component: LoginComponent},
   {path: 'configuracion', component: ConfiguracionComponent},
   {path: 'acerca-de', component: AcercaDeComponent},
   {path: 'sugerencias', component: SugerenciasComponent},
