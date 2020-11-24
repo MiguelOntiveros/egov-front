@@ -1,3 +1,24 @@
+.flex-container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5vh;
+    background-color:transparent;
+  }
+
+.img {
+    border-radius: 10px 10px 10px 10px;
+    border-color: white;
+    width: 100%;
+}
+
+.fondo-blanco{
+    border-radius: 10px 10px 10px 10px;
+    border-color: white;
+    align-items: center;
+}
+
 .input-login {
     border: 1px white solid;
     border-radius: 0px 5px 5px 0px;
@@ -16,7 +37,7 @@
 }
 
 .img-nl {
-    width: 40%;
+    width: 80%;
     border: 2px solid #ccc;
 }
 
