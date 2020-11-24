@@ -1,0 +1,87 @@
+<!-- HEADER / NAVBAR-->
+<div class="animate__animated animate__fadeIn">
+    <app-menu></app-menu>
+
+    <img src="assets/images/ValleHermoso/logo_prueba_horizontal.png" class="logo-horizontal img-fluid mx-auto d-block img-size">
+
+    <img src="assets/images/ValleHermoso/logo_prueba.png" class="logo-centro img-fluid mx-auto d-block img-size">
+
+    <!-- 
+<img src="assets/images/ValleHermoso/logo_valleHermoso_horizontal.jpg" class="logo-horizontal img-fluid mx-auto d-block img-size">
+
+<img src="assets/images/ValleHermoso/logo_valleHermoso.jpg" class="logo-centro img-fluid mx-auto d-block img-size">
+
+ -->
+
+
+
+    <!-- LOGO centro arriba
+assets/images/ValleHermoso/logo_valleHermoso_horizontal.jpg
+ -->
+    <!-- logo centro
+assets/images/ValleHermoso/logo_ValleHermoso.jpg
+ -->
+
+    <!-- FOOTER OPTIONS -->
+    <app-tabs-footer></app-tabs-footer>
+</div>
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Número</th>
+            <th scope="col">Persona</th>
+            <th scope="col">nombregenero</th>
+            <th scope="col">nombre</th>
+            <th scope="col">rfc</th>
+            <th scope="col">registro</th>
+            <th scope="col">padron</th>
+            <th scope="col">calle</th>
+            <th scope="col">numext</th>
+            <th scope="col">numint</th>
+            <th scope="col">edificio</th>
+            <th scope="col">colonia</th>
+            <th scope="col">pais</th>
+            <th scope="col">estado</th>
+            <th scope="col">ciudad</th>
+            <th scope="col">codpos</th>
+            <th scope="col">contacto</th>
+            <th scope="col">telefonos</th>
+            <th scope="col">giro</th>
+            <th scope="col">email</th>
+            <th scope="col">web</th>
+            <th scope="col">creadofecha</th>
+            <th scope="col">creadohora</th>
+        </tr>
+    </table>
+    
+    <table class="body-contratista">
+        <ng-container *ngIf="contratistas">
+            <tr *ngFor="let contratista of contratistas">
+                <td>{{contratista.numero}}</td>
+                <td>{{contratista.persona}}</td>
+                <td>{{contratista.nombregenero}}</td>
+                <td>{{contratista.nombre}}</td>
+                <td>{{contratista.rfc}}</td>
+                <td>{{contratista.registro}}</td>
+                <td>{{contratista.padron}}</td>
+                <td>{{contratista.calle}}</td>
+                <td>{{contratista.numext}}</td>
+                <td>{{contratista.numint}}</td>
+                <td>{{contratista.edificio}}</td>
+                <td>{{contratista.colonia}}</td>
+                <td>{{contratista.pais}}</td>
+                <td>{{contratista.estado}}</td>
+                <td>{{contratista.ciudad}}</td>
+                <td>{{contratista.codpos}}</td>
+                <td>{{contratista.contacto}}</td>
+                <td>{{contratista.telefonos}}</td>
+                <td>{{contratista.giro}}</td>
+                <td>{{contratista.email}}</td>
+                <td>{{contratista.web}}</td>
+                <td>{{contratista.creadofecha}}</td>
+                <td>{{contratista.creadohora}}</td>
+                <td>{{contratista.inscripcion}}</td>
+            </tr>
+        </ng-container>
+    </table>
+</div>

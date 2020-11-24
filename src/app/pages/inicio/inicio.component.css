@@ -1,0 +1,80 @@
+.logo-horizontal {
+    margin-top: 1rem;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.logo-centro {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.img-size {
+    width: 16rem;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .img-size {
+        width: 16rem;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+    .img-size {
+        width: 15rem;
+    }
+
+    .header-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .body-contratista {
+        background-color:transparent;
+        color:white;
+    }
+    
+    .container-prueba {
+        display: inline;
+        position: relative;
+        font-family: "Segoe IU", sans-serif;
+    }
+    
+    .header-contratista {
+        width: 100%;
+    }
+    
+    .body-contratista {
+        width: 100%;
+    }
+    
+    .ajustate{
+        width: 36%;
+        padding-left: 3px;
+    }
+    
+    @media screen and (max-width: 1300px) {
+    
+        thead, tbody, th, td, tr {
+            display: block;
+        }
+    
+        td, th {
+            padding: 0 0 0 20vw;
+        }
+    
+        .container-prueba {
+            display: flex;
+            flex-direction: row;
+        }
+    
+        .header-contratista {
+            padding: 0 25vw 0 25vw;
+            width: auto;
+        }
+    
+        .body-contratista {
+            width: auto;
+        }
+    
+    }
+    
+}
