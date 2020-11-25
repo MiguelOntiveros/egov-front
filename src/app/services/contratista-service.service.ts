@@ -9,10 +9,12 @@ export class ContratistaServiceService {
 
   private URL = 'https://maikiki.herokuapp.com/contratista/todos';
 
+  private URL2 = 'http://localhost:8083/contratista/todos';
+
   constructor(private http: HttpClient) { }
 
   getContratista(): Observable<any>{
-    return this.http.get<any>(this.URL);
+    return this.http.get<any>(this.URL2);
   }
 
 }
