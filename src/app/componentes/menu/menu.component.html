@@ -1,36 +1,24 @@
-<!-- Header -->
-<div class="flex-container">
 
+<p class="title-div">
+    VALLE HERMOSO
+</p>
+<div class="flex-container">
+    <div>
+        <button class="button-sidemenu mb-2" (click)="openMenu()">
+            <img src="assets/images/ValleHermoso/logo_ValleHermoso.png" class="empresa">
+        </button>
+    </div>
+    <div>
+        <app-searchbar titulo="Busqueda general"></app-searchbar>
+    </div>
+    <div>
+        <button class="rounded-circle bg-valle-celeste posicion-filtros" (click)="abrirFiltros()">
+            <i class="fa fa-sliders filter text-white pt-1" aria-hidden="true"></i>
+        </button>
+    </div>
 </div>
 
-<nav class="bg-valle-verde">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="text-white text-uppercase text-center first-title">{{tituloHeader}}</h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 text-center">
-            <button class="button-sidemenu mb-2" (click)="openMenu()">
-                    <img src="assets/images/ValleHermoso/logo_ValleHermoso.png" class="empresa">
-                </button>
-        </div>
-
-        <div class="col-8  text-center">
-            <app-searchbar titulo="Busqueda general"></app-searchbar>
-        </div>
-
-        <div class="col-2 text-center">
-            <button class="rounded-circle bg-valle-celeste posicion-filtros" (click)="abrirFiltros()">
-                        <i class="fa fa-sliders filter text-white pt-1" aria-hidden="true"></i>
-            </button>
-        </div>
-
-    </div>
-</nav>
-
-<!-- Menu Options -->
+<!-- Menu Options 
 
 <div *ngIf="mostrarMenu == true">
     <div class="bg-white menu-options animate__animated animate__fadeInLeft menu-options pos-fixed">
@@ -57,4 +45,4 @@
             </nav>
         </div>
     </div>
-</div>
+</div>-->
