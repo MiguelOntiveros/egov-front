@@ -31,11 +31,11 @@ th{
 }
 
 .table-td{
-    padding: 0 0 0 3vw;
+    padding: 0 3vw 0 0;
 }
 
 .table-td2{
-    padding: 0 5vw 0 0;
+    padding: 0 0 0 3vw;
 }
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
