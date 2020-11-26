@@ -1,3 +1,11 @@
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5vh;
+  }
+  
 .logo-horizontal {
     margin-top: 1rem;
     border-radius: 10px 10px 0px 0px;

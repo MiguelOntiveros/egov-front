@@ -1,5 +1,13 @@
 /* TITULO PRINCIPAL */
 
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5vh;
+}
+
 .first-title {
     font-size: 2rem;
     font-family: Arial;
