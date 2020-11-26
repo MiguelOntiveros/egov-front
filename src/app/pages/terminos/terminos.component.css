@@ -11,11 +11,13 @@
 .header-contratista {
     background-color:black;
     color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .body-contratista {
     background-color:white;
     color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 td{

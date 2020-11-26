@@ -1,22 +1,15 @@
-.flex-container-img{
+.flex-container{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     margin-top: 5vh;
-    background-color:transparent;
   }
 
 .img {
     border-radius: 10px 10px 10px 10px;
     border-color: white;
     width: 100%;
-}
-
-.fondo-blanco{
-    border-radius: 10px 10px 10px 10px;
-    border-color: white;
-    align-items: center;
 }
 
 .input-login {
@@ -36,9 +29,8 @@
     border-radius: 10px;
 }
 
-.img-nl {
-    width: 80%;
-    border: 2px solid #ccc;
+.button-padding{
+    padding: 0 0 0 64px;
 }
 
 .mensaje-aviso {
@@ -50,16 +42,9 @@
     .mensaje-aviso {
         font-size: 15px;
     }
-    .img-nl {
-        width: 70%;
-    }
 }
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
-    .img-nl {
-        width: 80%;
-    }
-
     .mensaje-aviso {
         font-size: 14px;
     }
