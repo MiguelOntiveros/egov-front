@@ -1,11 +1,11 @@
 /* Barra de búsqueda */
 
 .input-search {
-    width: 90%;
+    width: 30rem;
+    height: 2.2rem;
     color: black;
     border: 1px transparent;
     transition: 0.2s all linear;
-    margin-top: 3%;
 }
 
 .input-search:focus {
@@ -36,18 +36,24 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 700px) {
+
     .input-search {
-        width: 90%;
+        width: 20rem;
+        height: 1.5rem;
     }
+   
     .resultado {
         margin-top: 3rem;
     }
 }
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
+
     .input-search {
-        width: 90%;
+        width: 20rem;
+        height: 1.5rem;
     }
+   
     .resultado {
         margin-top: 10%;
     }
