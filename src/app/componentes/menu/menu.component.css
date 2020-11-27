@@ -20,6 +20,10 @@
     font-size: 2.5rem;
 }
 
+.menu-background{
+    background-color: white;
+}
+
 /* BOTON VALLE HERMOSO */
 
 .button-sidemenu {
@@ -69,6 +73,13 @@ input:focus {
     top: 0px;
     width: 12rem;
     height: 100%;
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 1rem 0 0 0;
+}
+
+.lista-padding{
+    padding: 1rem 0 1rem 0;
 }
 
 .option-hover,
@@ -85,11 +96,21 @@ a:hover {
 
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 801px) and (max-width: 1900px) {
+
+    .margin-correctivo{
+        margin-top: 8rem;
+    }
+}
 
 @media screen and (min-width: 500px) and (max-width: 800px) {
 
     .title-div{
         font-size: 1.5rem;
+    }
+
+    .margin-correctivo{
+        margin-top: 6rem;
     }
 
     .empresa {
@@ -105,6 +126,10 @@ a:hover {
 
     .title-div{
         font-size: 1.5rem;
+    }
+
+    .margin-correctivo{
+        margin-top: 5rem;
     }
     
     .empresa {
