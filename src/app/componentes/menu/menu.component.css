@@ -9,10 +9,40 @@
     background: rgb(160, 195, 13);
 }
 
+.flex-container2{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 60px;
+    background: rgb(160, 195, 13);
+    align-items: baseline;
+}
+
+.flex-container3{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 60px;
+    margin-left: 100px;
+    background: rgb(160, 195, 13);
+    align-items: baseline;
+    width: 50px;
+}
+
+input[ type="checkbox"]{
+    width: 30px;
+    height: 30px;
+}
+
+.table-correctivo{
+    padding-top: 10px;
+}
+
 .title-div{
     display: flex;
     position: relative;
     justify-content: center;
+    align-items: center;
     background: rgb(160, 195, 13);
     color:white;
     font-family: Arial;
@@ -22,6 +52,10 @@
 
 .menu-background{
     background-color: white;
+}
+
+.padding-correctivo{
+    padding-right: 1rem;
 }
 
 /* BOTON VALLE HERMOSO */
@@ -71,7 +105,7 @@ input:focus {
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 12rem;
+    width: 20rem;
     height: 100%;
     background-color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -79,7 +113,7 @@ input:focus {
 }
 
 .lista-padding{
-    padding: 1rem 0 1rem 0;
+    padding: 0 0 0 3rem;
 }
 
 .option-hover,
@@ -101,6 +135,10 @@ a:hover {
     .margin-correctivo{
         margin-top: 8rem;
     }
+
+    .lista-padding{
+        padding: 0 1rem 0 1rem;
+    }
 }
 
 @media screen and (min-width: 500px) and (max-width: 800px) {
@@ -111,6 +149,10 @@ a:hover {
 
     .margin-correctivo{
         margin-top: 6rem;
+    }
+
+    .lista-padding{
+        padding: 0 1rem 0 1rem;
     }
 
     .empresa {
@@ -130,6 +172,10 @@ a:hover {
 
     .margin-correctivo{
         margin-top: 5rem;
+    }
+
+    .lista-padding{
+        padding: 0 1rem 0 1rem;
     }
     
     .empresa {

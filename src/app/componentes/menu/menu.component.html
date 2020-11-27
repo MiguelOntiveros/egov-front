@@ -1,7 +1,5 @@
 
-<p class="title-div">
-    VALLE HERMOSO
-</p>
+<p class="title-div">VALLE HERMOSO</p>
 <div class="flex-container">
     <div>
         <button class="button-sidemenu mb-2" (click)="openMenu()">
@@ -11,7 +9,7 @@
     <div>
         <app-searchbar titulo="Busqueda general"></app-searchbar>
     </div>
-    <div>
+    <div class="padding-correctivo">
         <button class="rounded-circle bg-valle-celeste posicion-filtros" (click)="abrirFiltros()">
             <i class="fa fa-sliders filter text-white pt-1" aria-hidden="true"></i>
         </button>
@@ -19,25 +17,26 @@
 </div>
 
 <!-- Menu Options -->
-
 <div *ngIf="mostrarMenu == true" class="background-menu">
-    <div class="animate__animated animate__fadeInLeft menu-options margin-correctivo">
+    <div class="menu-options margin-correctivo">
         <div>
-               <!-- <img src="assets/images/ValleHermoso/logo_valleHermoso.jpg" class="w-50 mt-3">-->
-                <img src="assets/images/ValleHermoso/logo.jpg">
-                <button class="button-back" (click)="closeMenu()">
-                        <i class="fa fa-arrow-left"></i>
-                </button>
+            <!-- <img src="assets/images/ValleHermoso/logo_valleHermoso.jpg" class="w-50 mt-3">-->
+            <img src="assets/images/ValleHermoso/logo.jpg">
+            <button class="button-back" (click)="closeMenu()">
+                <i class="fa fa-arrow-left"></i>
+            </button>
 
-                <h4 class="text-white">{{usuario.rol}}</h4>
-                <span class="bg-valle-verde">{{usuario.correo}}</span>
+            <h4 class="text-white">{{usuario.rol}}</h4>
+            <span class="bg-valle-verde">{{usuario.correo}}</span>
 
             <nav>
                 <div *ngFor="let option of options">
+                    <br><br>
+                    <ul class="lista-padding">
+                        <a [routerLink]="option.ruta"></a>
+                    </ul>
                     <ul>
-                        <a [routerLink]="option.ruta" class="lista-padding">
-                            <li class="lista-padding"><i [class]="option.icono"></i>{{option.nombre}}</li>
-                        </a>
+                        <li class="lista-padding"><i [class]="option.icono" class="lista-padding"></i>{{option.nombre}}</li>
                     </ul>
                 </div>
             </nav>
