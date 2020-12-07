@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contratista } from 'src/app/interfaces/Contratista';
-import { ContratistaServiceService } from 'src/app/services/contratista-service.service';
+import { PruebaImagenesService } from 'src/app/services/prueba-imagenes.service';
 
 @Component({
   selector: 'app-inicio',
@@ -10,12 +10,13 @@ import { ContratistaServiceService } from 'src/app/services/contratista-service.
 export class InicioComponent implements OnInit {
 
   contratistas: Contratista[];
+  imagen: string;
 
-  constructor(private ContratistaService: ContratistaServiceService) { }
+  constructor( private ImagenService: PruebaImagenesService) { }
 
   ngOnInit(){
-    this.ContratistaService.getContratista().subscribe((Temp)=>{
-      this.contratistas = Temp;
+    this.ImagenService.getImagenes().subscribe((Temp)=>{
+      this.imagen = Temp;
     })
   }
 }
