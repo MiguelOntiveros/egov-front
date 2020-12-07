@@ -8,10 +8,12 @@ import { Observable } from 'rxjs';
 export class PruebaImagenesService {
 
    private URL = 'http://localhost:8083/contratistadocumentoimagen/unicoregistro';
+
+   private URL2 = 'https://mike-complise.herokuapp.com/contratistadocumentoimagen/unicoregistro';
    constructor(private http: HttpClient) { }
  
    getImagenes(): Observable<any>{
-     return this.http.get<any>(this.URL);
+     return this.http.get<any>(this.URL2);
    }
  
 }
