@@ -7,7 +7,7 @@ import { Observable} from 'rxjs';
 })
 export class PruebaImagenesService {
 
-  private URL = 'http://localhost:8083/contratistadocumentoimagen/unicoregistro';
+  private URL = 'http://localhost:8083/contratistadocumentoimagen/enviarimagen';
 
   private URL2 = 'https://mike-complise.herokuapp.com/contratistadocumentoimagen/unicoregistro';
 
