@@ -1,0 +1,83 @@
+<!-- PAGINA FILTROS  -->
+
+<!-- ANIMACION -->
+<div class="animate__animated animate__fadeIn fondo">
+
+    <app-header-titulo titulo="Filtros"></app-header-titulo>
+
+    <!-- FOTO CLIENTE -->
+
+    <div class="flex-container">
+        <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-cliente" />
+    </div>
+
+    <!-- OPCIONES BÚSQUEDA -->
+
+    <div class="flex-container">
+
+        <input type="checkbox" class="" checked/>
+        <label class="">Contratistas</label>
+
+        <input type="checkbox" class="" checked/>
+        <label class="">Socios</label>
+
+        <input type="checkbox" class="" checked/>
+        <label class="">Contratos</label>
+
+    </div>
+
+    <div class="flex-container">
+
+        <input type="checkbox" class="" checked/>
+        <label class="">Rep.Legal</label>
+
+        <input type="checkbox" class="" checked/>
+        <label class="">Descripcion</label>
+
+    </div>
+
+    <!-- FECHAS -->
+    <h3 class="titulo-seccion">Fechas</h3>
+    <div class="flex-container">
+
+        <label class="fecha-titulo">Inicio</label>
+        <input type="date" class="calendario">
+
+        <label class="fecha-titulo">Fin</label>
+        <input type="date" class="calendario">
+
+    </div>
+
+
+    <!-- MONTOS -->
+
+    <h3 class="titulo-seccion">Montos</h3>
+    <div class="" style="text-align: center;">
+        <p>Rango de Intervalo mínimo: {{ valorMinimo | currency }}</p>
+        <p>Rango de Intervalo máximo: {{ valorMaximo | currency }}</p>
+    </div>
+
+    <div class="flex-container">
+        <input type="range" [(ngModel)]="valorMinimo" step="100000" min="0" max="10000000" />
+        <input type="range" [(ngModel)]="valorMaximo" step="100000" min="0" max="10000000" />
+    </div>
+
+    <h3 class="titulo-seccion">Organizar</h3>
+
+    <div class="flex-container">
+        <span>Buscar conforme a filtros seleccionados</span>
+        <select name="montoRangos">
+            <option value="montoMayorMenor">
+                Monto mayor a menor
+            </option>
+            <option value="montoMenorMayor">
+                Monto menor a mayor
+            </option>
+        </select>
+
+        <button class="boton-filtrar" (click)="activarFiltros()">Filtrar</button>
+
+    </div>
+
+    <app-boton-footer></app-boton-footer>
+</div>

@@ -1,0 +1,37 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Area</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+            <th>Folio</th>
+            <th>Contrato</th>
+            <th>Evento</th>
+            <th>Segumiento Correo</th>
+            <th>Segumiento Responsable</th>
+            <th>Segumiento Url</th>
+            <th>Segumiento Tipo</th>
+            <th>Segumiento Count</th>
+            <th>Creado Fecha</th>
+        </tr>
+
+        <tr *ngFor="let contratoSeguimientoBitacora of contratosSeguimientoBitacora">
+            <td>
+                <p class="margin-espacio">{{contratoSeguimientoBitacora.id}}</p>
+            </td>
+            <td>{{contratoSeguimientoBitacora.area}}</td>
+            <td>{{contratoSeguimientoBitacora.tipo}}</td>
+            <td>{{contratoSeguimientoBitacora.categoria}}</td>
+            <td>{{contratoSeguimientoBitacora.folio}}</td>
+            <td>{{contratoSeguimientoBitacora.contrato}}</td>
+            <td>{{contratoSeguimientoBitacora.evento}}</td>
+            <td>{{contratoSeguimientoBitacora.seguimiento_correo}}</td>
+            <td>{{contratoSeguimientoBitacora.seguimiento_responsable}}</td>
+            <td>{{contratoSeguimientoBitacora.seguimiento_url}}</td>
+            <td>{{contratoSeguimientoBitacora.seguimiento_tipo}}</td>
+            <td>{{contratoSeguimientoBitacora.seguimiento_count}}</td>
+            <td>{{contratoSeguimientoBitacora.creadofecha}}</td>
+        </tr>
+    </table>
+</div>

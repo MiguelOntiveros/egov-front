@@ -1,0 +1,49 @@
+<!-- ANIMACION -->
+<div class="animate__animated animate__fadeIn fondo">
+
+    <!--CABECERA  -->
+    <app-header-titulo titulo="Configuraciones"></app-header-titulo>
+
+    <!-- FORMULARIO CONFIGURACIONES -->
+    <div class="container mt-4">
+        <form [formGroup]="configuracionesForm" (ngSubmit)="configurarSistema()">
+
+            <div class="row">
+                <!-- <div class="">
+                    <ul class="lista-opciones">
+                        <li class="opcion-nombre" *ngFor="let opcion of opcionConfiguracion">
+                            {{ opcion.nombre }}
+                        </li>
+                    </ul>
+                </div> -->
+
+                <div class="col-6">
+                    <li class="opcion-nombre" *ngFor="let opcion of opcionConfiguracion">
+                        {{ opcion.nombre }}
+                    </li>
+                </div>
+
+
+                <div class="col-6">
+                    <ul class="lista-opciones">
+                        <li><input type="number" formControlName="monto" placeholder="$ 0" required></li>
+                        <li><input type="number" formControlName="montoMaximo" placeholder="$10,000,000" required></li>
+                        <li><input type="number" formControlName="resultadoPagina" placeholder="20" required></li>
+                        <li><input type="number" formControlName="rangoIntervalos" placeholder="$ 1000" required></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <button class="boton-aceptar-cambios" type="submit" [ngClass]="configuracionesForm.valid  ? 'activado' : 'desactivado' ">
+                Aplicar cambios
+            </button>
+
+            <!-- <button (click)="configurarSistema()">Enviar configuraciones</button> -->
+
+        </form>
+    </div>
+
+    <app-boton-footer></app-boton-footer>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Numero</th>
+            <th>Pais</th>
+            <th>Estado</th>
+            <th>Ciudad</th>
+            <th>Descripcion</th>
+        </tr>
+
+        <tr *ngFor="let ciudad of ciudades">
+
+            <td>
+                <p class="margin-espacio">{{ciudad.id}}</p>
+            </td>
+            <td>{{ciudad.pais}}</td>
+            <td>{{ciudad.estado}}</td>
+            <td>{{ciudad.ciudad}}</td>
+            <td>{{ciudad.descripcion}}</td>
+        </tr>
+    </table>
+</div>

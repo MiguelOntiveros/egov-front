@@ -18,7 +18,7 @@ export class DataService {
     private http: HttpClient,
     private red: Red
     ) {
-    this.localhost =red.localhost;
+    this.localhost = red.localhost;
   }
 
   /* CONTRATO  */
@@ -88,15 +88,20 @@ export class DataService {
 
   // USUARIOS
 
-  getUsuario(id: number){
-    const url = this.localhost + '/egovi-api/usuario/buscarUsuario/' + id;
-    return this.http.get(url).pipe(
-      catchError(e => {
-        Swal.fire('Error de conexion', 'Hay una posible desconexión con el servidor u otro problema relacionado, consulte a soporte técnico', 'error');
-        return throwError(e);
-      })
-    );;
-  }
+  // getUsuario(id: number){
+  //   const url = this.localhost + '/egovi-api/usuario/buscarUsuario/' + id;
+  //   return this.http.get(url).pipe(
+  //     catchError(e => {
+  //       Swal.fire('Error de conexion', 'Hay una posible desconexión con el servidor u otro problema relacionado, consulte a soporte técnico', 'error');
+  //       return throwError(e);
+  //     })
+  //   );;
+  // }
+
+  // getUsuario(){
+    
+  // }
+
 
   getAllUsuarios(){
     const url = this.localhost + '/egovi-api/usuario/usuarios';

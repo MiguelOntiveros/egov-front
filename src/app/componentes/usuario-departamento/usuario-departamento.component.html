@@ -1,0 +1,17 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Descripcion</th>
+        </tr>
+
+        <tr *ngFor="let usuarioDepartamento of usuariosDepartamento">
+            <td>
+                <p class="margin-espacio">{{usuarioDepartamento.id}}</p>
+            </td>
+            <td>{{usuarioDepartamento.clave}}</td>
+            <td>{{usuarioDepartamento.descripcion}}</td>
+        </tr>
+    </table>
+</div>

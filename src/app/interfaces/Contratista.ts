@@ -1,4 +1,4 @@
-export interface Contratista {
+export interface Contratista{
     id: number;
     numero: number;
     persona: number;
@@ -17,17 +17,25 @@ export interface Contratista {
     ciudad: number;
     codpos: string;
     contacto: string;
-    telefonos: number;
+    telefonos: string;
     giro: number;
     email: string;
     web: string;
-    creadofecha: Date;
-    creadohora: Date;
+    notas: string;
+    estatus: number;
+    bloqueado: string;
+    suspendido: boolean;
+    // completo: boolean;
+    creadousuario: string;
+    creadofecha: string;
+    creadohora: string;
     inscripcion: string;
     vigencia: string;
     suspendidofecha: string;
     suspendidomotivo: number;
-    suspendidoobservaciones: string;
+    suspendidoobservaciones: string; // next
     curp: string;
     generico: number;
+
+    
 }

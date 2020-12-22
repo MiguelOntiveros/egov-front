@@ -1,0 +1,58 @@
+.flex-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.contenedor-lista {
+    width: 45%;
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.lista-resultado {
+    list-style: none;
+    margin: 20px;
+    background: white;
+    border-radius: 15px;
+}
+
+
+/* LISTA DE CONTRATOS /  CONTENIDO */
+
+.resultado-tipo-imagen {
+    margin: 20px;
+    width: 20%;
+    display: inline-flex;
+}
+
+.resultado-tipo-contenido {
+    margin: 20px;
+    width: 60%;
+    display: inline-block;
+}
+
+.imagen-tipo-contrato {
+    width: 5rem;
+    height: 5rem;
+}
+
+@media only screen and (device-width: 360px) and (device-height: 640px) {
+    .contenedor-lista {
+        width: 100%;
+    }
+    .imagen-tipo-contrato {
+        width: 5rem;
+        height: 4rem;
+        padding-left: 20%;
+    }
+    .resultado-tipo-imagen {
+        width: 100%;
+    }
+    .resultado-tipo-contenido {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1800) {}

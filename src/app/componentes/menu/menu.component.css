@@ -1,192 +1,220 @@
-/* TITULO PRINCIPAL */
-
-.flex-container{
+.flex-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     position: relative;
-    margin-top: 0;
-    background: rgb(160, 195, 13);
+    margin-top: 0px;
 }
 
-.flex-container2{
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-    margin-top: 60px;
-    background: rgb(160, 195, 13);
-    align-items: baseline;
+
+/* MENU HEADER */
+
+.contenedor-menu {
+    height: 120px;
 }
 
-.flex-container3{
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-    margin-top: 60px;
-    margin-left: 100px;
-    background: rgb(160, 195, 13);
-    align-items: baseline;
-    width: 50px;
-}
-
-input[ type="checkbox"]{
-    width: 30px;
-    height: 30px;
-}
-
-.table-correctivo{
-    padding-top: 10px;
-}
-
-.title-div{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    background: rgb(160, 195, 13);
-    color:white;
-    font-family: Arial;
-    padding: 0.5vh 0 0 0;
-    font-size: 2.5rem;
-}
-
-.menu-background{
-    background-color: white;
-}
-
-.padding-correctivo{
-    padding-right: 1rem;
-}
-
-/* BOTON VALLE HERMOSO */
-
-.button-sidemenu {
-    background: rgb(160, 195, 13);
-}
-
-.empresa {
+.imagen-menu {
     width: 5rem;
-    border-radius: 20%;
+    height: 4.5rem;
+    margin-left: 20px;
 }
 
-
-/* BARRA DE BÚSQUEDA */
-
-input {
-    transition: 0.3s all linear;
-    border: 2px solid #4c2866;
-    color: white;
-}
-
-input:focus {
-    outline: none;
-    border: 4px solid #CDC5D4;
-}
-
-
-/* BOTÓN DE FILTROS */
-
-.posicion-filtros {
-    margin-top: 2px;
-}
-
-.filter {
-    height: 2rem;
-    width: 3rem;
-    outline: none;
+.titulo-cliente {
     text-align: center;
+    color: white;
+    font-family: 'Arial';
+    font-size: 2rem;
+}
+
+
+/* BOTON MENU */
+
+.boton-menu {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+
+/* BOTON FILTROS */
+
+.boton-filtros {
+    background: rgb(69, 170, 226);
+    border: none;
+    border-radius: 30px;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2%;
+    outline: none;
+}
+
+.icono-filtros {
+    width: 1.5rem;
+    height: 1.5rem;
     transform: rotate(90deg);
-}
-
-
-/* MENU - OPCIÓN SELECCIONADA */
-
-.menu-options {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 20rem;
-    height: 100%;
-    background-color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 1rem 0 0 0;
-}
-
-.lista-padding{
-    padding: 0 0 0 3rem;
-}
-
-.option-hover,
-a {
-    transition: 0.2s all linear;
-    color: black;
-}
-
-.option-hover:hover,
-a:hover {
-    background: rgba(4, 85, 151, 0.8);
     color: white;
 }
 
 
-/* MEDIA QUERIES */
-@media screen and (min-width: 801px) and (max-width: 1900px) {
+/* MENU LATERAL */
 
-    .margin-correctivo{
-        margin-top: 8rem;
+
+/* USUARIO DATOS */
+
+.imagen-menu-lateral {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    padding-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.usuario-rol {
+    font-family: 'Arial';
+    display: block;
+    font-weight: bold;
+    padding-left: 10%;
+}
+
+.usuario-correo {
+    font-family: 'Arial';
+    padding-left: 10%;
+}
+
+
+/* OPCIONES MENU */
+
+.contenedor-menu-lateral {
+    position: absolute;
+    top: 0px;
+    background: white;
+    height: 99.5vh;
+    width: 12rem;
+    border: 1px solid #ccc
+}
+
+.ruta-opciones {
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    margin: 20px;
+}
+
+.lista-opciones {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.boton-cerrar-menu {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    position: absolute;
+    left: 70%;
+    cursor: pointer;
+}
+
+
+/* TIPO DE BUSQUEDA */
+
+.tipo-busqueda {
+    list-style: none;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .contenedor-menu {
+        height: 80px;
     }
-
-    .lista-padding{
-        padding: 0 1rem 0 1rem;
+    .titulo-cliente {
+        font-size: 1.5rem;
+    }
+    .imagen-menu {
+        width: 3.5rem;
+        height: 3rem;
+    }
+    .boton-menu {
+        margin: -3%;
+    }
+    .boton-filtros {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 800px) {
 
-    .title-div{
-        font-size: 1.5rem;
+/* Nexus 5 -------------*/
+
+@media only screen and (device-width: 360px) and (device-height: 640px) {
+    .contenedor-menu-lateral {
+        height: 100vh;
+        width: 8rem;
     }
 
-    .margin-correctivo{
-        margin-top: 6rem;
-    }
+}
 
-    .lista-padding{
-        padding: 0 1rem 0 1rem;
-    }
 
-    .empresa {
-        width: 4rem;
+/* iPads ----------- */
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) {
+    /* MENU HEADER */
+    .contenedor-menu {
+        height: 160px;
     }
-    /* BOTÓN FILTROS */
-    .posicion-filtros {
-        margin-top: 10px;
+    .imagen-menu {
+        width: 7rem;
+        height: 6rem;
+        margin-left: 50px;
+    }
+    .boton-filtros {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+    /* MENU LATERAL */
+    .contenedor-menu-lateral {
+        width: 14rem;
+    }
+    .imagen-menu-lateral {
+        width: 8rem;
+        height: 8rem;
+    }
+    /* INFORMACION DEL CLIENTE */
+    .usuario-rol {
+        font-size: 18px;
+    }
+    .usuario-correo {
+        font-size: 18px;
+    }
+    .lista-opciones {
+        font-size: 18px;
+    }
+    .boton-cerrar-menu {
+        left: 80%;
+        font-size: 20px;
     }
 }
 
-@media screen and (min-width: 300px) and (max-width: 500px) {
 
-    .title-div{
-        font-size: 1.5rem;
-    }
+/* Desktops and laptops ----------- */
 
-    .margin-correctivo{
-        margin-top: 5rem;
+@media only screen and (min-width: 1224px) {
+    .boton-filtros {
+        margin-right: 3%;
     }
+}
 
-    .lista-padding{
-        padding: 0 1rem 0 1rem;
-    }
-    
-    .empresa {
-        width: 3rem;
-    }
-    /* BOTÓN FILTROS */
-    .posicion-filtros {
-        margin-top: 05px;
-    }
-    .filter {
-        height: 1.5rem;
-        width: 1.5rem;
-    }
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
 }

@@ -1,0 +1,29 @@
+<!-- PAGINA SUGERENCIAS -->
+
+<!-- ANIMACION -->
+<div class="animate__animated animate__fadeIn fondo">
+
+    <app-header-titulo titulo="Sugerencias"></app-header-titulo>
+
+    <!-- SUGERENCIAS FORM -->
+    <form [formGroup]="sugerenciasForm" (ngSubmit)="enviarSugerencia()">
+
+        <div class="div-asunto">
+            <p class="titulo-asunto">Asunto</p>
+            <textarea class="campo-asunto" placeholder="Escribe algun asunto..." formControlName="asunto" required></textarea>
+        </div>
+
+        <hr>
+
+        <div class="div-sugerencias">
+            <p class="titulo-sugerencia">Sugerencias</p>
+            <textarea class="campo-sugerencias" placeholder="Escribe alguna sugerencia..." formControlName="sugerencia" required></textarea>
+        </div>
+
+        <button class="boton-enviar" [disabled]="sugerenciasForm.invalid">Enviar Sugerencias</button>
+
+    </form>
+
+    <app-boton-footer></app-boton-footer>
+
+</div>

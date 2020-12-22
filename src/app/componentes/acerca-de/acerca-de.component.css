@@ -1,0 +1,82 @@
+/* .fondo {
+    background: linear-gradient(90deg, rgba(110, 110, 110, 1) 0%, rgba(236, 236, 236, 1) 50%, rgba(110, 110, 110, 1) 100%);
+    height: 100vh;
+} */
+
+.contenedor-texto {
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 01%;
+    font-weight: bold;
+}
+
+.contenedor-texto-copy {
+    text-align: center;
+    width: 70%;
+    margin-left: 16%;
+    margin-top: 01%;
+    font-weight: bold;
+}
+
+.imagen-cliente {
+    width: 7rem;
+    height: 6rem;
+    margin: auto;
+    display: flex;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    .contenedor-texto {
+        font-size: 10px;
+    }
+    .contenedor-texto-copy {
+        font-size: 10px;
+    }
+    .imagen-cliente {
+        width: 4rem;
+        height: 3rem;
+    }
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+    /* Styles */
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    .contenedor-texto {
+        font-size: 25px;
+    }
+    .contenedor-texto-copy {
+        font-size: 25px;
+    }
+    .imagen-cliente {
+        width: 6rem;
+        height: 5rem;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}

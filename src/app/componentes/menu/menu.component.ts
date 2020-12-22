@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  tituloHeader: string = 'valle hermoso';
-  mostrarMenu: boolean;
-  usuario = {rol: 'Administrador', correo: 'admin@hotmail.com'};
+  tituloCliente: string = 'valle hermoso';
+  mostrarMenu = false;
 
-  options = [
+  usuario = { rol: 'Administrador', correo: 'admin@hotmail.com' };
+
+  menuOpciones = [
     {
       nombre: 'Inicio',
       icono: 'fa fa-home',
@@ -21,7 +22,7 @@ export class MenuComponent implements OnInit {
     {
       nombre: 'Configuraciones',
       icono: 'fa fa-cog',
-      ruta: '/configuracion'
+      ruta: '/configuraciones'
     },
     {
       nombre: 'Acerca de...',
@@ -43,28 +44,34 @@ export class MenuComponent implements OnInit {
       icono: 'fa fa-sign-out',
       ruta: '/login'
     },
-    {
-      nombre: 'Tablas',
-      icono: 'fa fa-table',
-      ruta: '/tablas'
-    }
+    // {
+    //   nombre: 'Tablas',
+    //   icono: 'fa fa-table',
+    //   ruta: '/tablas'
+    // }
+    // {
+    //   nombre: 'Lista-Documentos',
+    //   icono: 'fa fa-list',
+    //   ruta: '/lista-documentos'
+    // }
   ];
 
-  constructor(private router: Router) {
-   }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  openMenu(){
+  abrirMenu(){
+    console.log('Menu abierto');
     this.mostrarMenu = true;
   }
 
-  closeMenu(){
+  cerrarMenu(){
     this.mostrarMenu = false;
   }
 
   abrirFiltros(){
+    console.log('Filtros abiertos');
     this.router.navigate(['/filtros']);
   }
 

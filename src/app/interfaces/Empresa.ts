@@ -1,0 +1,30 @@
+export interface Empresa{
+    id: number;
+    nombre: string;
+    rfc: string;
+    edificio: string;
+    direccion: string;
+    colonia: string;
+    pais: string;
+    estado: string;
+    ciudad: string;
+    codpos: string;
+    web: string;
+    telefonos: string;
+    fax: string;
+    slogan: string;
+    colorfondo: string;
+    // imagenfondo: byte[];
+    // imagencompu: byte[];
+    // imagentableta: byte[];
+    // imagenmovil: byte[];
+    logocantidad: number;
+    logoalineacion: string;
+    // logo1: byte[];
+    // logo2: byte[];
+    // marcaagua: byte[];
+    fuentetipo: string;
+    fuentetamaño: string;
+    fuenteestilo: string;
+    fuentealineacion: string;
+}

@@ -1,0 +1,17 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Mes y Dia</th>
+            <th>Santoral</th>
+        </tr>
+
+        <tr *ngFor="let s of santoral">
+            <td>
+                <p class="margin-espacio">{{s.id}}</p>
+            </td>
+            <td>{{s.mesydia}}</td>
+            <td>{{s.santoral}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,459 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+}
+
+.logo-1-celular {
+    width: 100%;
+}
+
+.logo-2-celular {
+    width: 100%;
+}
+
+.logo-1-pc {
+    width: 100%;
+}
+
+.logo-2-pc {
+    width: 100%;
+}
+
+.contenedor-tipo-busqueda {
+    background: white;
+    border-radius: 1px;
+    position: absolute;
+    top: 24%;
+    left: 30%;
+    width: 40%;
+}
+
+.ruta-tipo-busqueda {
+    text-decoration: none;
+    color: black;
+}
+
+.lista-tipo-busqueda {
+    list-style: none;
+    margin: 2%;
+    font-weight: bold;
+}
+
+.ruta-tipo-busqueda:hover {
+    background: rgba(110, 110, 110, 0.4);
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    .logo-1-celular {
+        width: 15rem;
+        height: 6rem;
+    }
+    .logo-2-celular {
+        width: 8rem;
+        height: 8rem;
+    }
+    /* OCULTAR IMAGEN PC */
+    .logo-1-pc {
+        display: none;
+    }
+    .logo-2-pc {
+        display: none;
+    }
+    .contenedor-tipo-busqueda {
+        top: 20%;
+        left: 35%;
+        width: 60%;
+    }
+    .lista-tipo-busqueda {
+        font-size: 10px;
+    }
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 412px) and (max-device-width: 768px) {
+    /* Styles */
+    .logo-1-celular {
+        width: 14rem;
+        height: 7rem;
+    }
+    .logo-2-celular {
+        width: 10rem;
+        height: 10rem;
+    }
+    /* OCULTAR IMAGEN PC */
+    .logo-1-pc {
+        display: none;
+    }
+    .logo-2-pc {
+        display: none;
+    }
+    .contenedor-tipo-busqueda {
+        top: 15%;
+        left: 34%;
+        width: 45%;
+        height: 30%;
+    }
+    .lista-tipo-busqueda {
+        font-size: 10px;
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    .logo-1-celular {
+        width: 22rem;
+        height: 8rem;
+    }
+    .logo-2-celular {
+        width: 15rem;
+        height: 17rem;
+    }
+    /* OCULTAR IMAGEN PC */
+    .logo-1-pc {
+        display: none;
+    }
+    .logo-2-pc {
+        display: none;
+    }
+    .contenedor-tipo-busqueda {
+        top: 18%;
+        left: 30%;
+        width: 50%;
+        height: 40%;
+    }
+    .lista-tipo-busqueda {
+        font-size: 20px;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+    .logo-1-pc {
+        width: 25rem;
+        height: 10rem;
+    }
+    .logo-2-pc {
+        width: 12rem;
+        height: 12rem;
+    }
+    /* OCULTAR IMAGEN CELULAR */
+    .logo-1-celular {
+        display: none;
+    }
+    .logo-2-celular {
+        display: none;
+    }
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+  
+    /* OCULTAR IMAGEN CELULAR */
+    .logo-1-celular {
+        display: none;
+    }
+    .logo-2-celular {
+        display: none;
+    }
+}
+
+/* MENU HEADER */
+
+.contenedor-menu {
+    height: 120px;
+}
+
+.imagen-menu {
+    width: 5rem;
+    height: 4.5rem;
+    margin-left: 20px;
+}
+
+.titulo-cliente {
+    text-align: center;
+    color: white;
+    font-family: 'Arial';
+    font-size: 2rem;
+}
+
+
+/* BOTON MENU */
+
+.boton-menu {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+
+/* BOTON FILTROS */
+
+.boton-filtros {
+    background: rgb(69, 170, 226);
+    border: none;
+    border-radius: 30px;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2%;
+    outline: none;
+}
+
+.icono-filtros {
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(90deg);
+    color: white;
+}
+
+
+/* MENU LATERAL */
+
+
+/* USUARIO DATOS */
+
+.imagen-menu-lateral {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    padding-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.usuario-rol {
+    font-family: 'Arial';
+    display: block;
+    font-weight: bold;
+    padding-left: 10%;
+}
+
+.usuario-correo {
+    font-family: 'Arial';
+    padding-left: 10%;
+}
+
+
+/* OPCIONES MENU */
+
+.contenedor-menu-lateral {
+    position: absolute;
+    top: 0px;
+    background: white;
+    height: 99.5vh;
+    width: 12rem;
+    border: 1px solid #ccc
+}
+
+.ruta-opciones {
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    margin: 20px;
+}
+
+.lista-opciones {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.boton-cerrar-menu {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    position: absolute;
+    left: 70%;
+    cursor: pointer;
+}
+
+
+/* TIPO DE BUSQUEDA */
+
+.tipo-busqueda {
+    list-style: none;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .contenedor-menu {
+        height: 80px;
+    }
+    .titulo-cliente {
+        font-size: 1.5rem;
+    }
+    .imagen-menu {
+        width: 3.5rem;
+        height: 3rem;
+    }
+    .boton-menu {
+        margin: -3%;
+    }
+    .boton-filtros {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+
+/* Nexus 5 -------------*/
+
+@media only screen and (device-width: 360px) and (device-height: 640px) {
+    .contenedor-menu-lateral {
+        height: 100vh;
+        width: 8rem;
+    }
+}
+
+
+/* iPads ----------- */
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) {
+    /* MENU HEADER */
+    .contenedor-menu {
+        height: 160px;
+    }
+    .imagen-menu {
+        width: 7rem;
+        height: 6rem;
+        margin-left: 50px;
+    }
+    .boton-filtros {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+    /* MENU LATERAL */
+    .contenedor-menu-lateral {
+        width: 14rem;
+    }
+    .imagen-menu-lateral {
+        width: 8rem;
+        height: 8rem;
+    }
+    /* INFORMACION DEL CLIENTE */
+    .usuario-rol {
+        font-size: 18px;
+    }
+    .usuario-correo {
+        font-size: 18px;
+    }
+    .lista-opciones {
+        font-size: 18px;
+    }
+    .boton-cerrar-menu {
+        left: 80%;
+        font-size: 20px;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    .boton-filtros {
+        margin-right: 3%;
+    }
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}
+
+.buscador {
+    width: 35rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    border: none;
+    transition: 0.5s all linear;
+    outline: none;
+    text-align: center;
+}
+
+.buscador:focus {
+    background: #ccc;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    .buscador {
+        width: 11rem;
+        height: 2.2rem;
+    }
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+    /* Styles */
+    .buscador {
+        width: 20rem;
+        height: 2.2rem;
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    .buscador {
+        width: 26rem;
+        height: 3rem;
+        font-size: 30px;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+    .buscador {
+        width: 50rem;
+        height: 2.2rem;
+    }
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}

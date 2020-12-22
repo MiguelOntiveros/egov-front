@@ -1,0 +1,17 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Descripcion</th>
+        </tr>
+
+        <tr *ngFor="let contratoCancelado of contratosCancelado">
+            <td>
+                <p class="margin-espacio">{{contratoCancelado.id}}</p>
+            </td>
+            <td>{{contratoCancelado.clave}}</td>
+            <td>{{contratoCancelado.descripcion}}</td>
+        </tr>
+    </table>
+</div>

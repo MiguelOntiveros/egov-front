@@ -1,0 +1,22 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Descripcion</th>
+        </tr>
+
+        <tr *ngFor="let usuarioModulo of usuariosModulo">
+            <td>
+                <p class="margin-espacio">{{usuarioModulo.id}}</p>
+            </td>
+            <td>{{usuarioModulo.clave}}</td>
+            <td>{{usuarioModulo.modulo}}</td>
+            <td>{{usuarioModulo.submodulo}}</td>
+            <td>{{usuarioModulo.lectura}}</td>
+            <td>{{usuarioModulo.modificar}}</td>
+            <td>{{usuarioModulo.borrar}}</td>
+            <td>{{usuarioModulo.agregar}}</td>
+        </tr>
+    </table>
+</div>

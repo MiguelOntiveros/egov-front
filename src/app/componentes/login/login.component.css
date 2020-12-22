@@ -1,0 +1,193 @@
+.flex-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+input {
+    border: 1px solid #ccc;
+}
+
+
+/* IMAGEN CENTRO */
+
+.imagen-login-pc {
+    border-radius: 10px;
+    display: block;
+}
+
+.imagen-login-celular {
+    border-radius: 10px;
+    display: block;
+}
+
+
+/* CAMPOS USUARIO Y CONTRASEÑA */
+
+.campo-usuario {
+    /* margin-top: 30%; */
+    width: 13rem;
+    height: 1.5rem;
+    border-radius: 0px 5px 0px 0px;
+    outline: none;
+}
+
+.campo-contraseña {
+    /* margin-top: 5%; */
+    width: 13rem;
+    height: 1.5rem;
+    border-radius: 0px 5px 0px 0px;
+    outline: none;
+}
+
+.iconos-usuario {
+    background: rgb(160, 195, 13);
+    width: 1.5rem;
+    height: 1.7rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 5px 0px 0px 0px;
+    color: white;
+    place-self: flex-end;
+}
+
+
+/* BOTON INGRESAR SISTEMA */
+
+.boton-ingresar {
+    margin-top: 5%;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 10px;
+    background: rgb(69, 170, 226);
+    color: white;
+    cursor: pointer;
+}
+
+
+/* MENSAJE DE BIENVENIDA */
+
+.contenedor-mensaje {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.mensaje-datos-incorrectos {
+    text-align: center;
+    color: red;
+    margin-top: 2%;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    .imagen-login-celular {
+        width: 80%;
+        margin-top: 10%;
+    }
+    /* CAMPOS USUARIO Y CONTRASEÑA */
+    .campo-usuario {
+        margin-top: 30%;
+        width: 13rem;
+        height: 1.5rem;
+    }
+    .campo-contraseña {
+        margin-top: 5%;
+        width: 13rem;
+        height: 1.5rem;
+    }
+    /* OCULTAR IMAGEN PC */
+    .imagen-login-pc {
+        display: none;
+    }
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+    /* Styles */
+    .imagen-login-celular {
+        width: 80%;
+        margin-top: 5%;
+    }
+    /* OCULTAR IMAGEN PC */
+    .imagen-login-pc {
+        display: none;
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    .campo-usuario {
+        /* margin-top: 30%; */
+        width: 15rem;
+        height: 3rem;
+        font-size: 25px;
+    }
+    .campo-contraseña {
+        /* margin-top: 5%; */
+        width: 15rem;
+        height: 3rem;
+        font-size: 25px;
+    }
+    .iconos-usuario {
+        width: 3rem;
+        height: 3rem;
+        font-size: 25px;
+    }
+    .imagen-login-celular {
+        width: 80%;
+        margin-top: 5%;
+    }
+    .boton-ingresar {
+        margin-top: 5%;
+        width: 6rem;
+        height: 2rem;
+        border-radius: 10px;
+        background: rgb(69, 170, 226);
+        color: white;
+    }
+    /* OCULTAR IMAGEN PC */
+    .imagen-login-pc {
+        display: none;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+    .imagen-login-pc {
+        width: 50%;
+        margin-top: 2%;
+    }
+    /* OCULTAR IMAGEN CELULAR */
+    .imagen-login-celular {
+        display: none;
+    }
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+    .imagen-login {
+        width: 50%;
+    }
+    /* OCULTAR IMAGEN CELULAR */
+    .imagen-login-celular {
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Modulo</th>
+            <th>Campo</th>
+            <th>Requerido</th>
+            <th>Orden</th>
+        </tr>
+
+        <tr *ngFor="let r of requerido">
+            <td>
+                <p class="margin-espacio">{{r.id}}</p>
+            </td>
+            <td>{{r.modulo}}</td>
+            <td>{{r.campo}}</td>
+            <td>{{r.requerido}}</td>
+            <td>{{r.orden}}</td>
+        </tr>
+    </table>
+</div>

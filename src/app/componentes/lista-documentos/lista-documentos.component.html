@@ -1,0 +1,70 @@
+<!-- PAGINA LISTA-DOCUMENTOS -->
+
+<!-- ANIMACION -->
+
+<div class="animate__animated animate__fadeIn fondo">
+
+    <app-header-titulo titulo="Lista/Resultados"></app-header-titulo>
+
+    <div class="flex-container">
+
+        <div class="contenedor-lista">
+            <ul>
+                <a (click)="verDocumentos()">
+                    <li class="lista-resultado" *ngFor="let resultado of resultadoListaContrato">
+
+                        <div class="">
+                            <div class="resultado-tipo-imagen">
+                                <img [src]="imagenTipoContrato" class="imagen-tipo-contrato" />
+                            </div>
+
+                            <div class="resultado-tipo-contenido">
+                                <!-- NOMBRE DEL CONTRATISTA -->
+                                <label class="">
+                                    {{ resultado.con_nombre }}
+                                </label>
+
+                                <br>
+
+                                <!-- CLASIFICACION -->
+                                <label class="">
+                                    {{ resultado.categoria }}
+                                </label>
+
+                                <br>
+
+                                <!-- MONTOS -->
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                <label class="">
+                                    5,000,000
+                                </label>
+
+                                <!-- FECHA DE CREACION -->
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <label class="">
+                                    <!-- 2012/05/20 -->
+                                    {{resultado.creadofecha}}
+                                </label>
+
+                                <br>
+
+                                <!-- NÚMERO DE CONTRATO -->
+                                <label class="">
+                                    NUMERO DE CONTRATO: {{ resultado.contrato }}
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <!-- <app-resultado-busqueda></app-resultado-busqueda> -->
+
+    <!-- <app-boton-footer></app-boton-footer> -->
+
+</div>

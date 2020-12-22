@@ -1,5 +1,115 @@
-.img-responsive-size {
+/* HEADER */
+
+.contenedor-header {
     width: 100%;
-    min-width: 100px;
-    max-width: 200px;
+    height: 3rem;
 }
+
+.boton-regresar {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+}
+
+.arrow-padding {
+    margin-right: 10px;
+}
+
+.titulo-header {
+    color: white;
+    font-family: 'Arial';
+    display: inline;
+    float: right;
+    padding-top: 15px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.mensaje-regresar {
+    cursor: pointer;
+}
+
+.buscador {
+    width: 30rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    border: none;
+    transition: 0.5s all linear;
+    outline: none;
+    text-align: center;
+    margin-left: 20%;
+}
+
+.buscador:focus {
+    background: #ccc;
+}
+
+
+/* ------------------------------------------ */
+
+.flex-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.contenedor-lista {
+    width: 45%;
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.lista-resultado {
+    list-style: none;
+    margin: 20px;
+    background: white;
+    border-radius: 15px;
+}
+
+
+/* LISTA DE CONTRATOS /  CONTENIDO */
+
+.resultado-tipo-imagen {
+    margin: 20px;
+    width: 20%;
+    display: inline-flex;
+}
+
+.resultado-tipo-contenido {
+    margin: 20px;
+    width: 60%;
+    display: inline-block;
+}
+
+.imagen-tipo-contrato {
+    width: 5rem;
+    height: 5rem;
+}
+
+@media only screen and (device-width: 360px) and (device-height: 640px) {
+    .contenedor-lista {
+        width: 100%;
+    }
+    .imagen-tipo-contrato {
+        width: 5rem;
+        height: 4rem;
+        padding-left: 20%;
+    }
+    .resultado-tipo-imagen {
+        width: 100%;
+    }
+    .resultado-tipo-contenido {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1800) {}

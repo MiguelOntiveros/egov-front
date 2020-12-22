@@ -1,48 +1,44 @@
 <div class="container-prueba">
     <table class="header-contratista">
         <tr>
+            <th>Numero</th>
+            <th>Persona</th>
             <th>Nombre</th>
-            <th scope="col">Apellido Paterno</th>
-            <th scope="col">Apellido Materno</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Direccion</th>
-            <th scope="col">Celular</th>
-            <th scope="col">Estado Civil</th>
-            <th scope="col">Fecha de Nacimiento</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Primera Compra</th>
-            <th scope="col">Ultima Compra</th>
+            <th>RFC</th>
+            <th>Padron</th>
+            <th>Estatus</th>
+            <th>Calle</th>
+            <th>Numext</th>
+            <th>Numint</th>
+            <th>Edificio</th>
+            <th>Colonia</th>
+            <th>Pais</th>
+            <th>Estado</th>
+            <th>Contacto</th>
+            <th>Telefonos</th>
+            <th>Giro</th>
+            <th>Web</th>
+
+        </tr>
+
+        <tr *ngFor="let contratista of contratistas">
+            <td>{{contratista.numero}}</td>
+            <td>{{contratista.persona}}</td>
+            <td>{{contratista.nombre}}</td>
+            <td>{{contratista.rfc}}</td>
+            <td>{{contratista.padron}}</td>
+            <td>{{contratista.estatus}}</td>
+            <td>{{contratista.calle}}</td>
+            <td>{{contratista.numext}}</td>
+            <td>{{contratista.numint}}</td>
+            <td>{{contratista.edificio}}</td>
+            <td>{{contratista.colonia}}</td>
+            <td>{{contratista.pais}}</td>
+            <td>{{contratista.estado}}</td>
+            <td>{{contratista.contacto}}</td>
+            <td>{{contratista.telefonos}}</td>
+            <td>{{contratista.giro}}</td>
+            <td>{{contratista.web}}</td>
         </tr>
     </table>
-    
-    <table class="body-contratista">
-        <ng-container *ngIf="contratistas">
-            <tr *ngFor="let contratista of contratistas">
-                <td>{{contratista.nombre}}</td>
-                <td>{{contratista.apellidoPaterno}}</td>
-                <td>{{contratista.apellidoMaterno}}</td>
-                <td>{{contratista.edad}}</td>
-                <td>{{contratista.sexo}}</td>
-                <td>{{contratista.direccion}}</td>
-                <td>{{contratista.celular}}</td>
-                <td>{{contratista.estadocivil}}</td>
-                <td>{{contratista.fechaNacimiento}}</td>
-                <td>{{contratista.email}}</td>
-                <td>{{contratista.primeraCompra}}</td>
-                <td>{{contratista.ultimacompra}}</td>
-                <td>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                    </svg>
-                </td>
-                <td>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
-                    </svg>
-                </td>
-            </tr>
-        </ng-container>
-    </table>
 </div>
-

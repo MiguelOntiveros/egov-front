@@ -1,0 +1,108 @@
+/* BOOSTRAP */
+
+.row {
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+}
+
+.col-6 {
+    /* -ms-flex: 0 0 50%; */
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+
+/*  */
+
+.lista-opciones {
+    width: 90%;
+    list-style: none;
+    margin: 50px;
+}
+
+
+/* OPCION NOMBRE */
+
+.opcion-nombre {
+    border: 1px solid #ccc;
+    height: 15px;
+    padding: 15px;
+    font-weight: bold;
+    background: white;
+    list-style: none;
+}
+
+
+/* INPUT OPCIONES */
+
+input {
+    outline: none;
+    height: 40px;
+    margin-left: 20px;
+}
+
+
+/* BOTON ACEPTAR CAMBIOS */
+
+.boton-aceptar-cambios {
+    border: none;
+    border-radius: 5px;
+    background: #045597;
+    outline: none;
+    color: white;
+    padding: 10px;
+    margin-left: 40%;
+    font-weight: bold;
+}
+
+.fondo {
+    background: linear-gradient(90deg, rgba(110, 110, 110, 1) 0%, rgba(236, 236, 236, 1) 50%, rgba(110, 110, 110, 1) 100%);
+    height: 100vh;
+}
+
+.activado {
+    color: white;
+}
+
+.desactivado {
+    color: #5bee79
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+    /* Styles */
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}

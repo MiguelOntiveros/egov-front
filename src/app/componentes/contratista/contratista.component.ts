@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Contratista } from 'src/app/interfaces/Contratista';
-import { ContratistaServiceService } from 'src/app/services/contratista-service.service';
+import { Contratista } from '../../interfaces/Contratista';
+import { ContratistaService } from './contratista.service';
 
 @Component({
   selector: 'app-contratista',
@@ -11,11 +11,12 @@ export class ContratistaComponent implements OnInit {
 
   contratistas: Contratista[];
 
-  constructor(private ContratistaService: ContratistaServiceService) { }
+  constructor(private ContratistaService: ContratistaService) { }
 
   ngOnInit(){
-    this.ContratistaService.getContratista().subscribe((Temp)=>{
-      this.contratistas = Temp;
+    this.ContratistaService.getContratista().subscribe((data: any)=>{
+      this.contratistas = data;
+      console.log(data);
     })
   }
 

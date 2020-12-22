@@ -1,0 +1,33 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Dato</th>
+            <th>Documento</th>
+            <th>Escaneado</th>
+            <th>Formato</th>
+            <th>Nombre</th>
+            <th>Orden</th>
+            <th>Persona</th>
+            <th>Registro</th>
+            <th>Requerido</th>
+            <th>Valor</th>
+        </tr>
+
+        <tr *ngFor="let contratistaPersona of contratistasPersona">
+            <td>{{contratistaPersona.id}}</td>
+            <td>{{contratistaPersona.clave}}</td>
+            <td>{{contratistaPersona.dato}}</td>
+            <td>{{contratistaPersona.documento}}</td>
+            <td>{{contratistaPersona.escaneado}}</td>
+            <td>{{contratistaPersona.formato}}</td>
+            <td>{{contratistaPersona.nombre}}</td>
+            <td>{{contratistaPersona.orden}}</td>
+            <td>{{contratistaPersona.persona}}</td>
+            <td>{{contratistaPersona.registro}}</td>
+            <td>{{contratistaPersona.requerido}}</td>
+            <td>{{contratistaPersona.valor}}</td>
+        </tr>
+    </table>
+</div>

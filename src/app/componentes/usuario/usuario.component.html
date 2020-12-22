@@ -1,0 +1,37 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Password</th>
+            <!-- <td>Suspendido</td> -->
+            <th>Telefonos</th>
+            <th>Email</th>
+            <th>Email Password</th>
+            <!-- <th>Departamento</th> -->
+            <th>Puesto</th>
+            <th>Rol</th>
+            <th>Asistente</th>
+            <th>Superior</th>
+        </tr>
+
+        <tr *ngFor="let u of usuario">
+            <td>
+                <p class="margin-espacio">{{u.id}}</p>
+            </td>
+            <td>{{u.clave}}</td>
+            <td>{{u.nombre}}</td>
+            <td>{{u.password}}</td>
+            <!-- <td>{{u.suspendido}}</td> -->
+            <td>{{u.telefonos}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.email_password}}</td>
+            <!-- <td>{{u.departamento}}</td> -->
+            <td>{{u.puesto}}</td>
+            <td>{{u.rol}}</td>
+            <td>{{u.asistente}}</td>
+            <td>{{u.superior}}</td>
+        </tr>
+    </table>
+</div>

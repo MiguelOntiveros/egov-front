@@ -1,0 +1,27 @@
+<div class="container-prueba">
+    <table class="header-contratista">
+        <tr>
+            <th>Id</th>
+            <th>Persona</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+            <th>Estatus</th>
+            <th>Asunto</th>
+            <th>Contenido</th>
+            <th>Registro</th>
+        </tr>
+
+        <tr *ngFor="let contratoOficio of contratosOficio">
+            <td>
+                <p class="margin-espacio">{{contratoOficio.id}}</p>
+            </td>
+            <td>{{contratoOficio.persona}}</td>
+            <td>{{contratoOficio.tipo}}</td>
+            <td>{{contratoOficio.categoria}}</td>
+            <td>{{contratoOficio.estatus}}</td>
+            <td>{{contratoOficio.asunto}}</td>
+            <td>{{contratoOficio.contenido}}</td>
+            <td>{{contratoOficio.registro}}</td>
+        </tr>
+    </table>
+</div>

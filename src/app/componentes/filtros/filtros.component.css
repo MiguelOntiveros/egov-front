@@ -1,0 +1,91 @@
+/* IMAGEN CLIENTE */
+
+.flex-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.imagen-cliente {
+    width: 7rem;
+    height: 6rem;
+}
+
+
+/* CHECKBOX OPCIONES */
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+
+/* FECHAS */
+
+.fecha-titulo {
+    font-weight: bold;
+}
+
+.calendario {
+    border: transparent;
+    outline: none;
+    /* background: transparent; */
+}
+
+
+/* BOTON ACTIVAR FILTROS */
+
+.boton-filtrar {
+    background: #a0c30d;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+
+/*  */
+
+.titulo-seccion {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    .calendario {
+        width: 30%;
+    }
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+    /* Styles */
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}

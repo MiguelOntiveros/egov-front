@@ -1,4 +1,60 @@
-<app-menu></app-menu>
-<br>
-<img src="assets/images/main/obras.png" class="animate__animated animate__fade mx-auto d-block img-responsive-size mt-5">
-<app-tabs-footer></app-tabs-footer>
+<!-- PAGINA OBRAS -->
+
+<!-- ANIMACION -->
+<div class="animate__animated animate__fadeIn fondo">
+
+    <header>
+        <nav class="bg-vh-verde contenedor-header">
+            <button class="boton-regresar" routerLink="/inicio">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <label class="mensaje-regresar">Regresar a Inicio</label>
+            </button>
+            <input type="search" placeholder="OBRAS PÚBLICAS" class="buscador" [(ngModel)] = search autocomplete = off>
+            <h3 class="titulo-header">OBRAS PÚBLICAS</h3>
+        </nav>
+    </header>
+
+    <div class="flex-container">
+        <div class="contenedor-lista">
+            <ul>
+                <a (click)="verDocumentos()">
+                    <li class="lista-resultado" *ngFor="let resultado of resultadoListaContrato | filter:search">
+                        <div class="">
+                            <div class="resultado-tipo-imagen">
+                                <img [src]="imagenTipoContrato" class="imagen-tipo-contrato" />
+                            </div>
+                            <div class="resultado-tipo-contenido">
+                                <!-- NOMBRE DEL CONTRATISTA -->
+                                <label class="">
+                                    {{ resultado.con_nombre }}
+                                </label>
+                                <br>
+                                <!-- CLASIFICACION -->
+                                <label class="">
+                                    {{ resultado.categoria }}
+                                </label>
+                                <br>
+                                <!-- MONTOS -->
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                <label class="">
+                                    5,000,000
+                                </label>
+                                <!-- FECHA DE CREACION -->
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <label class="">
+                                    <!-- 2012/05/20 -->
+                                    {{resultado.creadofecha}}
+                                </label>
+                                <br>
+                                <!-- NÚMERO DE CONTRATO -->
+                                <label class="">
+                                    NUMERO DE CONTRATO: {{ resultado.contrato }}
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>

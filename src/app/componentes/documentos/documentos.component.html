@@ -1,0 +1,140 @@
+<!-- PAGINA DOCUMENTOS -->
+
+<!-- ANIMACION -->
+<div class="animate__animated animate__fadeIn fondo">
+
+    <app-header-titulo titulo="Documentos"></app-header-titulo>
+
+    <div class="flex-container">
+        <div class="contenedor-contenido">
+
+            <table>
+                <tr>
+                    <td>Monto</td>
+                    <div class="flex-container">
+                        <td>
+                            <i class="fa fa-money" aria-hidden="true"></i>
+                        </td>
+                    </div>
+                    <td>2,500,000</td>
+                </tr>
+                <!------------------------------------------>
+                <tr>
+                    <td>Fecha</td>
+                    <div class="flex-container">
+                        <td>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </td>
+                    </div>
+                    <td>24/05/2019</td>
+                </tr>
+                <!------------------------------------------>
+                <tr>
+                    <td>Rep. Legal</td>
+                    <div class="flex-container">
+                        <td>
+                            <label>JOSÉ ANTONIO LÓPEZ GARZA</label>
+                        </td>
+                    </div>
+                </tr>
+                <!------------------------------------------>
+                <tr>
+                    <td>Socios</td>
+                    <td>
+                        <label>JOSÉ ANTONIO LÓPEZ GARZA</label>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="contenedor-contenido">
+
+            <table>
+                <tr>
+                    <td>Estatus</td>
+                    <div class="flex-container">
+                        <td>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </td>
+                    </div>
+                    <td>EN REVISIÓN</td>
+                </tr>
+
+                <!--------------------------------------------->
+
+                <tr>
+                    <td>Seguimiento</td>
+                    <td>
+                        <button (click)="verSeguimiento()">Ver seguimiento</button>
+                    </td>
+                </tr>
+
+                <!--------------------------------------------->
+
+                <tr>
+                    <td>Responsable</td>
+                    <td>
+                        <label>LIC. GONZALO GONZALEZ MORENO</label>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <div class="flex-container">
+        <div class="contenedor-contenido">
+
+            <h3 class="documentos-titulo">Documentos</h3>
+            <div class="row">
+                <!-- FICHA TÉCNICA -->
+                <div class="contenedor-pdf">
+                    <button (click)="abrirFichaTecnica()">
+                    <i class="fa fa-file-pdf-o"></i>
+                    <label>FICHA TÉCNICA</label>
+                </button>
+                </div>
+
+                <!-- DOCUMENTOS PADRON -->
+                <div class="contenedor-pdf">
+                    <button (click)="abrirDocumentosPadron()">
+                    <i class="fa fa-file-pdf-o"></i>
+                    <label>DOCUMENTOS PADRÓN</label>
+                </button>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <!-- ANEXOS OFICIALES -->
+                <div class="contenedor-pdf">
+                    <button (click)="abrirAnexosOficiales()">
+                    <i class="fa fa-file-pdf-o"></i>
+                    <label>ANEXOS OFICIALES</label>
+                </button>
+                </div>
+
+                <!-- CONTRATOS Y ANEXOS -->
+                <div class="contendor-pdf">
+                    <button (click)="abrirContratosAnexos()">
+                    <i class="fa fa-file-pdf-o"></i>
+                    <label>CONTRATOS Y ANEXOS</label>
+                </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <app-boton-footer></app-boton-footer>
+</div>

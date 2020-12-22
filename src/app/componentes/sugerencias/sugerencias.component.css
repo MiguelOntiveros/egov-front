@@ -1,0 +1,130 @@
+.flex-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+/* CAMPOS ASUNTO Y SUGERENCIA */
+
+.div-asunto {
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+.campo-asunto {
+    width: 30%;
+    outline: none;
+    margin-top: 1%;
+    border: 2px solid #cdc5d4;
+}
+
+.div-sugerencias {
+    margin-left: 10%;
+}
+
+.campo-sugerencias {
+    width: 50%;
+    height: 5rem;
+    outline: none;
+    margin-top: 1%;
+    border: 2px solid #cdc5d4;
+}
+
+
+/* BOTON PARA ENVIAR */
+
+.boton-enviar {
+    margin-left: 10%;
+    margin-top: 1%;
+    outline: none;
+    background: #a0c30d;
+    border: 2px solid #cdc5d4;
+    border-radius: 05px;
+    width: 10rem;
+    height: 3rem;
+    color: white;
+}
+
+hr {
+    margin-left: 10%;
+    width: 45%;
+    border: 1px solid #cdc5d4;
+}
+
+.titulo-asunto {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.titulo-sugerencia {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+    .campo-asunto {
+        width: 80%;
+    }
+    .campo-sugerencias {
+        width: 80%;
+    }
+    hr {
+        width: 74%;
+    }
+}
+
+
+/* Surface Duo */
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
+    /* Styles */
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    .titulo-asunto {
+        font-size: 25px;
+    }
+    .titulo-sugerencia {
+        font-size: 25px;
+    }
+    .campo-asunto {
+        width: 80%;
+        height: 3rem;
+        font-size: 20px;
+    }
+    .campo-sugerencias {
+        width: 80%;
+        font-size: 20px;
+    }
+    hr {
+        width: 74%;
+    }
+    .boton-enviar {
+        width: 12rem;
+        height: 4rem;
+        font-size: 20px;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+}
+
+
+/* Large screens ----------- */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
+}
