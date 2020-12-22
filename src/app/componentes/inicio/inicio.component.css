@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .flex-container2 {
@@ -14,27 +15,35 @@
 
 .logo-1-celular {
     width: 100%;
+    z-index: 1;
+    position: relative;
+    display: none;
 }
 
 .logo-2-celular {
     width: 100%;
+    z-index: 1;
+    display: none;
 }
 
 .logo-1-pc {
     width: 100%;
+    z-index: 1;
+    display: none;
 }
 
 .logo-2-pc {
     width: 100%;
+    z-index: 1;
+    display: none;
 }
 
 .contenedor-tipo-busqueda {
     background: white;
     border-radius: 1px;
-    position: absolute;
-    top: 24%;
-    left: 30%;
-    width: 40%;
+    margin: 1rem 0 0 0;
+    position: relative;
+    z-index: 2;
 }
 
 .ruta-tipo-busqueda {
@@ -72,10 +81,8 @@
     .logo-2-pc {
         display: none;
     }
-    .contenedor-tipo-busqueda {
-        top: 20%;
-        left: 35%;
-        width: 60%;
+     .contenedor-tipo-busqueda {
+        margin: 5rem 0 0 0;
     }
     .lista-tipo-busqueda {
         font-size: 10px;
@@ -103,10 +110,7 @@
         display: none;
     }
     .contenedor-tipo-busqueda {
-        top: 15%;
-        left: 34%;
-        width: 45%;
-        height: 30%;
+        margin: 5rem 0 0 0;
     }
     .lista-tipo-busqueda {
         font-size: 10px;
@@ -116,7 +120,7 @@
 
 /* iPads (portrait and landscape) ----------- */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
     /* Styles */
     .logo-1-celular {
         width: 22rem;
@@ -128,16 +132,13 @@
     }
     /* OCULTAR IMAGEN PC */
     .logo-1-pc {
-        display: none;
+        display: block;
     }
     .logo-2-pc {
         display: none;
     }
     .contenedor-tipo-busqueda {
-        top: 18%;
-        left: 30%;
-        width: 50%;
-        height: 40%;
+        margin: 1rem 0 0 0;
     }
     .lista-tipo-busqueda {
         font-size: 20px;
@@ -152,10 +153,12 @@
     .logo-1-pc {
         width: 25rem;
         height: 10rem;
+        display: block;
     }
     .logo-2-pc {
         width: 12rem;
         height: 12rem;
+        display: block;
     }
     /* OCULTAR IMAGEN CELULAR */
     .logo-1-celular {
@@ -346,6 +349,7 @@ ul {
         width: 7rem;
         height: 6rem;
         margin-left: 50px;
+        z-index: 1;
     }
     .boton-filtros {
         width: 5rem;
