@@ -168,20 +168,6 @@ video {
     width: 100%;
 }
 
-
-/* th {
-    margin: 5px;
-    text-align: center;
+body{
+    background-color: linear-gradient(90deg, rgba(110, 110, 110, 1) 0%, rgba(236, 236, 236, 1) 50%, rgba(110, 110, 110, 1) 100%);
 }
-
-td {
-    border: 1px solid black;
-}
-
-.header-contratista {
-    border: 1px solid black;
-}
-
-.body-contratista {
-    border: 1px solid black;
-} */

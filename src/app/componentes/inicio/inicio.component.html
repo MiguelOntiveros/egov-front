@@ -120,7 +120,7 @@
             </ul> -->
 
             <ul>
-                <li class="lista-tipo-busqueda" *ngFor="let tipo of tipoBusqueda | busquedaPipe">
+                <li class="lista-tipo-busqueda" *ngFor="let tipo of tipoBusqueda | busquedaPipe | filter:search">
                     <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}">
                         {{tipo.descripcion}}
                     </a>

@@ -31,9 +31,9 @@
     color: white;
     font-family: 'Arial';
     float: right;
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 17px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 1rem;
 }
 
 ul {
