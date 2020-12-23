@@ -1,42 +1,42 @@
 <div class="fondo">
 
-<!-- <app-menu></app-menu> -->
-<div class="bg-vh-verde contenedor-menu">
+    <!-- <app-menu></app-menu> -->
+    <div class="bg-vh-verde contenedor-menu">
 
-    <p class="titulo-cliente">{{ tituloCliente | uppercase }}</p>
+        <p class="titulo-cliente">{{ tituloCliente | uppercase }}</p>
 
-    <div class="flex-container2">
-        <button class="boton-menu" (click)="abrirMenu()">
-            <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
-        </button>
-        <input type="search" placeholder="Busqueda General" class="buscador" [(ngModel)] = search autocomplete = off>
-        <button class="boton-filtros" (click)="abrirFiltros()">
-            <i class="fa fa-sliders icono-filtros"></i>
-        </button>
-    </div>
-</div>
-
-<!-- MENU OPCIONES -->
-<div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral">
-    <!-- APARTADO USUARIO -->
-    <div class="bg-vh-verde">
-        <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
-        <button class="boton-cerrar-menu" style="display: inline;" (click)="cerrarMenu()">
-            <i class="fa fa-arrow-left"></i>
-        </button>
-
-        <span class="usuario-rol">{{usuario.rol}}</span>
-        <span class="usuario-correo">{{usuario.correo}}</span>
+        <div class="flex-container2">
+            <button class="boton-menu" (click)="abrirMenu()">
+                <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
+            </button>
+            <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off>
+            <button class="boton-filtros" (click)="abrirFiltros()">
+                <i class="fa fa-sliders icono-filtros"></i>
+            </button>
+        </div>
     </div>
 
-    <div class="" *ngFor="let opcion of menuOpciones">
-        <ul class="">
-            <a [routerLink]="opcion.ruta" class="ruta-opciones">
-                <li class="lista-opciones"><i [class]="opcion.icono"></i>{{opcion.nombre}}</li>
-            </a>
-        </ul>
+    <!-- MENU OPCIONES -->
+    <div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral">
+        <!-- APARTADO USUARIO -->
+        <div class="bg-vh-verde">
+            <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
+            <button class="boton-cerrar-menu" style="display: inline;" (click)="cerrarMenu()">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+
+            <span class="usuario-rol">{{usuario.rol}}</span>
+            <span class="usuario-correo">{{usuario.correo}}</span>
+        </div>
+
+        <div class="" *ngFor="let opcion of menuOpciones">
+            <ul class="">
+                <a [routerLink]="opcion.ruta" class="ruta-opciones">
+                    <li class="lista-opciones"><i [class]="opcion.icono"></i>{{opcion.nombre}}</li>
+                </a>
+            </ul>
+        </div>
     </div>
-</div>
 
     <div class="flex-container">
         <img [src]="logo1Celular" class="logo-1-celular">
@@ -121,9 +121,8 @@
     </div>
 </div>
 
-<!-- <li class="lista-tipo-busqueda" *ngFor="let tipo of tipoBusqueda">
-            <a class="ruta-tipo-busqueda" routerLink="/adquisiciones">
-                {{tipo.descripcion}}
-            </a>
-
- </li> -->
+<li class="lista-tipo-busqueda" *ngFor="let tipo of tipoBusqueda">
+    <a class="ruta-tipo-busqueda" routerLink="/adquisiciones">
+        {{tipo.descripcion}}
+    </a>
+</li>

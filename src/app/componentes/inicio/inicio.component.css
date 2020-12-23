@@ -56,6 +56,12 @@
     color: black;
 }
 
+.ruta-tipo-busqueda-especial {
+    text-decoration: none;
+    color: black;
+    display: none;
+}
+
 .lista-tipo-busqueda {
     list-style: none;
     margin: 2%;
@@ -70,7 +76,7 @@
 /* Smartphones (portrait and landscape) ----------- */
 
 @media only screen and (min-device-width: 120px) and (max-device-width: 480px) {
-    /* Styles */
+    /* Styles 
     .logo-1-celular {
         width: 15rem;
         height: 6rem;
@@ -78,7 +84,7 @@
     .logo-2-celular {
         width: 8rem;
         height: 8rem;
-    }
+    }*/
     /* OCULTAR IMAGEN PC */
     .logo-1-pc {
         display: none;
@@ -100,13 +106,13 @@
 @media only screen and (min-device-width: 412px) and (max-device-width: 768px) {
     /* Styles */
     .logo-1-celular {
-        width: 14rem;
-        height: 7rem;
+      /*   width: 14rem;
+        height: 7rem;*/
         margin: 20rem 0 0 0;
     }
     .logo-2-celular {
-        width: 10rem;
-        height: 10rem;
+      /*   width: 10rem;
+        height: 10rem; */
         margin: 90rem 0 0 0;
     }
     /* OCULTAR IMAGEN PC */
@@ -130,13 +136,13 @@
 @media only screen and (min-device-width: 769px) and (max-device-width: 1353px) {
     /* Styles */
     .logo-1-celular {
-        width: 22rem;
-        height: 8rem;
+     /*    width: 22rem;
+        height: 8rem;*/
         margin: 90rem 0 0 0;
     }
     .logo-2-celular {
-        width: 15rem;
-        height: 17rem;
+    /*    width: 15rem;
+        height: 17rem;*/
         margin: 120rem 0 0 0;
     }
     /* OCULTAR IMAGEN PC */
@@ -160,14 +166,16 @@
 @media only screen and (min-width: 1224px) {
     /* Styles */
     .logo-1-pc {
-        width: 25rem;
-        height: 10rem;
+      /*    width: 25rem;
+        height: 10rem; */
         display: none;
+        margin: 120rem 0 0 0;
     }
     .logo-2-pc {
-        width: 12rem;
-        height: 12rem;
+     /*   width: 12rem;
+        height: 12rem;*/
         display: none;
+        margin: 180rem 0 0 0;
     }
     /* OCULTAR IMAGEN CELULAR */
     .logo-1-celular {
