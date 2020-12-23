@@ -3,4 +3,5 @@ export interface TipoBusqueda{
     clave: string;
     descripcion: string;
     clasificacion: string;
+    link?: any;
 }
