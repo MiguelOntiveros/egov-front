@@ -68,7 +68,7 @@ ul {
 }
 
 .contenedor-lista {
-    width: 100%;
+    width: auto;
     margin-top: 1%;
     margin-left: 20%;
     margin-right: 20%;
@@ -85,7 +85,7 @@ ul {
 /* LISTA DE CONTRATOS /  CONTENIDO */
 
 .resultado-tipo-imagen {
-    margin: 20px;
+    margin: 3vh 2vw 4vh 2vw;
     width: 10%;
     display: inline-flex;
 }
@@ -103,18 +103,19 @@ ul {
 
 @media only screen and (device-width: 360px) and (device-height: 640px) {
     .contenedor-lista {
-        width: 100%;
+        width: auto;
     }
     .imagen-tipo-contrato {
-        width: 5rem;
-        height: 4rem;
-        padding-left: 20%;
+        width: auto;
+        height: auto;
+       /* padding-left: 20%;*/
     }
     .resultado-tipo-imagen {
-        width: 100%;
+        width: auto;
     }
     .resultado-tipo-contenido {
-        width: 100%;
+        width: auto;
+        padding: 5vh 0 0 0;
     }
 
 }
