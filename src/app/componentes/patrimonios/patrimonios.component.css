@@ -31,9 +31,9 @@
     color: white;
     font-family: 'Arial';
     float: right;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    font-size: 1rem;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font-size: 3vw;
 }
 
 ul {
@@ -118,4 +118,8 @@ ul {
     }
 }
 
-@media only screen and (min-device-width: 1200px) and (max-device-width: 1800) {}
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1800px) {
+    .titulo-header {
+        font-size: 2vw;
+    }
+}

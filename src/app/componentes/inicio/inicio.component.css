@@ -14,16 +14,16 @@
 }
 
 .logo-1-celular {
-    width: 100%;
+    width: auto;
     z-index: 3;
     position: absolute;
-    margin: 15rem 0 0 0;
+    margin: 20vh 0 0 0;
 }
 
 .logo-2-celular {
-    width: 100%;
+    width: auto;
     z-index: 3;
-    margin: 70rem 0 0 0;
+    margin: 80vh 0 0 0;
     position: absolute;
 }
 
@@ -56,16 +56,21 @@
     color: black;
 }
 
-.ruta-tipo-busqueda-especial {
-    text-decoration: none;
-    color: black;
-    display: none;
-}
-
 .lista-tipo-busqueda {
     list-style: none;
     margin: 2%;
     font-weight: bold;
+}
+
+.capa-lista{
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-top-style:none;
+    border-right-style:none;
+    border-left-style:none;
+    width: 20rem;
+    height: 2.2rem;
 }
 
 .ruta-tipo-busqueda:hover {
@@ -104,17 +109,17 @@
 /* Surface Duo */
 
 @media only screen and (min-device-width: 412px) and (max-device-width: 768px) {
-    /* Styles */
+    /* Styles 
     .logo-1-celular {
-      /*   width: 14rem;
-        height: 7rem;*/
-        margin: 20rem 0 0 0;
-    }
-    .logo-2-celular {
+        width: 14rem;
+        height: 7rem;
+        margin: 10rem 0 0 0;
+    }*/
+     /*.logo-2-celular {
       /*   width: 10rem;
-        height: 10rem; */
-        margin: 90rem 0 0 0;
-    }
+        height: 10rem; 
+        margin: 20rem 0 0 0;
+    }*/
     /* OCULTAR IMAGEN PC */
     .logo-1-pc {
         display: none;

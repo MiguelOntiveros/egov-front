@@ -121,9 +121,11 @@
 
             <ul>
                 <li class="lista-tipo-busqueda" *ngFor="let tipo of tipoBusqueda | busquedaPipe | filter:search">
+                   <div class="capa-lista">
                     <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}">
                         {{tipo.descripcion}}
                     </a>
+                    </div>
                 </li>
             </ul>
         </div>

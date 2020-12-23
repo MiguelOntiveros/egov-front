@@ -31,9 +31,9 @@
     color: white;
     font-family: 'Arial';
     float: right;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    font-size: 1rem;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font-size: 3vw;
 }
 
 ul {
@@ -116,14 +116,14 @@ ul {
     .resultado-tipo-contenido {
         width: 100%;
     }
+
 }
 
 
 /* Desktops and Laptops -------- */
 
 @media only screen and (min-device-width: 1200px) and (max-device-width: 1800px) {
-    .lista-resultado {
-        width: 80%;
-        margin-left: 10%;
+    .titulo-header {
+        font-size: 2vw;
     }
 }
