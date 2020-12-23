@@ -67,6 +67,7 @@ import { ContratistaSuspendidoComponent } from './componentes/contratista-suspen
 import { ParametrosComponent } from './componentes/parametros/parametros.component';
 import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/resultado-busqueda.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SharedModule } from './services/shared/shared.module';
 
 
 @NgModule({
@@ -134,7 +135,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    SharedModule
   ],
   providers: [Red],
   bootstrap: [AppComponent]
