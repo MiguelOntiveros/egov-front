@@ -1,135 +1,51 @@
-<div class="fondo">
+<p class="titulo-cliente bg-vh-verde">{{ tituloCliente | uppercase }}</p>
+<div class="flex-container2 bg-vh-verde">
+    <button class="boton-menu" (click)="abrirMenu()">
+        <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
+    </button>
+    <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off>
+    <button class="boton-filtros" (click)="abrirFiltros()">
+        <i class="fa fa-sliders icono-filtros"></i>
+    </button>
+</div>
 
-    <!-- <app-menu></app-menu> -->
-    <div class="bg-vh-verde contenedor-menu">
+<!-- MENU OPCIONES -->
+<div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral">
+    <!-- APARTADO USUARIO -->
+    <div class="bg-vh-verde">
+        <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
+        <button class="boton-cerrar-menu" style="display: inline;" (click)="cerrarMenu()">
+            <i class="fa fa-arrow-left"></i>
+        </button>
 
-        <p class="titulo-cliente">{{ tituloCliente | uppercase }}</p>
-
-        <div class="flex-container2">
-            <button class="boton-menu" (click)="abrirMenu()">
-                <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
-            </button>
-            <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off>
-            <button class="boton-filtros" (click)="abrirFiltros()">
-                <i class="fa fa-sliders icono-filtros"></i>
-            </button>
-        </div>
+        <span class="usuario-rol">{{usuario.rol}}</span>
+        <span class="usuario-correo">{{usuario.correo}}</span>
     </div>
 
-    <!-- MENU OPCIONES -->
-    <div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral">
-        <!-- APARTADO USUARIO -->
-        <div class="bg-vh-verde">
-            <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
-            <button class="boton-cerrar-menu" style="display: inline;" (click)="cerrarMenu()">
-                <i class="fa fa-arrow-left"></i>
-            </button>
-
-            <span class="usuario-rol">{{usuario.rol}}</span>
-            <span class="usuario-correo">{{usuario.correo}}</span>
-        </div>
-
-        <div class="" *ngFor="let opcion of menuOpciones">
-            <ul class="">
-                <a [routerLink]="opcion.ruta" class="ruta-opciones">
-                    <li class="lista-opciones"><i [class]="opcion.icono"></i>{{opcion.nombre}}</li>
-                </a>
-            </ul>
-        </div>
+    <div class="" *ngFor="let opcion of menuOpciones">
+        <ul class="">
+            <a [routerLink]="opcion.ruta" class="ruta-opciones">
+                <li class="lista-opciones"><i [class]="opcion.icono"></i>{{opcion.nombre}}</li>
+            </a>
+        </ul>
     </div>
-
+</div>
+<!--
     <div class="flex-container">
         <img [src]="logo1Celular" class="logo-1-celular">
     </div>
 
     <div class="flex-container">
         <img [src]="logo2Celular" class="logo-2-celular">
+    </div> -->
+
+    
+<div class="flex-container3">
+    <div class="capa-lista" *ngFor="let tipo of tipoBusqueda | busquedaPipe | filter:search">
+        <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}">
+            {{tipo.descripcion}}
+        </a>
     </div>
-
-    <div class="flex-container">
-        <img [src]="logo1Pc" class="logo-1-pc">
-    </div>
-
-    <div class="flex-container">
-        <img [src]="logo2Pc" class="logo-2-pc">
-    </div>
-
-    <div class="flex-container">
-        <div class="contenedor-tipo-busqueda">
-
-            <!-- <ul>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/adquisiciones">
-                        ADQUISICIONES (COMPRA DE BIENES O SUMINISTROS)
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/patrimonios">
-                        AFECTACION DE INMUEBLES
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/patrimonios">
-                        ARRENDAMIENTO DE INMUEBLES
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/adquisiciones">
-                        ARRENDAMIENTO DE BIENES MUEBLES
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/patrimonios">
-                        COMODATO
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/patrimonios">
-                        DONACION
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/obras">
-                        OBRA PUBLICA
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/adquisiciones">
-                        PRESTACION DE SERVICIOS
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/lista-documentos">
-                        COMPRAS
-                    </a>
-                </li>
-                <hr>
-                <li class="lista-tipo-busqueda | filter:search">
-                    <a class="ruta-tipo-busqueda" routerLink="/lista-documentos">
-                        SERVICIOS
-                    </a>
-                </li>
-            </ul> -->
-
-            <ul>
-                <li class="lista-tipo-busqueda" *ngFor="let tipo of tipoBusqueda | busquedaPipe | filter:search">
-                   <div class="capa-lista">
-                    <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}">
-                        {{tipo.descripcion}}
-                    </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <img [src]="logo1Pc" class="logo-1-pc">
+    <img [src]="logo2Pc" class="logo-2-pc">
 </div>
-
-
