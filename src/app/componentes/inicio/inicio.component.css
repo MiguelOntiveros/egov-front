@@ -51,7 +51,7 @@
 }
 
 .capa-lista{
-    border-color: black;
+    border-color:transparent;
     border-style: solid;
     border-width: 2px;
     border-top-style:none;
@@ -60,7 +60,7 @@
     font-weight: bold;
     margin: 2vh 0 0 7vw;
     width: 80vw;
-    height: 5vh;
+    height: 7vh;
     background-color: transparent;
     position: relative;
     z-index: 5;
@@ -68,70 +68,6 @@
 
 .ruta-tipo-busqueda:hover {
     background: rgba(110, 110, 110, 0.4);
-}
-
-
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 120px) and (max-device-width: 480px) {
-    /* Styles 
-    .logo-1-celular {
-        width: 15rem;
-        height: 6rem;
-    }
-    .logo-2-celular {
-        width: 8rem;
-        height: 8rem;
-    }*/
-    /* OCULTAR IMAGEN PC 
-    .logo-1-pc {
-        display: none;
-    }
-    .logo-2-pc {
-        display: none;
-    }*/
-     .contenedor-tipo-busqueda {
-        margin: 5rem 0 0 0;
-    }
-    .lista-tipo-busqueda {
-        font-size: 10px;
-    }
-}
-
-
-/* Surface Duo */
-
-@media only screen and (min-device-width: 412px) and (max-device-width: 768px) {
-    /* Styles 
-    .logo-1-celular {
-        width: 14rem;
-        height: 7rem;
-        margin: 10rem 0 0 0;
-    }*/
-     /*.logo-2-celular {
-      /*   width: 10rem;
-        height: 10rem; 
-        margin: 20rem 0 0 0;
-    }*/
-    .contenedor-tipo-busqueda {
-        margin: 5rem 0 0 0;
-    }
-    .lista-tipo-busqueda {
-        font-size: 10px;
-    }
-}
-
-
-/* iPads (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 769px) and (max-device-width: 1353px) {
-  
-    .contenedor-tipo-busqueda {
-        margin: 1rem 0 0 0;
-    }
-    .lista-tipo-busqueda {
-        font-size: 20px;
-    }
 }
 
 
@@ -157,21 +93,6 @@
     .logo-2-pc {
         margin: 40vh 0 0 0;
     }
-}
-
-
-
-
-/* Large screens ----------- */
-
-@media only screen and (min-width: 1824px) {
-    
-}
-
-/* MENU HEADER */
-
-.contenedor-menu {
-    height: 120px;
 }
 
 .imagen-menu {
@@ -250,9 +171,23 @@
     position: absolute;
     top: 0px;
     background: white;
-    height: 99.5vh;
-    width: 12rem;
     border: 1px solid #ccc;
+    z-index: 5;
+    width: auto;
+}
+
+.contenedor-menu-lateral-verde {
+    top: 0px;
+    border: 1px solid #ccc;
+    width: 52vw;
+    z-index: 5;
+}
+
+.contenedor-menu-lateral-blanco {
+    background: white;
+    width: 52vw;
+    top: 0px;
+    position: absolute;
     z-index: 5;
 }
 
@@ -261,13 +196,17 @@
     text-decoration: none;
 }
 
+.capa-correctiva{
+    margin: 22vh 0 0 0;
+}
+
 ul {
     margin: 20px;
+    background: white;
 }
 
 .lista-opciones {
     list-style-type: none;
-    margin-top: 10px;
 }
 
 .boton-cerrar-menu {
@@ -281,21 +220,9 @@ ul {
 }
 
 
-/* TIPO DE BUSQUEDA */
-
-.tipo-busqueda {
-    list-style: none;
-    margin-left: 10%;
-    margin-top: 2%;
-}
-
-
 /* Smartphones (portrait and landscape) ----------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .contenedor-menu {
-        height: 80px;
-    }
     .titulo-cliente {
         font-size: 1.5rem;
     }
@@ -363,6 +290,14 @@ ul {
         left: 80%;
         font-size: 20px;
     }
+
+    .contenedor-menu-lateral-verde {
+        width: 22vw;
+    }
+    
+    .contenedor-menu-lateral-blanco {
+        width: 22vw;
+    }
 }
 
 
@@ -371,6 +306,14 @@ ul {
 @media only screen and (min-width: 1224px) {
     .boton-filtros {
         margin-right: 3%;
+    }
+
+    .contenedor-menu-lateral-verde {
+        width: 19vw;
+    }
+    
+    .contenedor-menu-lateral-blanco {
+        width: 19vw;
     }
 }
 
@@ -440,9 +383,3 @@ ul {
     }
 }
 
-
-/* Large screens ----------- */
-
-@media only screen and (min-width: 1824px) {
-    /* Styles */
-}
