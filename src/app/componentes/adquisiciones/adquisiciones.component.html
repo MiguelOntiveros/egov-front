@@ -9,13 +9,12 @@
     </div>
 </div>
 
-<div class="flex-container">
-        <ul>
+
             <a (click)="verDocumentos()">
                 <li class="lista-resultado" *ngFor="let resultado of resultadoListaContrato | filter:search">
 
                     <div class="resultado-tipo-imagen">
-                        <img [src]="imagenTipoContrato" class="imagen-tipo-contrato" />
+                        <img [src]="imagenTipoContrato" />
                     </div>
 
                     <div class="resultado-tipo-contenido">
@@ -38,5 +37,3 @@
                     </div>
                 </li>
             </a>
-        </ul>
-</div>
