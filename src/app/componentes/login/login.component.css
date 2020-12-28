@@ -4,6 +4,13 @@
     display: flex;
 }
 
+.flex-container2 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1vh 0 0 0;
+}
+
 input {
     border: 1px solid #ccc;
 }
@@ -49,7 +56,6 @@ input {
     display: flex;
     border-radius: 5px 0px 0px 0px;
     color: white;
-    place-self: flex-end;
 }
 
 
@@ -172,10 +178,10 @@ input {
         width: 50%;
         margin-top: 2%;
     }
-    /* OCULTAR IMAGEN CELULAR */
+    /* OCULTAR IMAGEN CELULAR 
     .imagen-login-celular {
         display: none;
-    }
+    } */
 }
 
 
