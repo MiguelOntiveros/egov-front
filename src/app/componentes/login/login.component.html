@@ -1,10 +1,13 @@
 
-
-    <!--<img [src]="imagenCelular" class="imagen-login-celular">
-    <div class="flex-container">
+    <div class="flex-container2">
+        <img [src]="imagenCelular" class="imagen-login-celular">
+    </div>
+    <div class="flex-container2">
+        <img [src]="imagenCelular" class="imagen-login-pc">
+    </div>
+    <div class="flex-container2">
         <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
 
-             CAMPO USUARIO 
             <div class="flex-container">
                 <div class="iconos-usuario">
                     <i class="fa fa-user"></i>
@@ -13,16 +16,13 @@
                 <input type="text" class="campo-usuario" placeholder="Usuario" formControlName="usuario" required>
 
             </div>
-
-             CAMPO CONTRASEÑA 
-            <div class="flex-container">
+            <div class="flex-container2">
                 <div class="iconos-usuario">
                     <i class="fa fa-lock" aria-hidden="true"></i>
                 </div>
                 <input type="password" class="campo-contraseña" placeholder="Contraseña" formControlName="password" required>
             </div>
 
-             BOTON PARA INGRESAR AL SISTEMA 'DEBE VALIDAR LAS CREDENCIALES DEL USUARIO' 
             <div class="flex-container">
                 <input type="submit" value="Entrar" [disabled]="loginForm.invalid" class="boton-ingresar">
             </div>
@@ -31,8 +31,8 @@
 
         </form>
 
-    </div>-->
-    <div class="flex-container">
+    </div>
+   <!-- <div class="flex-container">
         <img [src]="imagenCelular" class="imagen-login-celular">
     </div>
    
@@ -41,7 +41,7 @@
             <table>
                 <tr>
                     <td>
-                        <!-- CAMPO USUARIO  img-nl" -->
+                        
                         <span class="input-group-text bg-valle-verde">
                             <i class="fa fa-user text-white"></i>
                         </span>
@@ -56,12 +56,12 @@
                 <br />
                 <tr>
                     <td>
-                        <!-- CAMPO CONTRASEÑA -->
-                        <span class="input-group-text bg-valle-verde">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        
+                        <span class="bg-valle-verde">
+                            <i class="fa fa-lock"></i>
                         </span>
                         <input type="password" class="campo-contraseña" placeholder="Contraseña" formControlName="contraseña" required>
-                        <div class="input-group-prepend">
+                        <div>
                             <span class="input-group-text bg-valle-verde">
                                 <i class="fa fa-check text-white"></i>
                             </span>
@@ -70,12 +70,12 @@
                 </tr>
             </table>
             <br />
-            <!-- BOTON PARA INGRESAR AL SISTEMA 'DEBE VALIDAR LAS CREDENCIALES DEL USUARIO' -->
+
             <div class="flex-container">
                 <input type="submit" value="Entrar" [disabled]="loginForm.invalid" class="boton-ingresar">
             </div>
         </form>
-    </div>
+    </div> -->
   
        
 

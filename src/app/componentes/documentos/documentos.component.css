@@ -1,7 +1,7 @@
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 1.25rem
+    padding: 1.25rem;
 }
 
 .flex-container {
@@ -12,28 +12,13 @@
 
 .contenedor-contenido {
     background: white;
-    width: 40%;
+    width: 95%;
     margin-top: 2%;
     border-radius: 5px;
 }
 
-hr {
-    width: 100%;
-}
 
-.bloque {
-    width: 33%;
-    display: inline-block;
-}
-
-.bloque-2 {
-    width: 40%;
-    display: inline-block;
-}
-
-.ver-seguimiento {
-    border: transparent;
-}
+/* ESTATUS */
 
 .estatus {
     background: rgb(22, 130, 0);
@@ -41,108 +26,89 @@ hr {
 }
 
 
-/* DOCUMENTOS TITULO */
+/* BOTON VER SEGUIMIENTO */
+
+.ver-seguimiento {
+    border: transparent;
+}
+
+
+/* DOCUMENTOS PDF */
 
 .documentos-titulo {
     padding-left: 20px;
     padding-top: 10px;
 }
 
+.contenedor-pdf {
+    height: 10rem;
+    background: white;
+    width: 38%;
+    margin-top: 2%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
 
-/* .texto-monto {
-    margin-right: 30%;
+.boton-pdf {
+    border: transparent;
+    outline: none;
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+    margin: 10px;
+}
+
+
+/* FOOTER */
+
+.footer {
+    position: relative;
     margin-left: 5%;
+    margin-bottom: 5%;
 }
 
-.contenido-monto {
-    margin-left: 30%;
+.boton-footer {
+    border: none;
+    border-radius: 50%;
+    background: #045597;
+    width: 3rem;
+    height: 3rem;
+    outline: none;
+    color: white;
+    cursor: pointer;
 }
 
-.texto-fecha {
-    margin-right: 30%;
-    margin-left: 5%;
-}
-
-.contenido-fecha {
-    margin-left: 30%;
-}
-
-.texto-representante {
-    margin-right: 25%;
-    margin-left: 5%;
-}
-
-.contenido-representante {
-    margin-left: 20%;
-}
-
-.texto-socios {
-    margin-right: 25%;
-    margin-left: 5%;
-}
-
-.contenido-socios {
-    margin-left: 25%;
-}
-
-.texto-estatus {
-    margin-left: 5%;
-}
-
-.contenido-estatus {
-    margin-left: 55%;
-}
-
-.texto-seguimiento {
-    margin-left: 5%;
-}
-
-.contenido-seguimiento {
-    margin-left: 50%;
-}
-
-.texto-responsable {
-    margin: 5%;
-}
-
-.contenido-responsable {
-    margin-left: 30%;
-} */
-
-
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (device-width: 320px) and (device-height: 480px) {
-    /* Styles */
+a {
+    text-decoration: none;
+    color: white;
 }
 
 
-/* Surface Duo */
+/* Smartphones */
 
-@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
-    /* Styles */
-}
-
-
-/* iPads (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* Styles */
-}
-
-
-/* Desktops and laptops ----------- */
-
-@media only screen and (min-width: 1224px) {
-    /* Styles */
+@media only screen and (device-width: 360px) and (device-height: 640px) {
     .contenedor-contenido {
-        width: 38%;
+        width: 90%;
+    }
+    .boton-pdf {
+        margin: 0px;
     }
 }
 
 
-/* Large screens ----------- */
+/* Desktops and Laptops -------- */
 
-@media only screen and (min-width: 1824px) {
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1800px) {
     /* Styles */
+    .contenedor-contenido {
+        width: 40%;
+    }
+    .boton-pdf {
+        margin-left: 20%;
+        margin-bottom: 3%;
+    }
+    .footer {
+        margin-left: 2%;
+        margin-bottom: 2%;
+    }
 }

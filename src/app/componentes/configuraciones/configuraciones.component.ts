@@ -9,13 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ConfiguracionesComponent implements OnInit {
 
-  titulo = 'Configuraciones';
-
   opcionConfiguracion = [
     {nombre: 'Monto'},
-    {nombre: 'Monto Máximo'},
-    {nombre: 'Resultado por Pagina'},
-    {nombre: 'Rango de Intervalos'}
+    {nombre: 'Monto máximo'},
+    {nombre: 'Resultado por página'},
+    {nombre: 'Rango de intervalos'}
   ]
 
   configuracionesForm: FormGroup;
@@ -40,14 +38,8 @@ export class ConfiguracionesComponent implements OnInit {
 
     console.log(monto, montoMaximo, resultadoPagina, rangoIntervalos);
     console.log('Sistema configurado');
-    // this.router.navigate(['/inicio']);
+    this.router.navigate(['/inicio']);
 
-  console.log('XD');
-
-  }
-
-  sistemaPrueba(){
-    console.log('Prueba del sistema');
   }
 
 

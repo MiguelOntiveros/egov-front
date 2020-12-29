@@ -10,14 +10,14 @@ export class DocumentosComponent implements OnInit {
 
   montoContrato = '2,500,000';
   fechaContratoCreado = '24/05/2019';
-  estatusContrato = 'En revisión' ;
+  estatusContrato = 'EN REVISIÓN' ;
   responsableContrato = 'LIC. GONZALO GONZALEZ MORENO';
 
   repLegalContrato = [{nombre: 'JOSÉ ANTONIO LÓPEZ GARZA'},];
 
   sociosContrato = [
     {nombre: 'JOSÉ ANTONIO LÓPEZ GARZA'},
-    // {nombre: 'VICTOR VILLAREAL ESPINOZA'}
+    {nombre: 'VICTOR VILLAREAL ESPINOZA'}
   ];
 
   documentos = [
@@ -35,27 +35,33 @@ export class DocumentosComponent implements OnInit {
     console.log('-> VER SEGUIMIENTO');
   }
 
-    /*
+  /*
   Pagina oficial
   https://www.npmjs.com/package/pdfmake-wrapper
   */
 
  abrirFichaTecnica(){
   console.log('Ficha Técnica abierto');
+  this.router.navigate(['/seguimientos']);
 }
 
 abrirDocumentosPadron(){
   console.log('Documentos Padron abierto');
+  this.router.navigate(['/seguimientos']);
 }
 
 abrirAnexosOficiales(){
   console.log('Anexos Oficiales abierto');
+  this.router.navigate(['/seguimientos']);
 }
 
 abrirContratosAnexos(){
   console.log('Contratos y Anexos abierto');
+  this.router.navigate(['/seguimientos']);
 }
 
-
+irInicio(){
+  this.router.navigate(['/inicio']);
+}
 
 }
