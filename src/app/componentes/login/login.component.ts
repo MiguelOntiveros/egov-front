@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { Usuario } from '../../interfaces/Usuario';
+import {AbstractControl, ValidatorFn} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -27,24 +28,24 @@ export class LoginComponent implements OnInit {
       usuario: ['', [Validators.required, Validators.minLength(4)]],
       password: ['', [Validators.required, Validators.minLength(4)]]
 
-    });}
+    });
+  }
 
   ngOnInit(): void {
   }
 
   // INICIA LA SESION DEL USUARIO, VALIDA SI EL USUARIO EXISTE O NO
-  loginUser(){
+  loginUser() {
+    const { usuario, password } = this.loginForm.value;
 
-  const{usuario, password} = this.loginForm.value;
-
-    this.loginService.getUsuario(usuario,password).subscribe((data: any) => {
+    this.loginService.getUsuario(usuario.toUpperCase(), password).subscribe((data: any) => {
       this.login = data;
-      if(data === true){
+      if (data === true) {
         this.router.navigate(['/inicio']);
         this.mensaje = 'Bienvenido al sistema';
         console.log('Bienvenido al sistema, credenciales correctas');
-        
-      }else if(data === false){
+
+      } else if (data === false) {
         this.mensaje = 'Datos incorrectos';
         console.error('No tienes acceso al sistema, credenciales incorrectas');
 
@@ -56,5 +57,11 @@ export class LoginComponent implements OnInit {
     })
 
   }
+
+  validacionUsuario(): ValidatorFn {  
+    return (control: AbstractControl): { [key: string]: any } | null =>  
+        control.value?.toLowerCase() === 'blue' 
+            ? null : {wrongColor: control.value};
+}
 
 }
