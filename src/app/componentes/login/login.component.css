@@ -37,7 +37,6 @@ input {
     width: 13rem;
     height: 1.5rem;
     border-radius: 0px 5px 0px 0px;
-    outline: none;
 }
 
 .campo-contraseña {
@@ -45,7 +44,6 @@ input {
     width: 13rem;
     height: 1.5rem;
     border-radius: 0px 5px 0px 0px;
-    outline: none;
 }
 
 .iconos-usuario {
@@ -100,12 +98,10 @@ input {
     }
     /* CAMPOS USUARIO Y CONTRASEÑA */
     .campo-usuario {
-        margin-top: 30%;
         width: 13rem;
         height: 1.5rem;
     }
     .campo-contraseña {
-        margin-top: 5%;
         width: 13rem;
         height: 1.5rem;
     }
