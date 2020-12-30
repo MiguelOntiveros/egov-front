@@ -16,4 +16,12 @@ export class AdquisicionesService {
     return this.http.get<any>(this.urlAdquisiciones2);
   }
 
+  llamarContrato(id) {
+    return this.http.get<any>('https://maikiki.herokuapp.com/contrato/contrato?id=', {
+      params: {
+        id: id
+      }
+    });
+  }
+
 }

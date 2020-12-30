@@ -24,9 +24,13 @@ export class AdquisicionesComponent implements OnInit {
     })
   }
 
-  verDocumentos(){
-    console.log('Documentos Abiertos');
-  this.router.navigate(['/documentos']);
+  llamarContrato(id){
+    this.router.navigate(['/documentos']);
+    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
+      this.contrato = data;
+      console.log(data);
+      console.log('Documentos Abiertos');
+    })
   }
 
 }

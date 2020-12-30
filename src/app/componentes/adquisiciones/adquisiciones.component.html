@@ -10,7 +10,7 @@
 </div>
 
 
-            <a (click)="verDocumentos()">
+            <a (click)="llamarContrato(resultado.id)">
                 <li class="lista-resultado" *ngFor="let resultado of contrato | filter:search">
 
                     <div class="resultado-tipo-imagen">
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="resultado-tipo-contenido">
-                        <div class="ocultar">{{ resultado.id }}</div>
+                        <div>{{ resultado.id }}</div>
                         <!-- NOMBRE DEL CONTRATISTA -->
                         {{ resultado.con_nombre }}
                         <br>

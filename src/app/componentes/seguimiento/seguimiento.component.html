@@ -1,11 +1,44 @@
 <!-- PAGINA SEGUIMIENTO -->
+<app-header-titulo titulo="Seguimientos"></app-header-titulo>
 
-<!-- ANIMACION -->
-<div class="animate__animated animate__fadeIn">
+<div class="contenedor-seguimientos">
 
-    <app-header-titulo></app-header-titulo>
+    <div class="contenido">
+        <label>Responsable: {{nombreResponsable}}</label>
+    </div>
+
+    <div class="contenido">
+        <label>Fecha: {{fechaSeguimiento}}</label>
+    </div>
+
+    <div class="contenido">
+        <label>Hora: {{horaSeguimiento}}</label>
+    </div>
 
 
-    <app-boton-footer></app-boton-footer>
+    <!-- ESTATUS / PREGUNTAS SOBRE SEGUIMIENTO -->
 
-</div>
+    <div>
+        <p class="pregunta-seguimiento">¿La obra sigue en ejecución?</p>
+        <p class="respuesta-obra">{{respuestaObra}}</p>
+    </div>
+
+    <div>
+        <p class="pregunta-seguimiento">¿Se esta cumpliendo la obra a lo establecido en el contrato?</p>
+        <p class="respuesta-obra">{{respuestaObra2}}</p>
+    </div>
+
+    <!-- OBSERVACIONES -->
+
+    <h4 class="titulo-observaciones">Observaciones</h4>
+    <textarea class="contenedor-observaciones"></textarea>
+
+    <br />
+
+    <!-- IMAGENES DEL SEGUIMIENTO -->
+
+    <img src="https://cdn.pixabay.com/photo/2015/06/24/15/45/computer-820281_960_720.jpg" class="imagen-seguimientos" />
+    <img src="https://cdn.pixabay.com/photo/2015/03/26/10/36/apple-691633_960_720.jpg" class="imagen-seguimientos" />
+    <img src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_960_720.jpg" class="imagen-seguimientos" />
+    <img src="https://cdn.pixabay.com/photo/2014/07/30/22/56/workstation-405768_960_720.jpg"
+        class="imagen-seguimientos" />
