@@ -1,3 +1,13 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+    padding-bottom: 10px;
+    margin-top: 5%
+}
+
 .boton-footer {
     border: none;
     border-radius: 50%;
@@ -6,6 +16,7 @@
     height: 3rem;
     outline: none;
     color: white;
+    margin-left: 2%;
 }
 
 a {
@@ -13,48 +24,12 @@ a {
     color: white;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0px;
-    margin: 0px 0px 20px 20px;
-}
 
+/* Desktops and Laptops -------- */
 
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    /* Styles */
-}
-
-
-/* Surface Duo */
-
-@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
-    /* Styles */
-}
-
-
-/* iPads (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* Styles */
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1800px) {
     .boton-footer {
-        width: 5rem;
-        height: 5rem;
-        font-size: 20px;
+        width: 3rem;
+        height: 2.5rem;
     }
-}
-
-
-/* Desktops and laptops ----------- */
-
-@media only screen and (min-width: 1224px) {
-    /* Styles */
-}
-
-
-/* Large screens ----------- */
-
-@media only screen and (min-width: 1824px) {
-    /* Styles */
 }
