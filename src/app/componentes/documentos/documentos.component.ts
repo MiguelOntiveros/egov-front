@@ -24,7 +24,7 @@ export class DocumentosComponent implements OnInit {
     {nombre: 'Ficha Tecnica'}, {nombre: 'Documentos Padrón'},
     {nombre: 'Anexos Oficiales'}, {nombre: 'Contratos y Anexos'}
   ];
-
+  
   constructor(private router: Router) { 
       var datos = localStorage.getItem("data")
   }
