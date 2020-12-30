@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-documentos',
@@ -25,7 +25,9 @@ export class DocumentosComponent implements OnInit {
     {nombre: 'Anexos Oficiales'}, {nombre: 'Contratos y Anexos'}
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+      var datos = localStorage.getItem("data")
+  }
 
   ngOnInit(): void {
   }

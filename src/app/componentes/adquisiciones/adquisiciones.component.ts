@@ -25,12 +25,12 @@ export class AdquisicionesComponent implements OnInit {
   }
 
   llamarContrato(id){
-    this.router.navigate(['/documentos']);
     this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
       this.contrato = data;
+      this.router.navigate(['documentos']);
+      localStorage.setItem("data", data);
       console.log(data);
       console.log('Documentos Abiertos');
     })
   }
-
 }
