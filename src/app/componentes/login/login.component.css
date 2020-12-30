@@ -16,6 +16,10 @@ input {
 }
 
 
+.uppercase{
+    text-transform: uppercase;
+}
+
 /* IMAGEN CENTRO */
 
 .imagen-login-pc {
