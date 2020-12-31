@@ -14,4 +14,12 @@ export class ObrasService {
   getObrasPublicas(): Observable<any>{
     return this.http.get<any>(this.urlObrasPublicas);
   }
+
+  llamarContrato(id) {
+    return this.http.get<any>('https://maikiki.herokuapp.com/contrato/contrato', {
+      params: {
+        id: id
+      }
+    });
+  }
 }

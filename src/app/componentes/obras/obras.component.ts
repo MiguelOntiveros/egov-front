@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ObrasComponent implements OnInit {
 
-  resultadoListaContrato: Contrato[];
+  contrato: Contrato[];
   search;
 
   imagenTipoContrato = 'assets/imagenes/main/obras_icono.png'
@@ -19,15 +19,18 @@ export class ObrasComponent implements OnInit {
 
   ngOnInit(): void {
     this.obrasService.getObrasPublicas().subscribe((data: any) => {
-      this.resultadoListaContrato = data;
+      this.contrato = data;
       console.log(data);
     });
-    
   }
 
-  verDocumentos(){
-    console.log('-> VER DOCUMENTOS');
-    this.router.navigate(['/documentos']);
+  llamarContrato(id){
+    this.obrasService.llamarContrato(id).subscribe((data: any) => {
+      this.contrato = data;
+      this.router.navigate(['documentos']);
+      localStorage.setItem('data', JSON.stringify(data));
+      console.log(data);
+    })
   }
 
 }

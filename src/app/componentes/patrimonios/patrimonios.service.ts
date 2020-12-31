@@ -17,4 +17,12 @@ export class PatrimoniosService {
     return this.http.get<any>(this.urlPatrimonios2);
   }
 
+  llamarContrato(id) {
+    return this.http.get<any>('https://maikiki.herokuapp.com/contrato/contrato', {
+      params: {
+        id: id
+      }
+    });
+  }
+
 }

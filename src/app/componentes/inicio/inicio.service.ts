@@ -11,7 +11,15 @@ export class InicioService {
 
   constructor(private http: HttpClient) { }
 
-  getTipoBusquedas(): Observable<any>{
+  getCategorias(): Observable<any>{
     return this.http.get<any>(this.url);
+  }
+
+  getConfiguracion(tipo) {
+    return this.http.get<any>('https://maikiki.herokuapp.com/configuracionweb/configuracion', {
+      params: {
+        tipo: tipo
+      }
+    });
   }
 }

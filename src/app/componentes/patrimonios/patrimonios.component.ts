@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PatrimoniosComponent implements OnInit {
 
-  resultadoListaContrato: Contrato[];
+  contrato: Contrato[];
   search;
 
   imagenTipoContrato = 'assets/imagenes/main/patrimonios_icono.png';
@@ -19,7 +19,16 @@ export class PatrimoniosComponent implements OnInit {
 
   ngOnInit(): void {
     this.patrimoniosService.getPatrimonios().subscribe((data: any) => {
-      this.resultadoListaContrato = data;
+      this.contrato = data;
+      console.log(data);
+    })
+  }
+
+  llamarContrato(id){
+    this.patrimoniosService.llamarContrato(id).subscribe((data: any) => {
+      this.contrato = data;
+      this.router.navigate(['documentos']);
+      localStorage.setItem('data', JSON.stringify(data));
       console.log(data);
     })
   }

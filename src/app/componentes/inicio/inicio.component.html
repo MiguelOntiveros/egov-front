@@ -43,10 +43,8 @@
 
     
 <div class="flex-container3">
-    <div class="capa-lista" *ngFor="let tipo of tipoBusqueda | busquedaPipe | filter:search">
-        <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}">
-            {{tipo.descripcion}}
-        </a>
+    <div class="capa-lista" *ngFor="let tipo of configuracion | busquedaPipe | filter:search">
+        <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}"> {{tipo.descripcion}}</a>
     </div>
     <img [src]="logo1Pc" class="logo-1-pc">
     <img [src]="logo2Pc" class="logo-2-pc">

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contratista } from '../../interfaces/Contratista';
 // import { ContratistaServiceService } from '../../services/contratista-service.service';
 import { InicioService } from './inicio.service';
-import { TipoBusqueda } from '../../interfaces/tipoBusqueda';
+import { ContratoCategoria } from '../../interfaces/ContratoCategoria';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
 })
 export class InicioComponent implements OnInit {
 
-  tipoBusqueda: TipoBusqueda[];
-  contratistas: Contratista[];
+  configuracion: ContratoCategoria[];
   search;
 
   tituloCliente: string = 'valle hermoso';
@@ -72,11 +71,17 @@ export class InicioComponent implements OnInit {
   constructor(private inicioService: InicioService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.ContratistaService.getContratista().subscribe((Temp)=>{
-    //   this.contratistas = Temp;
-    // })
-    this.inicioService.getTipoBusquedas().subscribe((data: any) => {
-      this.tipoBusqueda = data;
+    this.inicioService.getCategorias().subscribe((data: any) => {
+      this.configuracion = data;
+    })
+  }
+
+  llamarContrato(tipo){
+    this.inicioService.getConfiguracion(tipo).subscribe((data: any) => {
+      this.configuracion = data;
+      this.router.navigate(['documentos']);
+      localStorage.setItem('data', JSON.stringify(data));
+      console.log(data);
     })
   }
 
