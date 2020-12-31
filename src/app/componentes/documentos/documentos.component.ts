@@ -28,9 +28,6 @@ export class DocumentosComponent implements OnInit {
   contrato= null;
 
   constructor(private router: Router) { 
-      var datos = localStorage.getItem("data")
-      this.contrato = datos;
-      console.log(datos);
   }
 
   ngOnInit(): void {

@@ -30,7 +30,6 @@ export class AdquisicionesComponent implements OnInit {
       this.router.navigate(['documentos']);
       localStorage.setItem('data', JSON.stringify(data));
       console.log(data);
-      console.log('Documentos Abiertos');
     })
   }
 }
