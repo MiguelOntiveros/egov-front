@@ -29,10 +29,14 @@ export class DocumentosComponent implements OnInit {
 
   constructor(private router: Router) { 
       var datos = localStorage.getItem("data")
-      this.contrato = JSON.parse(datos)
+      this.contrato = datos;
+      console.log(datos);
   }
 
   ngOnInit(): void {
+    var datos = localStorage.getItem("data");
+    this.contrato = JSON.parse(datos);
+    console.log(datos);
   }
 
   verSeguimiento(){

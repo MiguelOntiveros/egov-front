@@ -28,7 +28,7 @@ export class AdquisicionesComponent implements OnInit {
     this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
       this.contrato = data;
       this.router.navigate(['documentos']);
-      localStorage.setItem("data", data);
+      localStorage.setItem('data', JSON.stringify(data));
       console.log(data);
       console.log('Documentos Abiertos');
     })
