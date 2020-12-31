@@ -115,14 +115,95 @@
     </footer>
 -->
 
-    <div class="flex-container">
-        <div class="contenedor-contenido">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4">Fecha</div>
-                    <div class="col-4"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                    <div class="col-4"><label>{{contrato.id}}</label></div>
-                </div>
+<div class="flex-container">
+    <div class="contenedor-contenido">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">Monto</div>
+                <div class="col-4"><i class="fa fa-money" aria-hidden="true"></i></div>
+                <div class="col-4"></div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-4">Fecha</div>
+                <div class="col-4"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                <div class="col-4">{{contrato.creadofecha}}</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-6">Rep. Legal</div>
+                <div class="col-6">{{contrato.con_representante}}</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-6">Socios</div>
+                <div class="col-6"></div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="flex-container">
+    <div class="contenedor-contenido">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">Estatus</div>
+                <div class="col-4"><i class="fa fa-money" aria-hidden="true"></i></div>
+                <div class="col-4">{{contrato.estatus}}</div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-8">Seguimiento</div>
+                <div class="col-4"><button class="boton-" type="button" (click)="verSeguimiento()">Ver
+                        seguimiento</button></div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-6">Responsable</div>
+                <div class="col-6"></div>
+            </div>
+            <hr />
+        </div>
+    </div>
+</div>
+
+<div class="flex-container">
+    <div class="contenedor-contenido" style="margin-bottom: 2%;">
+        <h3 style="margin: 10px;">Documentos</h3>
+        <div class="row">
+
+            <div class="col-6">
+                <button class="boton-pdf" (click)="abrirFichaTecnica()">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    <label>FICHA TÉCNICA</label>
+                </button>
+            </div>
+
+            <div class="col-6">
+                <button class="boton-pdf" (click)="abrirDocumentosPadron()">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    <label>DOCUMENTOS PADRÓN</label>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <button class="boton-pdf" (click)="abrirAnexosOficiales()">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    <label>ANEXOS OFICIALES</label>
+                </button>
+            </div>
+
+            <div class="col-6">
+                <button class="boton-pdf" (click)="abrirContratosAnexos()">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    <label>CONTRATOS Y ANEXOS</label>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
