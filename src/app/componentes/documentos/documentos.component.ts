@@ -24,9 +24,12 @@ export class DocumentosComponent implements OnInit {
     {nombre: 'Ficha Tecnica'}, {nombre: 'Documentos Padrón'},
     {nombre: 'Anexos Oficiales'}, {nombre: 'Contratos y Anexos'}
   ];
-  
+
+  contrato= null;
+
   constructor(private router: Router) { 
       var datos = localStorage.getItem("data")
+      this.contrato = JSON.parse(datos)
   }
 
   ngOnInit(): void {
