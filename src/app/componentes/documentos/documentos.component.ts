@@ -26,6 +26,7 @@ export class DocumentosComponent implements OnInit {
   ];
 
   contrato= null;
+  configuracion = null;
 
   constructor(private router: Router) {}
 
@@ -33,6 +34,10 @@ export class DocumentosComponent implements OnInit {
     var datos = localStorage.getItem("data");
     this.contrato = JSON.parse(datos);
     console.log(datos);
+
+    var info = localStorage.getItem("config");
+    this.configuracion = JSON.parse(info);
+    console.log(info);
   }
 
   verSeguimiento(){

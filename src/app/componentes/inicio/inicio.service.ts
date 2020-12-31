@@ -15,10 +15,18 @@ export class InicioService {
     return this.http.get<any>(this.url);
   }
 
-  getConfiguracion(tipo) {
-    return this.http.get<any>('https://maikiki.herokuapp.com/configuracionweb/configuracion', {
+  getConfiguracion2(tipo) {
+    return this.http.get<any>('https://maikiki.herokuapp.com/configuracionweb/tipo', {
       params: {
         tipo: tipo
+      }
+    });
+  }
+
+  getConfiguracion(clave) {
+    return this.http.get<any>('https://maikiki.herokuapp.com/configuracionweb/categoria', {
+      params: {
+        string: clave
       }
     });
   }

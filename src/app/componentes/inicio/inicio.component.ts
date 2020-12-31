@@ -76,12 +76,12 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  llamarContrato(tipo){
-    this.inicioService.getConfiguracion(tipo).subscribe((data: any) => {
-      this.configuracion = data;
+  getConfiguracion(clave){
+    this.inicioService.getConfiguracion(clave).subscribe((config: any) => {
+      this.configuracion = config;
       this.router.navigate(['documentos']);
-      localStorage.setItem('data', JSON.stringify(data));
-      console.log(data);
+      localStorage.setItem('data', JSON.stringify(config));
+      console.log(config);
     })
   }
 
