@@ -78,7 +78,7 @@ export class InicioComponent implements OnInit {
   }
 
   enviarClave(clave){
-    localStorage.setItem('clave', clave);
+    localStorage.setItem('info', clave);
     console.log(clave);
 }
 

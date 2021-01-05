@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'obras', component: ObrasComponent},
   {path: 'patrimonios', component: PatrimoniosComponent},
   {path: 'adquisiciones', component: AdquisicionesComponent},
-  {path: 'documentos', component: DocumentosComponent},
+  {path: 'documentos/:id', component: DocumentosComponent},
   {path: 'lista-documentos', component: ListaDocumentosComponent},
   // {path: 'lista-documentos/:id', component: ListaDocumentosComponent},
   {path: 'seguimientos', component: SeguimientoComponent},

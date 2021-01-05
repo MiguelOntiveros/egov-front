@@ -11,22 +11,23 @@ import { InicioService } from '../inicio/inicio.service';
 export class DocumentosComponent implements OnInit {
 
   contrato= null;
-  configuracion = {}
+  configuracion = null;
 
-  constructor(private router: Router, private inicio: InicioService) {}
+  constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     var datos = localStorage.getItem("data");
     this.contrato = JSON.parse(datos);
-    console.log(datos);
+    //console.log(datos);
     this.getConfiguracion(this.configuracion);
   }
 
-  getConfiguracion(clave){
-    var clave2 = localStorage.getItem("clave")
-    this.inicio.getConfiguracion(clave2).subscribe((config: any) => {
+  getConfiguracion(info){
+    info2 = this.activateRoute.snapshot.paramMap.get("id");
+    var info2 = localStorage.getItem("info")
+    this.inicio.getConfiguracion(info2).subscribe((config: any) => {
       this.configuracion = config;
-      console.log(clave2);
+      console.log(info2);
     })
   }
 
