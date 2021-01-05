@@ -68,6 +68,7 @@ export class InicioComponent implements OnInit {
   logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
   logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
 
+
   constructor(private inicioService: InicioService, private router: Router) { }
 
   ngOnInit(): void {
@@ -76,14 +77,10 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  getConfiguracion(clave){
-    this.inicioService.getConfiguracion(clave).subscribe((config: any) => {
-      this.configuracion = config;
-      this.router.navigate(['documentos']);
-      localStorage.setItem('data', JSON.stringify(config));
-      console.log(config);
-    })
-  }
+  enviarClave(clave){
+    localStorage.setItem('clave', clave);
+    console.log(clave);
+}
 
   abrirMenu(){
     console.log('Menu abierto');

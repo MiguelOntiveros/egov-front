@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeguimientoComponent implements OnInit {
 
-  nombreResponsable = 'LIC. GONZALO GONZALEZ MORENO';
-  fechaSeguimiento = '2018/09/13';
-  horaSeguimiento = '09:57';
+  //nombreResponsable = 'LIC. GONZALO GONZALEZ MORENO';
+  //fechaSeguimiento = '2018/09/13';
+  //horaSeguimiento = '09:57';
   
-  respuestaObra = 'SI';
+  //respuestaObra = 'SI';
 
-  respuestaObra2 = 'SI';
+  //respuestaObra2 = 'SI';
 
   constructor() { }
 

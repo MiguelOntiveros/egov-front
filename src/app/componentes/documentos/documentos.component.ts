@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { InicioComponent } from '../inicio/inicio.component';
+import { InicioService } from '../inicio/inicio.service';
 
 @Component({
   selector: 'app-documentos',
@@ -8,37 +10,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DocumentosComponent implements OnInit {
 
-  montoContrato = '2,500,000';
-  fechaContratoCreado = '24/05/2019';
-  estatusContrato = 'EN REVISIÓN' ;
-  responsableContrato = 'LIC. GONZALO GONZALEZ MORENO';
-
-  repLegalContrato = [{nombre: 'JOSÉ ANTONIO LÓPEZ GARZA'},];
-
-  sociosContrato = [
-    {nombre: 'JOSÉ ANTONIO LÓPEZ GARZA'},
-    {nombre: 'VICTOR VILLAREAL ESPINOZA'}
-  ];
-
-  documentos = [
-    {nombre: 'Ficha Tecnica'}, {nombre: 'Documentos Padrón'},
-    {nombre: 'Anexos Oficiales'}, {nombre: 'Contratos y Anexos'}
-  ];
-
   contrato= null;
-  configuracion = null;
+  configuracion = {}
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private inicio: InicioService) {}
 
   ngOnInit(): void {
     var datos = localStorage.getItem("data");
     this.contrato = JSON.parse(datos);
     console.log(datos);
-
-    var info = localStorage.getItem("config");
-    this.configuracion = JSON.parse(info);
-    console.log(info);
+    this.getConfiguracion(this.configuracion);
   }
+
+  getConfiguracion(clave){
+    var clave2 = localStorage.getItem("clave")
+    this.inicio.getConfiguracion(clave2).subscribe((config: any) => {
+      this.configuracion = config;
+      console.log(clave2);
+    })
+  }
+
 
   verSeguimiento(){
     this.router.navigate(['/seguimientos']);

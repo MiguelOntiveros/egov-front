@@ -43,9 +43,8 @@
 
     
 <div class="flex-container3">
-    <div class="capa-lista" *ngFor="let tipo of configuracion | busquedaPipe | filter:search" (click)="getConfiguracion(tipo.clave)">
-        <div class="ocultar">{{ tipo.clave }}</div>
-        <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}"> {{tipo.descripcion}}</a>
+    <div class="capa-lista flex-container3" *ngFor="let tipo of configuracion | busquedaPipe | filter:search" (click)="enviarClave(tipo.clave)">
+        <a class="ruta-tipo-busqueda" routerLink="{{ tipo.link }}"><div >{{ tipo.clave }} {{tipo.descripcion}}</div></a>
     </div>
     <img [src]="logo1Pc" class="logo-1-pc">
     <img [src]="logo2Pc" class="logo-2-pc">
