@@ -20,13 +20,17 @@ export class DocumentosComponent implements OnInit {
     this.contrato = JSON.parse(datos);
     //console.log(datos);
     this.getConfiguracion(this.configuracion);
+    this.activateRoute.params.subscribe(params => {
+      var clave = params['id']
+      this.getConfiguracion(clave)
+    })
   }
 
   getConfiguracion(clave){
-    var info3 = this.activateRoute.snapshot.paramMap.get("id");
-    this.inicio.getConfiguracion(info3).subscribe((config: any) => {
+    //var info3 = this.activateRoute.snapshot.paramMap.get("clave");
+    this.inicio.getConfiguracion(clave).subscribe((config: any) => {
       this.configuracion = config;
-      console.log(info3);
+      console.log(clave);
     })
   }
 
