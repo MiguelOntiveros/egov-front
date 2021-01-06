@@ -22,12 +22,11 @@ export class DocumentosComponent implements OnInit {
     this.getConfiguracion(this.configuracion);
   }
 
-  getConfiguracion(info){
-    info2 = this.activateRoute.snapshot.paramMap.get("id");
-    var info2 = localStorage.getItem("info")
-    this.inicio.getConfiguracion(info2).subscribe((config: any) => {
+  getConfiguracion(clave){
+    var info3 = this.activateRoute.snapshot.paramMap.get("id");
+    this.inicio.getConfiguracion(info3).subscribe((config: any) => {
       this.configuracion = config;
-      console.log(info2);
+      console.log(info3);
     })
   }
 

@@ -29,6 +29,7 @@ export class ObrasComponent implements OnInit {
       this.contrato = data;
       this.router.navigate(['documentos']);
       localStorage.setItem('data', JSON.stringify(data));
+      //localStorage.setItem('clave', clave);
       console.log(data);
     })
   }
