@@ -77,11 +77,6 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  enviarClave(clave){
-    localStorage.setItem('clave', clave);
-    console.log(clave);
-}
-
   abrirMenu(){
     console.log('Menu abierto');
     this.mostrarMenu = true;

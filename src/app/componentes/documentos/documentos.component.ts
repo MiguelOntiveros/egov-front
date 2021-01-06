@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { InicioComponent } from '../inicio/inicio.component';
 import { InicioService } from '../inicio/inicio.service';
+import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
 
 @Component({
   selector: 'app-documentos',
@@ -11,7 +11,7 @@ import { InicioService } from '../inicio/inicio.service';
 export class DocumentosComponent implements OnInit {
 
   contrato= null;
-  configuracion = null;
+  configuracion : ConfiguracionWeb[];
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) {}
 
@@ -21,14 +21,17 @@ export class DocumentosComponent implements OnInit {
    this.contrato = JSON.parse(datos);
    this.activateRoute.params.subscribe((params) => {
    // obtiene el parametro llamado categoría
-   var categoria = params['categoria'];
-   this.getConfiguracion(categoria);
-   console.log(categoria);
+   var clave = params['categoria'];
+   this.inicio.getConfiguracion(clave).subscribe((config: any) => {
+    this.configuracion = config;
+  });
+   console.log(clave);
+   console.log(this.inicio.getConfiguracion(clave));
   });
   }
 
-  getConfiguracion(categoria) {
-    this.inicio.getConfiguracion(categoria).subscribe((config: any) => {
+  getConfiguracion(clave) {
+    this.inicio.getConfiguracion(clave).subscribe((config: any) => {
       this.configuracion = config;
     });
   }
