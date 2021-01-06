@@ -121,7 +121,9 @@
             <div class="row">
                 <div class="col-4">Monto</div>
                 <div class="col-4"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="col-4" *ngFor="let variable of configuracion">{{configuracion.monto}}</div>
+                <div class="col-4" *ngFor="let variable of configuracion">
+                    <div>{{variable.id}}</div>
+                </div>
             </div>
             <hr />
             <div class="row">

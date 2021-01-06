@@ -22,9 +22,7 @@ export class DocumentosComponent implements OnInit {
    this.activateRoute.params.subscribe((params) => {
    // obtiene el parametro llamado categoría
    var clave = params['categoria'];
-   this.inicio.getConfiguracion(clave).subscribe((config: any) => {
-    this.configuracion = config;
-  });
+   this.getConfiguracion(clave);
    console.log(clave);
    console.log(this.inicio.getConfiguracion(clave));
   });
