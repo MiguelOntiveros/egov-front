@@ -16,25 +16,23 @@ export class DocumentosComponent implements OnInit {
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    var datos = localStorage.getItem("data");
-    this.contrato = JSON.parse(datos);
-    //console.log(datos);
-    this.getConfiguracion(this.configuracion);
-    this.activateRoute.params.subscribe(params => {
-      var clave = params['id']
-      this.getConfiguracion(clave)
-    })
+   // obtiene el storage llamado contrato
+   var datos = localStorage.getItem('contrato');
+   this.contrato = JSON.parse(datos);
+   this.activateRoute.params.subscribe((params) => {
+   // obtiene el parametro llamado categoría
+   var categoria = params['categoria'];
+   this.getConfiguracion(categoria);
+   console.log(categoria);
+  });
   }
 
-  getConfiguracion(clave){
-    //var info3 = this.activateRoute.snapshot.paramMap.get("clave");
-    this.inicio.getConfiguracion(clave).subscribe((config: any) => {
+  getConfiguracion(categoria) {
+    this.inicio.getConfiguracion(categoria).subscribe((config: any) => {
       this.configuracion = config;
-      console.log(clave);
-    })
+    });
   }
-
-
+  
   verSeguimiento(){
     this.router.navigate(['/seguimientos']);
     console.log('-> VER SEGUIMIENTO');
