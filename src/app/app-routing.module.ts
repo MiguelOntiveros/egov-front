@@ -29,7 +29,6 @@ const routes: Routes = [
   {path: 'adquisiciones', component: AdquisicionesComponent},
   {path: 'documentos/:categoria', component: DocumentosComponent},
   {path: 'lista-documentos', component: ListaDocumentosComponent},
-  // {path: 'lista-documentos/:id', component: ListaDocumentosComponent},
   {path: 'seguimientos', component: SeguimientoComponent},
   {path: 'tablas', component: TablasComponent},
   {path: '**', pathMatch: 'full', redirectTo: '/index'}

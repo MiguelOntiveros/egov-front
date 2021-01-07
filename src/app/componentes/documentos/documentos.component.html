@@ -121,9 +121,8 @@
             <div class="row">
                 <div class="col-4">Monto</div>
                 <div class="col-4"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="col-4" *ngFor="let variable of configuracion">
-                    <div>{{variable.id}}</div>
-                </div>
+                <div class="col-4">{{configuracion.monto}}</div>
+                <div class="col-4">nota: esta clave no tiene valor</div>
             </div>
             <hr />
             <div class="row">
@@ -134,12 +133,14 @@
             <hr />
             <div class="row">
                 <div class="col-6">Rep. Legal</div>
-                <div class="col-6">{{contrato.con_representante}}</div>
+                <div class="col-6"></div>
+                <div class="col-6 ocultar">{{contrato.area}} {{contrato.tipo}} {{contrato.categoria}} {{contrato.folio}} {{contrato.revision}}</div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-6">Socios</div>
                 <div class="col-6"></div>
+                <div class="col-6 ocultar">{{contrato.area}} {{contrato.tipo}} {{contrato.categoria}} {{contrato.folio}} {{contrato.revision}}</div>
             </div>
         </div>
     </div>
@@ -162,7 +163,8 @@
             <hr />
             <div class="row">
                 <div class="col-6">Responsable</div>
-                <div class="col-6"></div>
+                <div class="col-6">{{configuracion.responsablenombre}}</div>
+                <div class="col-4">nota: no se ha asignado responsable</div>
             </div>
             <hr />
         </div>

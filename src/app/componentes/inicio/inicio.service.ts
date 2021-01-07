@@ -18,7 +18,7 @@ export class InicioService {
   getConfiguracion(clave) {
     return this.http.get<any>('https://maikiki.herokuapp.com/configuracionweb/categoria', {
       params: {
-        string: clave
+        clave: clave
       }
     });
   }

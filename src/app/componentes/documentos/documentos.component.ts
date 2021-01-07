@@ -11,7 +11,7 @@ import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
 export class DocumentosComponent implements OnInit {
 
   contrato= null;
-  configuracion : ConfiguracionWeb[];
+  configuracion = null;
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) {}
 
@@ -24,13 +24,12 @@ export class DocumentosComponent implements OnInit {
    var clave = params['categoria'];
    this.getConfiguracion(clave);
    console.log(clave);
-   console.log(this.inicio.getConfiguracion(clave));
   });
   }
 
   getConfiguracion(clave) {
-    this.inicio.getConfiguracion(clave).subscribe((config: any) => {
-      this.configuracion = config;
+    this.inicio.getConfiguracion(clave).subscribe((data: any) => {
+      this.configuracion = data;
     });
   }
   

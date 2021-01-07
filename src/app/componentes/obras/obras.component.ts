@@ -26,9 +26,9 @@ export class ObrasComponent implements OnInit {
 
   llamarContrato(id) {
     this.obrasService.llamarContrato(id).subscribe((data: any) => {
-      // primero se setea el contrato que se seleccionó
+     
       localStorage.setItem('contrato', JSON.stringify(data));
-      // después llama al navigate y se envía su categoría como parametro
+    
       this.router.navigate(['documentos', data.categoria]);
       console.log(data);
       console.log(data.categoria);
