@@ -24,12 +24,14 @@ export class AdquisicionesComponent implements OnInit {
     })
   }
 
-  llamarContrato(id){
+  llamarContrato(id) {
     this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
-      this.contrato = data;
-      this.router.navigate(['documentos']);
-      localStorage.setItem('data', JSON.stringify(data));
+     
+      localStorage.setItem('contrato', JSON.stringify(data));
+    
+      this.router.navigate(['documentos', data.categoria]);
       console.log(data);
+      console.log(data.categoria);
     })
   }
 }
