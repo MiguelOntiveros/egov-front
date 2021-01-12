@@ -28,6 +28,29 @@
     color: white;
 }
 
+/* SOCIOS */
+
+.socios {
+    width: 30%;
+    font-size: 1rem;
+}
+
+.nombre-socios {
+    width: 70%;
+    font-size: 0.7rem;
+}
+
+/* RESPONSABLES LEGALES */
+
+.rep {
+    width: 30%;
+    font-size: 1rem;
+}
+
+.nombre-rep {
+    width: 70%;
+    font-size: 0.7rem;
+}
 
 /* BOTON VER SEGUIMIENTO */
 
