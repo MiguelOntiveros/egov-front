@@ -133,14 +133,20 @@
             <hr />
             <div class="row">
                 <div class="col-6">Rep. Legal</div>
-                <div class="col-6"></div>
-                <div class="col-6 ocultar">{{contrato.area}} {{contrato.tipo}} {{contrato.categoria}} {{contrato.folio}} {{contrato.revision}}</div>
+                <div class="" *ngFor="let responsables of contratoReferencia">
+                    <div class="col-6" *ngIf="responsables.referencia <= 4">
+                        {{responsables.nombre}}
+                    </div>
+                </div>
+                 <!-- <div class="col-6 ocultar">{{contrato.area}} {{contrato.tipo}} {{contrato.categoria}} {{contrato.folio}} {{contrato.revision}}</div>-->
             </div>
             <hr />
             <div class="row">
                 <div class="col-6">Socios</div>
-                <div class="col-6"></div>
-                <div class="col-6 ocultar">{{contrato.area}} {{contrato.tipo}} {{contrato.categoria}} {{contrato.folio}} {{contrato.revision}}</div>
+                <div class="" *ngFor="let socios of contratoReferencia">
+                    <div class="col-6" *ngIf="socios.referencia >= 5">{{socios.nombre}}</div>
+                </div>
+               <!-- <div class="col-6 ocultar">{{contrato.area}} {{contrato.tipo}} {{contrato.categoria}} {{contrato.folio}} {{contrato.revision}}</div>-->
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InicioService } from '../inicio/inicio.service';
 import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
+import { ContratoReferencia } from '../../interfaces/ContratoReferencias';
 
 @Component({
   selector: 'app-documentos',
@@ -10,21 +11,40 @@ import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
 })
 export class DocumentosComponent implements OnInit {
 
-  contrato= null;
+  contrato = null;
   configuracion = null;
+  contratoReferencia: ContratoReferencia[];
 
-  constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) {}
+  constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   // obtiene el storage llamado contrato
-   var datos = localStorage.getItem('contrato');
-   this.contrato = JSON.parse(datos);
-   this.activateRoute.params.subscribe((params) => {
-   // obtiene el parametro llamado categoría
-   var clave = params['categoria'];
-   this.getConfiguracion(clave);
-   console.log(clave);
-  });
+    // obtiene el storage llamado contrato
+    var datos = localStorage.getItem('contrato');
+    this.contrato = JSON.parse(datos);
+    this.activateRoute.params.subscribe((params) => {
+      // obtiene el parametro llamado categoría
+      var clave = params['categoria'];
+      this.getConfiguracion(clave);
+      console.log(clave);
+    });
+
+    const area = this.contrato['area'];
+    const tipo = this.contrato['tipo'];
+    const categoria = this.contrato['categoria'];
+    const folio = this.contrato['folio'];
+    const revision = this.contrato['revision'];
+
+    if (this.contrato !== "undefined" || this.contrato !== null) {
+      this.getDocumentos(area, tipo, categoria, folio, revision);
+      console.log('Area:', area);
+      console.log('Tipo:', tipo);
+      console.log('Categoria:', categoria);
+      console.log('Folio:', folio);
+      console.log('Revision:', revision);
+    } else {
+      console.error('No hay datos', []);
+    }
+
   }
 
   getConfiguracion(clave) {
@@ -32,8 +52,14 @@ export class DocumentosComponent implements OnInit {
       this.configuracion = data;
     });
   }
-  
-  verSeguimiento(){
+
+  getDocumentos(area, tipo, categoria, folio, revision) {
+    this.inicio.getDocumentos(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.contratoReferencia = data;
+    });
+  }
+
+  verSeguimiento() {
     this.router.navigate(['/seguimientos']);
     console.log('-> VER SEGUIMIENTO');
   }
@@ -43,28 +69,28 @@ export class DocumentosComponent implements OnInit {
   https://www.npmjs.com/package/pdfmake-wrapper
   */
 
- abrirFichaTecnica(){
-  console.log('Ficha Técnica abierto');
-  this.router.navigate(['/seguimientos']);
-}
+  abrirFichaTecnica() {
+    console.log('Ficha Técnica abierto');
+    this.router.navigate(['/seguimientos']);
+  }
 
-abrirDocumentosPadron(){
-  console.log('Documentos Padron abierto');
-  this.router.navigate(['/seguimientos']);
-}
+  abrirDocumentosPadron() {
+    console.log('Documentos Padron abierto');
+    this.router.navigate(['/seguimientos']);
+  }
 
-abrirAnexosOficiales(){
-  console.log('Anexos Oficiales abierto');
-  this.router.navigate(['/seguimientos']);
-}
+  abrirAnexosOficiales() {
+    console.log('Anexos Oficiales abierto');
+    this.router.navigate(['/seguimientos']);
+  }
 
-abrirContratosAnexos(){
-  console.log('Contratos y Anexos abierto');
-  this.router.navigate(['/seguimientos']);
-}
+  abrirContratosAnexos() {
+    console.log('Contratos y Anexos abierto');
+    this.router.navigate(['/seguimientos']);
+  }
 
-irInicio(){
-  this.router.navigate(['/inicio']);
-}
+  irInicio() {
+    this.router.navigate(['/inicio']);
+  }
 
 }

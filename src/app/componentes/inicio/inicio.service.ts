@@ -22,4 +22,8 @@ export class InicioService {
       }
     });
   }
+
+  getDocumentos(area: string, tipo: string, categoria: string, folio: number, revision: number): Observable<any>{
+    return this.http.get('https://maikiki.herokuapp.com/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
+  }
 }
