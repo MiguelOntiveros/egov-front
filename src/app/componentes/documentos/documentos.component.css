@@ -121,6 +121,30 @@ a {
     }
 }
 
+@media only screen and (device-width: 768px) and (device-height: 1024px) {
+    .contenedor-contenido {
+        min-width: 60%;
+        max-width: 70%;
+    }
+    /* RESPONSABLES LEGALES */
+    .rep {
+        width: 55%;
+        font-size: 1rem;
+    }
+    .nombre-rep {
+        width: 45%;
+        font-size: 0.8rem;
+    }
+    /* SOCIOS */
+    .socios {
+        width: 55%;
+        font-size: 1rem;
+    }
+    .nombre-socios {
+        width: 45%;
+        font-size: 0.8rem;
+    }
+}
 
 /* Desktops and Laptops -------- */
 
