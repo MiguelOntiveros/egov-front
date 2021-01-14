@@ -11,28 +11,23 @@ import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/ima
 export class ImagenesAnexosOficialesComponent implements OnInit {
 
   //documentos: String[];
-  contrato : Contrato[];
-  lista : Object = {};
+  contratoAlmacenado = null;
+  lista = null;
 
   constructor(private imagenesAnexas: ImagenesAnexosOficialesService) { }
 
   ngOnInit(): void {
     // obtiene el storage llamado contrato
-    var datos = localStorage.getItem('contrato');
-    this.contrato = JSON.parse(datos);
+    var contratoOriginal = localStorage.getItem('contrato');
+    this.contratoAlmacenado = JSON.parse(contratoOriginal);
 
-    const area = this.contrato['area'];
-    const tipo = this.contrato['tipo'];
-    const categoria = this.contrato['categoria'];
-    const folio = this.contrato['folio'];
-    const revision = this.contrato['revision'];
+    const area = this.contratoAlmacenado['area'];
+    const tipo = this.contratoAlmacenado['tipo'];
+    const categoria = this.contratoAlmacenado['categoria'];
+    const folio = this.contratoAlmacenado['folio'];
+    const revision = this.contratoAlmacenado['revision'];
 
-    console.log('Area:', area);
-    console.log('Tipo:', tipo);
-    console.log('Categoria:', categoria);
-    console.log('Folio:', folio);
-    console.log('Revision:', revision);
-    console.log(this.lista);
+    console.log(this.contratoAlmacenado);
   }
 
   getDocumentos(area, tipo, categoria, folio, revision){
