@@ -14,6 +14,7 @@ import { ListaDocumentosComponent } from './componentes/lista-documentos/lista-d
 import { TablasComponent } from './componentes/tablas/tablas.component';
 import { AdquisicionesComponent } from './componentes/adquisiciones/adquisiciones.component';
 import { SeguimientoComponent } from './componentes/seguimiento/seguimiento.component';
+import { ImagenesAnexosOficialesComponent } from './componentes/imagenes-anexos-oficiales/imagenes-anexos-oficiales.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'lista-documentos', component: ListaDocumentosComponent},
   {path: 'seguimientos', component: SeguimientoComponent},
   {path: 'tablas', component: TablasComponent},
+  {path: 'anexos-oficiales', component: ImagenesAnexosOficialesComponent},
   {path: '**', pathMatch: 'full', redirectTo: '/index'}
 ];
 

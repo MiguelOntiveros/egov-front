@@ -68,6 +68,7 @@ import { ParametrosComponent } from './componentes/parametros/parametros.compone
 import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/resultado-busqueda.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedModule } from './shared/shared.module';
+import { ImagenesAnexosOficialesComponent } from './componentes/imagenes-anexos-oficiales/imagenes-anexos-oficiales.component';
 
 
 
@@ -128,7 +129,8 @@ import { SharedModule } from './shared/shared.module';
     EstadoComponent,
     ContratistaSuspendidoComponent,
     ParametrosComponent,
-    ResultadoBusquedaComponent
+    ResultadoBusquedaComponent,
+    ImagenesAnexosOficialesComponent
   ],
   imports: [
     BrowserModule,

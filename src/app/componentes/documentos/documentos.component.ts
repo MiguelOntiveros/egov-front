@@ -81,12 +81,12 @@ export class DocumentosComponent implements OnInit {
 
   abrirAnexosOficiales() {
     console.log('Anexos Oficiales abierto');
-    this.router.navigate(['/seguimientos']);
+    this.router.navigate(['/anexos-oficiales']);
   }
 
   abrirContratosAnexos() {
     console.log('Contratos y Anexos abierto');
-    this.router.navigate(['/seguimientos']);
+    this.router.navigate(['/anexos-oficiales']);
   }
 
   irInicio() {
