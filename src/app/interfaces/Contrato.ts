@@ -1,12 +1,12 @@
 export interface Contrato {
     id: number;
-    area: string;
-    tipo: string;
-    categoria: string;
-    folio: number;
-    contrato: string;
-    clasificacion: string;
-    ubicacion: string;
+    area?: string;
+    tipo?: string;
+    categoria?: string;
+    folio?: number;
+    contrato?: string;
+    clasificacion?: string;
+    ubicacion?: string;
     notas: string;
     estatus: string;
     revision: string;
