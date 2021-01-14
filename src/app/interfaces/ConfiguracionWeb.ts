@@ -5,7 +5,7 @@ export interface ConfiguracionWeb{
     categoria: string;
     fechainicio: string;
     fechafinal: string;
-    monto: string;
+    monto?: string;
     descripcion: string;
     fechaautorizacion: string;
     estimacionmayor: string;

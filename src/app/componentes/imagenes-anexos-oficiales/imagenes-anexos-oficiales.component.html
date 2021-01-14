@@ -10,9 +10,14 @@
 </div>
 <div class="flex-container-adjudicacion"><p class="texto">PROCEDIMIENTO DE ADJUDICACIÓN</p></div>
 <div class="flex-container-adjudicacion-imagen">
-    <img src="https://maikiki.herokuapp.com/contratooficialimagen/imagen?area=A1&tipo=CO&categoria=OP&folio=1&revision=3&documento=PROCEDIMIENTO%20DE%20ADJUDICACI%C3%93N">
+    <!--<img src="https://maikiki.herokuapp.com/contratooficialimagen/imagen?area=A1&tipo=CO&categoria=OP&folio=1&revision=3&documento=PROCEDIMIENTO%20DE%20ADJUDICACI%C3%93N">-->
 </div>
 <div class="flex-container-oficio"><p class="texto">OFICIO DE ORIGEN DE LOS RECURSOS</p></div>
 <div class="flex-container-oficio-imagen">
    
+</div>
+<div class="flex-container2">
+    <div class="capa-lista flex-container3" *ngFor="let tipo of lista">
+        <a class="ruta-tipo-busqueda">{{tipo.documento}}</a>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contrato } from '../../interfaces/Contrato';
+import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/imagenes-anexos-oficiales.service';
 
 @Component({
   selector: 'app-imagenes-anexos-oficiales',
@@ -11,13 +12,14 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
 
   //documentos: String[];
   contrato : Contrato[];
+  lista : Object = {};
 
-  constructor(private imagenes: ImagenesAnexosOficialesService) { }
+  constructor(private imagenesAnexas: ImagenesAnexosOficialesService) { }
 
   ngOnInit(): void {
     // obtiene el storage llamado contrato
     var datos = localStorage.getItem('contrato');
-    this.documentos = JSON.parse(datos);
+    this.contrato = JSON.parse(datos);
 
     const area = this.contrato['area'];
     const tipo = this.contrato['tipo'];
@@ -30,11 +32,12 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
     console.log('Categoria:', categoria);
     console.log('Folio:', folio);
     console.log('Revision:', revision);
+    console.log(this.lista);
   }
 
   getDocumentos(area, tipo, categoria, folio, revision){
-    this.inicio.getConfiguracion(clave).subscribe((data: any) => {
-      this.configuracion = data;
+    this.imagenesAnexas.getDocumentos(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.lista = data;
     });
   }
 
