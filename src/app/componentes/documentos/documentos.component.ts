@@ -12,7 +12,7 @@ import { ContratoReferencia } from '../../interfaces/ContratoReferencias';
 export class DocumentosComponent implements OnInit {
 
   contrato = null;
-  configuracion: ConfiguracionWeb[];
+  configuracion: ConfiguracionWeb = {};
   contratoReferencia: ContratoReferencia[];
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
