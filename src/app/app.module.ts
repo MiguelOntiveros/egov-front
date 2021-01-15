@@ -69,6 +69,11 @@ import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/res
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedModule } from './shared/shared.module';
 import { ImagenesAnexosOficialesComponent } from './componentes/imagenes-anexos-oficiales/imagenes-anexos-oficiales.component';
+import { ImagenesAOBasesDeLicitacionComponent } from './componentes/imagenes-a-o-bases-de-licitacion/imagenes-a-o-bases-de-licitacion.component';
+import { ProcedimientoDeAdjudicacionComponent } from './componentes/procedimiento-de-adjudicacion/procedimiento-de-adjudicacion.component';
+import { ImagenesAOProcedimientoDeAdjudicacionComponent } from './componentes/imagenes-a-o-procedimiento-de-adjudicacion/imagenes-a-o-procedimiento-de-adjudicacion.component';
+import { ImagenesAOOficioDeOrigenDeLosRecursosComponent } from './componentes/imagenes-a-o-oficio-de-origen-de-los-recursos/imagenes-a-o-oficio-de-origen-de-los-recursos.component';
+import { ImagenesAOActaDeFalloComponent } from './componentes/imagenes-a-o-acta-de-fallo/imagenes-a-o-acta-de-fallo.component';
 
 
 
@@ -130,7 +135,12 @@ import { ImagenesAnexosOficialesComponent } from './componentes/imagenes-anexos-
     ContratistaSuspendidoComponent,
     ParametrosComponent,
     ResultadoBusquedaComponent,
-    ImagenesAnexosOficialesComponent
+    ImagenesAnexosOficialesComponent,
+    ImagenesAOBasesDeLicitacionComponent,
+    ProcedimientoDeAdjudicacionComponent,
+    ImagenesAOProcedimientoDeAdjudicacionComponent,
+    ImagenesAOOficioDeOrigenDeLosRecursosComponent,
+    ImagenesAOActaDeFalloComponent
   ],
   imports: [
     BrowserModule,

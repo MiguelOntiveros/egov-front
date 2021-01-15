@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contrato } from '../../interfaces/Contrato';
+import { ContratoOficialImagen } from 'src/app/interfaces/ContratoOficialImagen';
 import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/imagenes-anexos-oficiales.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/ima
 
 export class ImagenesAnexosOficialesComponent implements OnInit {
 
-  //documentos: String[];
   contratoAlmacenado = null;
-  lista: string;
+  contratoOficialImagen: ContratoOficialImagen[];
+  //ConfiguracionWeb = {};
 
   constructor(private imagenesAnexas: ImagenesAnexosOficialesService) { }
 
@@ -26,13 +26,11 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
     const categoria = this.contratoAlmacenado['categoria'];
     const folio = this.contratoAlmacenado['folio'];
     const revision = this.contratoAlmacenado['revision'];
-    this.getDocumentos(area, tipo, categoria, folio, revision);
-    console.log(this.contratoAlmacenado);
-  }
-
-  getDocumentos(area, tipo, categoria, folio, revision){
-    this.imagenesAnexas.getDocumentos(area, tipo, categoria, folio, revision).subscribe((data: any) => {
-      this.lista = data;
+    const page = 1;
+    const size = 4;
+    console.log(this.contratoOficialImagen);
+    this.imagenesAnexas.getDocumentos(page, size).subscribe((data: any) => {
+      this.contratoOficialImagen = data;
     });
   }
 

@@ -9,7 +9,16 @@ export class ImagenesAnexosOficialesService {
 
   constructor(private http: HttpClient) { }
 
-  getDocumentos(area, tipo, categoria, folio, revision): Observable<any>{
+  getDocumentos(page, size): Observable<any>{
+    return this.http.get<any>('https://maikiki.herokuapp.com/contratooficialimagen/documentos', {
+      params: {
+        page: page,
+        size: size
+      }
+    });
+  }
+  
+  getLista(area, tipo, categoria, folio, revision): Observable<any>{
     return this.http.get<any>('http://localhost:8083/contratooficialimagen/documentos', {
       params: {
         area: area,
