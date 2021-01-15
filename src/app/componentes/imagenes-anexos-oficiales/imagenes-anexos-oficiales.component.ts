@@ -12,7 +12,7 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
 
   //documentos: String[];
   contratoAlmacenado = null;
-  lista = null;
+  lista: string;
 
   constructor(private imagenesAnexas: ImagenesAnexosOficialesService) { }
 
@@ -26,7 +26,7 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
     const categoria = this.contratoAlmacenado['categoria'];
     const folio = this.contratoAlmacenado['folio'];
     const revision = this.contratoAlmacenado['revision'];
-
+    this.getDocumentos(area, tipo, categoria, folio, revision);
     console.log(this.contratoAlmacenado);
   }
 
