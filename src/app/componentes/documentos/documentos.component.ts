@@ -69,23 +69,8 @@ export class DocumentosComponent implements OnInit {
   https://www.npmjs.com/package/pdfmake-wrapper
   */
 
-  abrirFichaTecnica() {
-    console.log('Ficha Técnica abierto');
-    this.router.navigate(['/seguimientos']);
-  }
-
-  abrirDocumentosPadron() {
-    console.log('Documentos Padron abierto');
-    this.router.navigate(['/seguimientos']);
-  }
-
   abrirAnexosOficiales() {
     console.log('Anexos Oficiales abierto');
-    this.router.navigate(['/anexos-oficiales']);
-  }
-
-  abrirContratosAnexos() {
-    console.log('Contratos y Anexos abierto');
     this.router.navigate(['/anexos-oficiales']);
   }
 

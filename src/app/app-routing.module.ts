@@ -15,7 +15,10 @@ import { TablasComponent } from './componentes/tablas/tablas.component';
 import { AdquisicionesComponent } from './componentes/adquisiciones/adquisiciones.component';
 import { SeguimientoComponent } from './componentes/seguimiento/seguimiento.component';
 import { ImagenesAnexosOficialesComponent } from './componentes/imagenes-anexos-oficiales/imagenes-anexos-oficiales.component';
-
+import { ImagenesAOBasesDeLicitacionComponent } from './componentes/imagenes-a-o-bases-de-licitacion/imagenes-a-o-bases-de-licitacion.component';
+import { ImagenesAOProcedimientoDeAdjudicacionComponent } from './componentes/imagenes-a-o-procedimiento-de-adjudicacion/imagenes-a-o-procedimiento-de-adjudicacion.component';
+import { ImagenesAOOficioDeOrigenDeLosRecursosComponent } from './componentes/imagenes-a-o-oficio-de-origen-de-los-recursos/imagenes-a-o-oficio-de-origen-de-los-recursos.component';
+import { ImagenesAOActaDeFalloComponent } from './componentes/imagenes-a-o-acta-de-fallo/imagenes-a-o-acta-de-fallo.component';
 
 const routes: Routes = [
   {path: 'index', component: LoginComponent},
@@ -33,6 +36,10 @@ const routes: Routes = [
   {path: 'seguimientos', component: SeguimientoComponent},
   {path: 'tablas', component: TablasComponent},
   {path: 'anexos-oficiales', component: ImagenesAnexosOficialesComponent},
+  {path: 'imagenes-a-o-bases-de-licitacion', component: ImagenesAOBasesDeLicitacionComponent},
+  {path: 'imagenes-a-o-procedimiento-de-adjudicacion', component: ImagenesAOProcedimientoDeAdjudicacionComponent},
+  {path: 'imagenes-a-o-oficio-de-origen-de-los-recursos', component: ImagenesAOOficioDeOrigenDeLosRecursosComponent},
+  {path: 'imagenes-a-o-acta-de-fallo', component: ImagenesAOActaDeFalloComponent},
   {path: '**', pathMatch: 'full', redirectTo: '/index'}
 ];
 
