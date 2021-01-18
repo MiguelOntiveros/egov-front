@@ -7,21 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagenesAOBasesDeLicitacionComponent implements OnInit {
 
-  contratoAlmacenado = null;
+  contratoAlmacenado2 = null;
 
   constructor() { }
 
   ngOnInit(): void {
    // obtiene el storage llamado contrato
    var contratoOriginal = localStorage.getItem('contrato');
-   this.contratoAlmacenado = JSON.parse(contratoOriginal);
+   this.contratoAlmacenado2 = JSON.parse(contratoOriginal);
  
-   const area = this.contratoAlmacenado['area'];
-   const tipo = this.contratoAlmacenado['tipo'];
-   const categoria = this.contratoAlmacenado['categoria'];
-   const folio = this.contratoAlmacenado['folio'];
-   const revision = this.contratoAlmacenado['revision'];
-   console.log(this.contratoAlmacenado);
+   const area = this.contratoAlmacenado2['area'];
+   const tipo = this.contratoAlmacenado2['tipo'];
+   const categoria = this.contratoAlmacenado2['categoria'];
+   const folio = this.contratoAlmacenado2['folio'];
+   const revision = this.contratoAlmacenado2['revision'];
+   console.log(this.contratoAlmacenado2);
   }
 
 }
