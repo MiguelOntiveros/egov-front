@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContratoOficialImagen } from 'src/app/interfaces/ContratoOficialImagen';
 import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/imagenes-anexos-oficiales.service';
+import { InicioService } from '../inicio/inicio.service';
 
 @Component({
   selector: 'app-imagenes-anexos-oficiales',
@@ -12,10 +13,10 @@ import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/ima
 export class ImagenesAnexosOficialesComponent implements OnInit {
 
   contratoAlmacenado = null;
-  contratoOficialImagen: ContratoOficialImagen[];
+  contratoOficialImagen: string[];
   //ConfiguracionWeb = {};
 
-  constructor(private imagenesAnexas: ImagenesAnexosOficialesService, private router: Router) { }
+  constructor(private imagenesAnexas: ImagenesAnexosOficialesService, private router: Router, private inicio: InicioService) { }
 
   ngOnInit(): void {
     // obtiene el storage llamado contrato
@@ -27,10 +28,12 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
     const categoria = this.contratoAlmacenado['categoria'];
     const folio = this.contratoAlmacenado['folio'];
     const revision = this.contratoAlmacenado['revision'];
-    const page = 1;
-    const size = 4;
     console.log(this.contratoOficialImagen);
-    this.imagenesAnexas.getDocumentos(page, size).subscribe((data: any) => {
+   
+  }
+
+  getDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision) {
+    this.inicio.getDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
       this.contratoOficialImagen = data;
     });
   }
