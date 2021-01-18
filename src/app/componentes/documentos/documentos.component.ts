@@ -61,7 +61,6 @@ export class DocumentosComponent implements OnInit {
 
   verSeguimiento() {
     this.router.navigate(['/seguimientos']);
-    console.log('-> VER SEGUIMIENTO');
   }
 
   /*
@@ -70,8 +69,19 @@ export class DocumentosComponent implements OnInit {
   */
 
   abrirAnexosOficiales() {
-    console.log('Anexos Oficiales abierto');
     this.router.navigate(['/anexos-oficiales']);
+  }
+
+  abrirDocumentosPadron() {
+    this.router.navigate(['/documentos-padron']);
+  }
+
+  abrirFichaTecnica() {
+    this.router.navigate(['/ficha-tecnica']);
+  }
+
+  abrirImagenesContratosAnexos() {
+    this.router.navigate(['/ficha-tecnica']);
   }
 
   irInicio() {

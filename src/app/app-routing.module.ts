@@ -19,6 +19,9 @@ import { ImagenesAOBasesDeLicitacionComponent } from './componentes/imagenes-a-o
 import { ImagenesAOProcedimientoDeAdjudicacionComponent } from './componentes/imagenes-a-o-procedimiento-de-adjudicacion/imagenes-a-o-procedimiento-de-adjudicacion.component';
 import { ImagenesAOOficioDeOrigenDeLosRecursosComponent } from './componentes/imagenes-a-o-oficio-de-origen-de-los-recursos/imagenes-a-o-oficio-de-origen-de-los-recursos.component';
 import { ImagenesAOActaDeFalloComponent } from './componentes/imagenes-a-o-acta-de-fallo/imagenes-a-o-acta-de-fallo.component';
+import { DocumentosPadronComponent } from './componentes/documentos-padron/documentos-padron.component';
+import { FichaTecnicaComponent } from './componentes/ficha-tecnica/ficha-tecnica.component';
+import { ImagenesContratosYAnexosComponent } from './componentes/imagenes-contratos-y-anexos/imagenes-contratos-y-anexos.component';
 
 const routes: Routes = [
   {path: 'index', component: LoginComponent},
@@ -40,6 +43,9 @@ const routes: Routes = [
   {path: 'imagenes-a-o-procedimiento-de-adjudicacion', component: ImagenesAOProcedimientoDeAdjudicacionComponent},
   {path: 'imagenes-a-o-oficio-de-origen-de-los-recursos', component: ImagenesAOOficioDeOrigenDeLosRecursosComponent},
   {path: 'imagenes-a-o-acta-de-fallo', component: ImagenesAOActaDeFalloComponent},
+  {path: 'documentos-padron', component: DocumentosPadronComponent},
+  {path: 'ficha-tecnica', component: FichaTecnicaComponent},
+  {path: 'imagenes-contratos-y-anexos', component: ImagenesContratosYAnexosComponent},
   {path: '**', pathMatch: 'full', redirectTo: '/index'}
 ];
 
