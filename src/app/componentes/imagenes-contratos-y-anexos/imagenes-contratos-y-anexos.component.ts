@@ -15,9 +15,18 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
   constructor(private inicio: InicioService) { }
 
   ngOnInit(): void {
-    var datos = localStorage.getItem('contrato');
-    this.contrato = JSON.parse(datos);
-    
+    var info = localStorage.getItem('contrato');
+    this.contrato = JSON.parse(info);
+    console.log(this.contratoAnexoImagen);
+    console.log(this.contrato);
+
+    const area = this.contrato['area'];
+    const tipo = this.contrato['tipo'];
+    const categoria = this.contrato['categoria'];
+    const folio = this.contrato['folio'];
+    const revision = this.contrato['revision'];
+
+    this.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision);
   }
 
   getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {

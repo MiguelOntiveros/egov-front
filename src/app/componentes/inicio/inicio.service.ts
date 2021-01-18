@@ -27,15 +27,7 @@ export class InicioService {
     return this.http.get('https://maikiki.herokuapp.com/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
 
-  getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
-    return this.http.get<any>('http://localhost:8083/contratoanexoimagen/documentos', {
-      params: {
-        area: area,
-        tipo: tipo,
-        categoria: categoria,
-        folio: folio,
-        revision: revision
-      }
-    });
+  getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision): Observable<any> {
+    return this.http.get<any>('http://localhost:8083/contratoanexoimagen/documentos?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
 }
