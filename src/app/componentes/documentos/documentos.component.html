@@ -189,17 +189,17 @@
         <div class="row">
 
             <div class="col-6">
-                <button class="boton-pdf">
+                <button class="boton-pdf" (click)="abrirFichaTecnica()">
                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                     <label>FICHA TÉCNICA</label>
                 </button>
             </div>
 
             <div class="col-6">
-                <a href="https://maikiki.herokuapp.com/contratodocumentoimagen/imagen?area={{contrato.area}}&tipo={{contrato.tipo}}&categoria={{contrato.categoria}}&folio={{contrato.folio}}&revision={{contrato.revision}}"><button class="boton-pdf">
+                <button class="boton-pdf" (click)="abrirDocumentosPadron()">
                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                     <label>DOCUMENTOS PADRÓN</label>
-                </button></a>
+                </button>
             </div>
 
         </div>
@@ -214,7 +214,7 @@
             </div>
 
             <div class="col-6">
-               <button class="boton-pdf">
+               <button class="boton-pdf" (click)="abrirImagenesContratosAnexos()">
                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                     <label>CONTRATOS Y ANEXOS</label>
                 </button>
