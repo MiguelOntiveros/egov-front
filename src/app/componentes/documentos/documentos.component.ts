@@ -35,7 +35,7 @@ export class DocumentosComponent implements OnInit {
     const revision = this.contrato['revision'];
 
     if (this.contrato !== "undefined" || this.contrato !== null) {
-      this.getDocumentos(area, tipo, categoria, folio, revision);
+      this.getSociosYRep(area, tipo, categoria, folio, revision);
       console.log('Area:', area);
       console.log('Tipo:', tipo);
       console.log('Categoria:', categoria);
@@ -53,12 +53,12 @@ export class DocumentosComponent implements OnInit {
     });
   }
 
-  getDocumentos(area, tipo, categoria, folio, revision) {
-    this.inicio.getDocumentos(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+  getSociosYRep(area, tipo, categoria, folio, revision) {
+    this.inicio.getSociosYRep(area, tipo, categoria, folio, revision).subscribe((data: any) => {
       this.contratoReferencia = data;
     });
   }
-
+  
   verSeguimiento() {
     this.router.navigate(['/seguimientos']);
   }
@@ -81,7 +81,7 @@ export class DocumentosComponent implements OnInit {
   }
 
   abrirImagenesContratosAnexos() {
-    this.router.navigate(['/ficha-tecnica']);
+    this.router.navigate(['/imagenes-contratos-y-anexos']);
   }
 
   irInicio() {
