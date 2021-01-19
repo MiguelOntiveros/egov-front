@@ -7,6 +7,6 @@
     </div>
 </div>
 
-<div class="capa-lista flex-container3" *ngFor="let variable of contratoAnexoImagen">
-    <a class="ruta-tipo-busqueda">{{variable}}</a>
+<div class="capa-lista flex-container3" *ngFor="let documento of contratoAnexoImagen | documentosContratoAnexoPipe">
+    <a class="ruta-tipo-busqueda" [routerLink]="[documento]">{{documento}}</a>
 </div>
