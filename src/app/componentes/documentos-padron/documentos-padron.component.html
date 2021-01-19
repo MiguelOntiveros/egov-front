@@ -8,5 +8,5 @@
 </div>
 
 <div class="capa-lista flex-container3" *ngFor="let documento of contratoDocumentoImagen | documentosPadronPipe">
-    <a class="ruta-tipo-busqueda" [routerLink]="[documento]">{{documento}}</a>
+    <a class="ruta-tipo-busqueda" [routerLink]="[documento.enlace]">{{documento.nombre}}</a>
 </div>

@@ -6,53 +6,52 @@ import { Pipe, PipeTransform } from '@angular/core';
   })
 
   export class DocumentosPadronPipe implements PipeTransform {
-    transform(documentosPadron: any[]): any {
+    nuevoDocumentosCA = []
   
-      if (!documentosPadron) return [];
+      transform(documentosCA: any[]): any {
+        if (!documentosCA) return [];
+        this.nuevoDocumentosCA = []
   
-      documentosPadron.forEach((documento) => {
-        switch (documento) {
-          case 'QR':
-            documento = '/adquisiciones';
-            break;
-          case 'Escrito de conformidad la dependencia solicitante':
-            documento = '/patrimonios';
-            break;
-          case 'Acta de entrega':
-            documento = '/obras';
-            break;
-          case 'Evidencia fotografica':
-            documento = '/lista-documentos';
-            break;
-          case 'Factura para pago y xml':
-            documento = '/adquisiciones';
-            break;
-          case 'Verificacion de comprobantes fiscales digitales al SAT':
-            documento = '/patrimonios';
-            break;
-          case 'Contrarecibo':
-            documento = '/obras';
-            break;
-          case 'Cuentas contables afectadas':
-            documento = '/lista-documentos';
-            break;
-          case 'Autorizacion de transferencia electronica o emision de cheque':
-            documento = '/obras';
-            break;
-          case 'Comprobante de transferencia o copia del cheque':
-            documento = '/lista-documentos';
-            break;
-          case 'Poliza de diario':
-            documento = '/adquisiciones';
-            break;
-          case 'NULL':
-            documento = '/lista-documentos';
-            break;
-          default:
-            break;
-        }
-      });
+        documentosCA.forEach((documento) => {
+          let objetoCA: any = {};
   
-      return documentosPadron;
+          objetoCA.nombre = documento;
+  
+          switch (documento) {
+            case 'ACTA CONSTITUTIVA':
+              objetoCA.enlace = '/adquisiciones';
+              break;
+            case 'ALTA DE HACIENDA':
+              objetoCA.enlace  = '/patrimonios';
+              break;
+            case 'COMPROBANTE DE DOMICILIO':
+              objetoCA.enlace = '/obras';
+              break;
+            case 'UBICACIÓN FOTOGRÁFICA DEL DOMICILIO':
+              objetoCA.enlace = '/lista-documentos';
+              break;
+            case 'IDENTIFICACIÓN OFICIAL':
+              objetoCA.enlace = '/adquisiciones';
+              break;
+            case 'PODER LEGAL':
+              objetoCA.enlace = '/patrimonios';
+              break;
+            case 'ALTA DE HACIENDA':
+              objetoCA.enlace = '/obras';
+              break;
+            case 'LOGO DE LA PERSONA MORAL':
+              objetoCA.enlace = '/lista-documentos';
+              break;
+            case 'NULL':
+                objetoCA.enlace = '/lista-documentos';
+                break;
+            default:
+              break;
+          }
+  
+          this.nuevoDocumentosCA.push(objetoCA);
+        });
+  
+        return this.nuevoDocumentosCA;
+      }
     }
-  }
