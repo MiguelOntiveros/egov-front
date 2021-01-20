@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InicioService } from '../inicio/inicio.service';
 import { ContratoAnexoImagen } from '../../interfaces/ContratoAnexoImagen';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-imagenes-contratos-y-anexos',
@@ -12,7 +13,7 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
   contrato = null;
   contratoAnexoImagen: string[];
 
-  constructor(private inicio: InicioService) { }
+  constructor(private inicio: InicioService, private router: Router) { }
 
   ngOnInit(): void {
     var info = localStorage.getItem('contrato');
@@ -27,6 +28,14 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
     const revision = this.contrato['revision'];
 
     this.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision);
+  }
+
+  verQr() {
+    this.router.navigate(['/imagenes-c-a-qr']);
+  }
+
+  verSeguimiento1() {
+    this.router.navigate(['/imagenes-c-a-seguimiento1']);
   }
 
   getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
