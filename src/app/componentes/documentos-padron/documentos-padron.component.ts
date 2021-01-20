@@ -29,12 +29,28 @@ export class DocumentosPadronComponent implements OnInit {
     this.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision);
   }
 
-  verQr() {
-    this.router.navigate(['/imagenes-c-a-qr']);
+  verActaConstitutiva() {
+    this.router.navigate(['/imagenes-d-p-acta-constitutiva']);
   }
 
-  verSeguimiento1() {
-    this.router.navigate(['/imagenes-c-a-seguimiento1']);
+  verAltaHacienda() {
+    this.router.navigate(['/imagenes-d-p-alta-hacienda']);
+  }
+
+  verComprobanteDomicilio() {
+    this.router.navigate(['/imagenes-d-p-comprobante-domicilio']);
+  }
+
+  verUbicacion() {
+    this.router.navigate(['/imagenes-d-p-ubicacion-domicilio']);
+  }
+
+  verIdentificacion() {
+    this.router.navigate(['/imagenes-d-p-identificacion-oficial']);
+  }
+
+  verPoderLegal() {
+    this.router.navigate(['/imagenes-d-p-poder-legal']);
   }
 
   getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
