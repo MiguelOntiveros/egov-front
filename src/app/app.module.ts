@@ -78,6 +78,12 @@ import { ImagenesContratosYAnexosComponent } from './componentes/imagenes-contra
 import { FichaTecnicaComponent } from './componentes/ficha-tecnica/ficha-tecnica.component';
 import { ImagenesCAQrComponent } from './componentes/imagenes-c-a-qr/imagenes-c-a-qr.component';
 import { ImagenesCASeguimiento1Component } from './componentes/imagenes-c-a-seguimiento1/imagenes-c-a-seguimiento1.component';
+import { ImagenesDPActaConstitutivaComponent } from './componentes/imagenes-d-p-acta-constitutiva/imagenes-d-p-acta-constitutiva.component';
+import { ImagenesDPAltaHaciendaComponent } from './componentes/imagenes-d-p-alta-hacienda/imagenes-d-p-alta-hacienda.component';
+import { ImagenesDPComprobanteDomicilioComponent } from './componentes/imagenes-d-p-comprobante-domicilio/imagenes-d-p-comprobante-domicilio.component';
+import { ImagenesDPUbicacionDomicilioComponent } from './componentes/imagenes-d-p-ubicacion-domicilio/imagenes-d-p-ubicacion-domicilio.component';
+import { ImagenesDPIdentificacionOficialComponent } from './componentes/imagenes-d-p-identificacion-oficial/imagenes-d-p-identificacion-oficial.component';
+import { ImagenesDPPoderLegalComponent } from './componentes/imagenes-d-p-poder-legal/imagenes-d-p-poder-legal.component';
 
 
 
@@ -148,7 +154,13 @@ import { ImagenesCASeguimiento1Component } from './componentes/imagenes-c-a-segu
     ImagenesContratosYAnexosComponent,
     FichaTecnicaComponent,
     ImagenesCAQrComponent,
-    ImagenesCASeguimiento1Component
+    ImagenesCASeguimiento1Component,
+    ImagenesDPActaConstitutivaComponent,
+    ImagenesDPAltaHaciendaComponent,
+    ImagenesDPComprobanteDomicilioComponent,
+    ImagenesDPUbicacionDomicilioComponent,
+    ImagenesDPIdentificacionOficialComponent,
+    ImagenesDPPoderLegalComponent
   ],
   imports: [
     BrowserModule,
