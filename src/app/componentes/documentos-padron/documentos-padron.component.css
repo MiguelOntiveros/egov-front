@@ -73,3 +73,22 @@
     color: black;
     background-color: white;
 }
+
+
+.flex-container-oficio {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    margin: 3vh 8vw 0 0;
+    z-index: 1;
+}
+
+.flex-container-adjudicacion {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    margin: 2vh 8vw 0 0;
+    z-index: 1;
+}
