@@ -74,6 +74,9 @@
     background-color: white;
 }
 
+.texto{
+    background-color: white;
+}
 
 .flex-container-oficio {
     display: flex;
@@ -92,3 +95,5 @@
     margin: 2vh 8vw 0 0;
     z-index: 1;
 }
+
+

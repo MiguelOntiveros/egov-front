@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InicioService } from '../inicio/inicio.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class DocumentosPadronComponent implements OnInit {
   contrato = null;
   contratoDocumentoImagen: string[];
 
-  constructor(private inicio: InicioService) { }
+  constructor(private inicio: InicioService, private router: Router) { }
 
   ngOnInit(): void {
     var info = localStorage.getItem('contrato');
@@ -26,6 +27,14 @@ export class DocumentosPadronComponent implements OnInit {
     const revision = this.contrato['revision'];
 
     this.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision);
+  }
+
+  verQr() {
+    this.router.navigate(['/imagenes-c-a-qr']);
+  }
+
+  verSeguimiento1() {
+    this.router.navigate(['/imagenes-c-a-seguimiento1']);
   }
 
   getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {

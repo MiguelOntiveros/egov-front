@@ -76,6 +76,8 @@ import { ImagenesAOActaDeFalloComponent } from './componentes/imagenes-a-o-acta-
 import { DocumentosPadronComponent } from './componentes/documentos-padron/documentos-padron.component';
 import { ImagenesContratosYAnexosComponent } from './componentes/imagenes-contratos-y-anexos/imagenes-contratos-y-anexos.component';
 import { FichaTecnicaComponent } from './componentes/ficha-tecnica/ficha-tecnica.component';
+import { ImagenesCAQrComponent } from './componentes/imagenes-c-a-qr/imagenes-c-a-qr.component';
+import { ImagenesCASeguimiento1Component } from './componentes/imagenes-c-a-seguimiento1/imagenes-c-a-seguimiento1.component';
 
 
 
@@ -144,7 +146,9 @@ import { FichaTecnicaComponent } from './componentes/ficha-tecnica/ficha-tecnica
     ImagenesAOActaDeFalloComponent,
     DocumentosPadronComponent,
     ImagenesContratosYAnexosComponent,
-    FichaTecnicaComponent
+    FichaTecnicaComponent,
+    ImagenesCAQrComponent,
+    ImagenesCASeguimiento1Component
   ],
   imports: [
     BrowserModule,
