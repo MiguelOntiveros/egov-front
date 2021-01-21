@@ -25,8 +25,6 @@ export class DocumentosPadronComponent implements OnInit {
     const categoria = this.contrato['categoria'];
     const folio = this.contrato['folio'];
     const revision = this.contrato['revision'];
-
-    this.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision);
   }
 
   verActaConstitutiva() {
