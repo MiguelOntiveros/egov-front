@@ -1,3 +1,44 @@
+.flex-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+}
+
+.boton-regresar {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+}
+
+.titulo-header {
+    color: white;
+    font-family: 'Arial';
+    float: right;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font-size: 3vw;
+}
+
+.empresa {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.buscador:focus {
+    background: #ccc;
+}
+
+.mensaje-regresar {
+    cursor: pointer;
+}
+
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;

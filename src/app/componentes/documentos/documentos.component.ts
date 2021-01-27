@@ -27,7 +27,6 @@ export class DocumentosComponent implements OnInit {
       this.getConfiguracion(clave);
       console.log(clave);
     });
-
     const area = this.contrato['area'];
     const tipo = this.contrato['tipo'];
     const categoria = this.contrato['categoria'];
@@ -44,7 +43,6 @@ export class DocumentosComponent implements OnInit {
     } else {
       console.error('No hay datos', []);
     }
-
   }
 
   getConfiguracion(clave) {

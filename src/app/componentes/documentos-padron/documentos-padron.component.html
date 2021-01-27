@@ -1,11 +1,22 @@
-<div class="contenedor-header">
+<div class="bg-vh-verde contenedor-header">
+    <div class="flex-container2">
+        <button class="boton-regresar" routerLink="/inicio">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <label class="mensaje-regresar">Regresar a Inicio</label>
+        </button>
+        <div class="empresa">{{contrato.con_nombre}}</div>
+        <h3 class="titulo-header">{{contrato.contrato}}</h3>
+    </div>
+</div>
+
+<!--<div class="contenedor-header">
     <div class="flex-container2">
         <button class="boton-regresar" routerLink="/inicio">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
             <label class="mensaje-regresar">Regresar a Inicio</label>
         </button>
     </div>
-</div>
+</div>-->
 
 <!--
 <div class="capa-lista flex-container3" *ngFor="let documento of contratoDocumentoImagen | documentosPadronPipe">
