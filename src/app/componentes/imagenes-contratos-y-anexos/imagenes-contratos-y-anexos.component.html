@@ -11,5 +11,5 @@
     <a class="ruta-tipo-busqueda" [routerLink]="[documento.enlace]">{{documento.nombre}}</a>
 </div> -->
 
-<div class="flex-container-adjudicacion" (click)="verQr()"><p class="texto">QR</p></div>
-<div class="flex-container-oficio" (click)="verSeguimiento1()"><p class="texto">SEGUIMIENTO1</p></div>
+<a href="http://localhost:8083//contratoanexoimagen/imagen?area={{contrato.area}}&tipo={{contrato.tipo}}&categoria={{contrato.categoria}}&folio={{contrato.folio}}&revision={{contrato.revision}}&documento=QR"><div class="flex-container-adjudicacion"><p class="texto">QR</p></div></a>
+<a href="http://localhost:8083//contratoanexoimagen/imagen?area={{contrato.area}}&tipo={{contrato.tipo}}&categoria={{contrato.categoria}}&folio={{contrato.folio}}&revision={{contrato.revision}}&documento=SEGUIMIENTO%201"><div class="flex-container-oficio"><p class="texto">SEGUIMIENTO1</p></div></a>
