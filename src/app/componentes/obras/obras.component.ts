@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contrato } from '../../interfaces/Contrato';
 import { ObrasService } from './obras.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-obras',
@@ -10,18 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ObrasComponent implements OnInit {
 
-  contrato: Contrato[];
+  contratos: Contrato[];
   search;
 
   imagenTipoContrato = 'assets/imagenes/main/obras_icono.png'
 
-  constructor(private obrasService: ObrasService, private router: Router) { }
+  constructor(private obrasService: ObrasService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.obrasService.getObrasPublicas().subscribe((data: any) => {
-      this.contrato = data;
+    var datos = localStorage.getItem('contratos');
+    this.contratos = JSON.parse(datos);
+    const numero = this.contratos['numero'];
+  }
+
+  getContratos(numero){
+    this.obrasService.getContratos(numero).subscribe((data: any) => {
+      this.contratos = data;
       console.log(data);
-    });
+    })
   }
 
   llamarContrato(id) {

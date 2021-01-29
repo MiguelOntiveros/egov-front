@@ -18,10 +18,6 @@ export class AdquisicionesComponent implements OnInit {
   constructor(private adquisicionesService: AdquisicionesService, private router: Router) { }
 
   ngOnInit(): void {
-    this.adquisicionesService.getAdquisiciones().subscribe((data: any) => {
-      this.contrato = data;
-      console.log(data);
-    })
   }
 
   llamarContrato(id) {

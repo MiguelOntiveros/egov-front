@@ -76,6 +76,12 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  getContratos(numero) {
+    this.inicioService.getContratos(numero).subscribe((data: any) => {
+      localStorage.setItem('contratos', JSON.stringify(data));
+    })
+  }
+
   abrirMenu(){
     console.log('Menu abierto');
     this.mostrarMenu = true;
