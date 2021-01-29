@@ -73,6 +73,7 @@ export class InicioComponent implements OnInit {
     this.inicioService.getContratistas().subscribe((data: any) => {
       this.contratista = data;
     })
+    console.log(this.contratista);
   }
 
   abrirMenu(){
