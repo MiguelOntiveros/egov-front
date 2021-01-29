@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class InicioService {
 
-  private url = 'https://maikiki.herokuapp.com/contratocategoria/categorias';
+  private url = 'http://localhost:8083/contratista/contratistas';
 
   constructor(private http: HttpClient) { }
 
-  getCategorias(): Observable<any>{
+  getContratistas(): Observable<any>{
     return this.http.get<any>(this.url);
   }
 

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contratista } from '../../interfaces/Contratista';
-// import { ContratistaServiceService } from '../../services/contratista-service.service';
 import { InicioService } from './inicio.service';
-import { ContratoCategoria } from '../../interfaces/ContratoCategoria';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class InicioComponent implements OnInit {
 
-  configuracion: ContratoCategoria[];
+  contratista: Contratista[];
   search;
 
   tituloCliente: string = 'valle hermoso';
@@ -72,8 +70,8 @@ export class InicioComponent implements OnInit {
   constructor(private inicioService: InicioService, private router: Router) { }
 
   ngOnInit(): void {
-    this.inicioService.getCategorias().subscribe((data: any) => {
-      this.configuracion = data;
+    this.inicioService.getContratistas().subscribe((data: any) => {
+      this.contratista = data;
     })
   }
 
