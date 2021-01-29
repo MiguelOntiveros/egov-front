@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdquisicionesComponent implements OnInit {
 
-  contrato: Contrato[];
+  contratos: Contrato[];
   search;
 
   imagenTipoContrato = 'assets/imagenes/main/adquisiciones_icono.png';
@@ -18,6 +18,16 @@ export class AdquisicionesComponent implements OnInit {
   constructor(private adquisicionesService: AdquisicionesService, private router: Router) { }
 
   ngOnInit(): void {
+    var datos = localStorage.getItem('contratos');
+    this.contratos = JSON.parse(datos);
+    const numero = this.contratos['numero'];
+  }
+
+  getContratos(numero){
+    this.adquisicionesService.getContratos(numero).subscribe((data: any) => {
+      this.contratos = data;
+      console.log(data);
+    })
   }
 
   llamarContrato(id) {
