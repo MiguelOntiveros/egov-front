@@ -15,6 +15,14 @@ export class InicioService {
     return this.http.get<any>(this.url);
   }
 
+  getContratos(numero) {
+    return this.http.get<any>('http://localhost:8083/contrato/contratos', {
+      params: {
+        numero: numero
+      }
+    });
+  }
+
   getConfiguracion(clave) {
     return this.http.get<any>('https://maikiki.herokuapp.com/configuracionweb/categoria', {
       params: {
