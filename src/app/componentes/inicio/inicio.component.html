@@ -42,7 +42,7 @@
     </div> -->
 
     
-<div class="flex-container3">
+<div [ngClass]="{'flex-container3': inputActive, 'ocultar': !inputActive}" >
     <div class="capa-lista flex-container3" *ngFor="let tipo of contratista | busquedaPipe | filter:search">
         <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link]">{{tipo.nombre}}</a>
     </div>

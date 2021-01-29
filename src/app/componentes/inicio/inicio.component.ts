@@ -12,6 +12,7 @@ export class InicioComponent implements OnInit {
 
   contratista: Contratista[];
   search;
+  inputActive = false;
 
   tituloCliente: string = 'valle hermoso';
   mostrarMenu = false;
@@ -73,7 +74,6 @@ export class InicioComponent implements OnInit {
     this.inicioService.getContratistas().subscribe((data: any) => {
       this.contratista = data;
     })
-    console.log(this.contratista);
   }
 
   abrirMenu(){
