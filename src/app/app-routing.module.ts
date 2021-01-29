@@ -42,7 +42,7 @@ const routes: Routes = [
   {path: 'obras/:numero', component: ObrasComponent},
   {path: 'patrimonios/:numero', component: PatrimoniosComponent},
   {path: 'adquisiciones/:numero', component: AdquisicionesComponent},
-  {path: 'documentos/:categoria', component: DocumentosComponent},
+  {path: 'documentos', component: DocumentosComponent},
   {path: 'lista-documentos', component: ListaDocumentosComponent},
   {path: 'seguimientos', component: SeguimientoComponent},
   {path: 'tablas', component: TablasComponent},

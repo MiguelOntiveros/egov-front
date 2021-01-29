@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Contrato } from '../../interfaces/Contrato';
 import { InicioService } from '../inicio/inicio.service';
 import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
 import { ContratoReferencia } from '../../interfaces/ContratoReferencias';
@@ -11,38 +12,39 @@ import { ContratoReferencia } from '../../interfaces/ContratoReferencias';
 })
 export class DocumentosComponent implements OnInit {
 
-  contrato = null;
+  contrato: Contrato = {};
   configuracion: ConfiguracionWeb = {};
   contratoReferencia: ContratoReferencia[];
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+   
     // obtiene el storage llamado contrato
-    var datos = localStorage.getItem('contrato');
+    var datos = localStorage.getItem('contrato1');
     this.contrato = JSON.parse(datos);
-    this.activateRoute.params.subscribe((params) => {
+    const clave = this.contrato['categoria'];
+    this.getConfiguracion(clave);
+    console.log(clave);
+    /*this.activateRoute.params.subscribe((params) => {
       // obtiene el parametro llamado categoría
       var clave = params['categoria'];
       this.getConfiguracion(clave);
       console.log(clave);
-    });
+    });*/
     const area = this.contrato['area'];
     const tipo = this.contrato['tipo'];
     const categoria = this.contrato['categoria'];
     const folio = this.contrato['folio'];
     const revision = this.contrato['revision'];
 
-    if (this.contrato !== "undefined" || this.contrato !== null) {
       this.getSociosYRep(area, tipo, categoria, folio, revision);
       console.log('Area:', area);
       console.log('Tipo:', tipo);
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
-    } else {
-      console.error('No hay datos', []);
-    }
+    
   }
 
   getConfiguracion(clave) {
