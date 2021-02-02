@@ -12,13 +12,13 @@ export class BusquedaRoutePipe implements PipeTransform {
     tipoBusqueda.forEach((tipo) => {
       switch (tipo.registro) {
         case 0:
-          tipo.link = '/obras/:numero';
+          tipo.link = '/obras';
           break;
         case 1:
-          tipo.link = '/adquisiciones/:numero';
+          tipo.link = '/adquisiciones';
           break;
         case 2:
-          tipo.link = '/patrimonios/:numero';
+          tipo.link = '/patrimonios';
           break;
         case 'NULL':
           tipo.link = '/lista-documentos';

@@ -23,11 +23,11 @@ export class ObrasComponent implements OnInit {
     var datos = localStorage.getItem('contratista');
     this.contratista = JSON.parse(datos);
     var numero = this.contratista['numero'];
-    console.log(numero);
+    //console.log(numero);
     this.activateRoute.params.subscribe((params) => {
       // obtiene el parametro llamado numero
       var numero = params['numero'];
-      //console.log(numero);
+      console.log(numero);
     });
   }
 
