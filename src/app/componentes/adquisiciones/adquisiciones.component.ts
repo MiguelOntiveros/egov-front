@@ -19,9 +19,9 @@ export class AdquisicionesComponent implements OnInit {
   constructor(private adquisicionesService: AdquisicionesService, private router: Router) { }
 
   ngOnInit(): void {
-    var datos = localStorage.getItem('contratos');
-    this.contratos = JSON.parse(datos);
-    const numero = this.contratos['conNumero'];
+    //var datos = localStorage.getItem('contratos');
+    //this.contratos = JSON.parse(datos);
+    //const numero = this.contratos['conNumero'];
   }
 
   getContratos(numero){

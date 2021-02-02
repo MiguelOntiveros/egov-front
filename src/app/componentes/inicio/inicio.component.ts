@@ -67,7 +67,6 @@ export class InicioComponent implements OnInit {
   logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
   logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
 
-
   constructor(private inicioService: InicioService, private router: Router) { }
 
   ngOnInit(): void {
@@ -76,10 +75,12 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  getContratos(numero) {
-    this.inicioService.getContratos(numero).subscribe((data: any) => {
-      localStorage.setItem('contratos', JSON.stringify(data));
-    })
+  enviarnumero(id) {
+    this.inicioService.getContratista(id).subscribe((data: any) => {
+      this.contratista = data;
+      // primero se setea el contratista que se seleccionó
+      localStorage.setItem('contratista', JSON.stringify(data));
+    });
   }
 
   abrirMenu(){

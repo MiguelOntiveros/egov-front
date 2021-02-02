@@ -43,9 +43,12 @@
 
     
 <div class="flex-container3">
-    <div  [ngClass]="{'flex-container3 capa-lista': inputActive, 'ocultar': !inputActive}" class="capa-lista flex-container3" *ngFor="let tipo of contratista | busquedaPipe | filter:search">
-        <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link]" (click)="getContratos(tipo.numero)">{{tipo.nombre}}</a>
+    <div [ngClass]="{'flex-container3 capa-lista': inputActive, 'ocultar': !inputActive}"
+        class="capa-lista flex-container3" *ngFor="let tipo of contratista | busquedaPipe | filter:search">
+        <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link]" (click)="enviarnumero(tipo.id)">{{tipo.id}}
+            {{tipo.nombre}} {{tipo.numero}}</a>
     </div>
     <img [src]="logo1Pc" class="logo-1-pc">
     <img [src]="logo2Pc" class="logo-2-pc">
 </div>
+<div [ngClass]="{'menu-footer-activo': inputActive, 'menu-footer': !inputActive}"></div>

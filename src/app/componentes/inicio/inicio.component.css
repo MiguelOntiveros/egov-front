@@ -44,6 +44,22 @@
     z-index: 0;
 }
 
+.menu-footer {
+    width: 100%;
+    margin: 80vh 0 0 0;
+    position: relative;
+    z-index: 0;
+    background-color: red;
+}
+
+.menu-footer-activo {
+    width: 100%;
+    margin: 3vh 0 0 0;
+    position: relative;
+    z-index: 0;
+    background-color: red;
+}
+
 .ruta-tipo-busqueda {
     text-decoration: none;
     color: black;
@@ -87,6 +103,10 @@
     .logo-2-pc {
         margin: 30vh 0 0 0;
     }
+
+    .menu-footer {
+        margin: 33vh 0 0 0;
+    }
 }
 
 /* Desktops and laptops ESTE TAMBIEN----------- */
@@ -98,6 +118,10 @@
 
     .logo-2-pc {
         margin: 40vh 0 0 0;
+    }
+
+    .menu-footer {
+        margin: 143vh 0 0 0;
     }
 }
 
