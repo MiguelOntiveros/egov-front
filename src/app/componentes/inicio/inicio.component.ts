@@ -75,6 +75,18 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  enrutarObrasPublicasGenerales(){
+    this.router.navigate(['obras-generales']);
+  }
+
+  enrutarAdquisicionesGenerales(){
+    this.router.navigate(['adquisiciones-generales']);
+  }
+
+  enrutarPatrimoniosGenerales(){
+    this.router.navigate(['patrimonios-generales']);
+  }
+
   enviarnumero(id) {
     this.inicioService.getContratista(id).subscribe((data: any) => {
       this.contratista = data;

@@ -84,6 +84,9 @@ import { ImagenesDPComprobanteDomicilioComponent } from './componentes/imagenes-
 import { ImagenesDPUbicacionDomicilioComponent } from './componentes/imagenes-d-p-ubicacion-domicilio/imagenes-d-p-ubicacion-domicilio.component';
 import { ImagenesDPIdentificacionOficialComponent } from './componentes/imagenes-d-p-identificacion-oficial/imagenes-d-p-identificacion-oficial.component';
 import { ImagenesDPPoderLegalComponent } from './componentes/imagenes-d-p-poder-legal/imagenes-d-p-poder-legal.component';
+import { ObrasGeneralesComponent } from './componentes/obras-generales/obras-generales.component';
+import { PatrimoniosGeneralesComponent } from './componentes/patrimonios-generales/patrimonios-generales.component';
+import { AdquisionesGeneralesComponent } from './componentes/adquisiones-generales/adquisiones-generales.component';
 
 
 
@@ -160,7 +163,10 @@ import { ImagenesDPPoderLegalComponent } from './componentes/imagenes-d-p-poder-
     ImagenesDPComprobanteDomicilioComponent,
     ImagenesDPUbicacionDomicilioComponent,
     ImagenesDPIdentificacionOficialComponent,
-    ImagenesDPPoderLegalComponent
+    ImagenesDPPoderLegalComponent,
+    ObrasGeneralesComponent,
+    PatrimoniosGeneralesComponent,
+    AdquisionesGeneralesComponent
   ],
   imports: [
     BrowserModule,

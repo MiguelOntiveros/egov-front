@@ -30,6 +30,9 @@ import { ImagenesDPComprobanteDomicilioComponent } from './componentes/imagenes-
 import { ImagenesDPUbicacionDomicilioComponent } from './componentes/imagenes-d-p-ubicacion-domicilio/imagenes-d-p-ubicacion-domicilio.component';
 import { ImagenesDPIdentificacionOficialComponent } from './componentes/imagenes-d-p-identificacion-oficial/imagenes-d-p-identificacion-oficial.component';
 import { ImagenesDPPoderLegalComponent } from './componentes/imagenes-d-p-poder-legal/imagenes-d-p-poder-legal.component';
+import { ObrasGeneralesComponent } from './componentes/obras-generales/obras-generales.component';
+import { PatrimoniosGeneralesComponent } from './componentes/patrimonios-generales/patrimonios-generales.component';
+import { AdquisionesGeneralesComponent } from './componentes/adquisiones-generales/adquisiones-generales.component';
 
 const routes: Routes = [
   {path: 'index', component: LoginComponent},
@@ -40,8 +43,11 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'filtros', component: FiltrosComponent},
   {path: 'obras/:numero', component: ObrasComponent},
+  {path: 'obras-generales', component: ObrasGeneralesComponent},
   {path: 'patrimonios/:numero', component: PatrimoniosComponent},
+  {path: 'patrimonios-generales', component: PatrimoniosGeneralesComponent},
   {path: 'adquisiciones/:numero', component: AdquisicionesComponent},
+  {path: 'adquisiciones-generales', component: AdquisionesGeneralesComponent},
   {path: 'documentos', component: DocumentosComponent},
   {path: 'lista-documentos', component: ListaDocumentosComponent},
   {path: 'seguimientos', component: SeguimientoComponent},
