@@ -4,6 +4,7 @@ import { Contrato } from '../../interfaces/Contrato';
 import { InicioService } from '../inicio/inicio.service';
 import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
 import { ContratoReferencia } from '../../interfaces/ContratoReferencias';
+import { AdquisicionesService } from '../adquisiciones/adquisiciones.service';
 
 @Component({
   selector: 'app-documentos',
@@ -16,17 +17,19 @@ export class DocumentosComponent implements OnInit {
   configuracion: ConfiguracionWeb = {};
   contratoReferencia: ContratoReferencia = {};
 
-  constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
+  constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute, private adquisicionesService: AdquisicionesService) { }
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((params) => {
       // se obtienen los parametros
+      var id = params['id'];
       var clave = params['categoria'];
       var area = params['area'];
       var tipo = params['tipo'];
       var categoria = params['categoria'];
       var folio = params['folio'];
       var revision = params['revision'];
+      console.log('Id:', id);
       console.log('Clave:', clave);
       console.log('Area:', area);
       console.log('Tipo:', tipo);
@@ -35,6 +38,7 @@ export class DocumentosComponent implements OnInit {
       console.log('Revision:', revision);
       this.getConfiguracion(clave);
       this.getSociosYRep(area, tipo, categoria, folio, revision);
+      this.llamarContrato(id);
     });
   }
 
@@ -48,6 +52,12 @@ export class DocumentosComponent implements OnInit {
     this.inicio.getSociosYRep(area, tipo, categoria, folio, revision).subscribe((data: any) => {
       this.contratoReferencia = data;
     });
+  }
+
+  llamarContrato(id) {
+    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
+      this.contrato = data;
+    })
   }
   
   verSeguimiento() {
