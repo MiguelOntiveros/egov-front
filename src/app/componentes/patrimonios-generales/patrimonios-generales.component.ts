@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Contrato } from '../../interfaces/Contrato';
+import { Contratista } from '../../interfaces/Contratista';
 import { Router } from '@angular/router';
 import { PatrimoniosService } from '../patrimonios/patrimonios.service';
+import { InicioService } from '../inicio/inicio.service';
 
 @Component({
   selector: 'app-patrimonios-generales',
@@ -10,34 +12,57 @@ import { PatrimoniosService } from '../patrimonios/patrimonios.service';
 })
 export class PatrimoniosGeneralesComponent implements OnInit {
 
-  contrato: Contrato[];
+  contratos: Contrato[];
+  contratista : Contratista[];
   search;
 
-  imagenTipoContrato = 'assets/imagenes/main/patrimonios_icono.png';
+  tituloCliente: string = 'valle hermoso';
+  mostrarMenu = false;
+  inputActive = false;
+  logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+  logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
 
-  constructor(private patrimoniosService: PatrimoniosService, private router: Router) { }
+  imagenTipoContrato = 'assets/imagenes/main/obras_icono.png'
+  constructor(private inicioService: InicioService,private patrimoniosService: PatrimoniosService, private router: Router) { }
 
   ngOnInit(): void {
-    this.patrimoniosService.getPatrimonios().subscribe((data: any) => {
-      this.contrato = data;
-      console.log(data);
+    this.inicioService.getPatrimonios().subscribe((data: any) => {
+      this.contratista = data;
     })
   }
 
-  llamarContrato(id) {
-    this.patrimoniosService.llamarContrato(id).subscribe((data: any) => {
-     
-      localStorage.setItem('contrato', JSON.stringify(data));
-    
-      this.router.navigate(['documentos', data.categoria]);
-      console.log(data);
-      console.log(data.categoria);
-    })
+  enrutarObrasPublicasGenerales(){
+    this.router.navigate(['obras-generales']);
   }
 
-  verDocumentos(){
-    console.info('-> VER DOCUMENTOS');
-    this.router.navigate(['/documentos'])
+  enrutarAdquisicionesGenerales(){
+    this.router.navigate(['adquisiciones-generales']);
+  }
+
+  enrutarPatrimoniosGenerales(){
+    this.router.navigate(['patrimonios-generales']);
+  }
+
+  enviarnumero(id) {
+    this.inicioService.getContratista(id).subscribe((data: any) => {
+      this.contratista = data;
+      // primero se setea el contratista que se seleccionó
+      localStorage.setItem('contratista', JSON.stringify(data));
+    });
+  }
+
+  abrirMenu(){
+    console.log('Menu abierto');
+    this.mostrarMenu = true;
+  }
+
+  cerrarMenu(){
+    this.mostrarMenu = false;
+  }
+
+  abrirFiltros(){
+    console.log('Filtros abiertos');
+    this.router.navigate(['/filtros']);
   }
 
 }

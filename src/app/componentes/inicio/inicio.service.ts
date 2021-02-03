@@ -9,10 +9,28 @@ export class InicioService {
 
   private url = 'http://localhost:8083/contratista/contratistas';
 
+  private url2 = 'http://localhost:8083/contratista/obraspublicas';
+
+  private url3 = 'http://localhost:8083/contratista/adquisiciones';
+
+  private url4 = 'http://localhost:8083/contratista/patrimonios';
+
   constructor(private http: HttpClient) { }
 
   getContratistas(): Observable<any>{
     return this.http.get<any>(this.url);
+  }
+
+  getObrasPublicas(): Observable<any>{
+    return this.http.get<any>(this.url2);
+  }
+
+  getAdquisiciones(): Observable<any>{
+    return this.http.get<any>(this.url3);
+  }
+
+  getPatrimonios(): Observable<any>{
+    return this.http.get<any>(this.url4);
   }
 
   getContratista(id) {

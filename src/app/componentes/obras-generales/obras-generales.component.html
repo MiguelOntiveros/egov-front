@@ -1,32 +1,61 @@
-<div class="bg-vh-verde contenedor-header">
-    <div class="flex-container2">
-        <button class="boton-regresar" routerLink="/inicio">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <label class="mensaje-regresar">Regresar a Inicio</label>
-        </button>
-        <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off>
-        <h3 class="titulo-header">OBRAS PUBLICAS</h3>
-    </div>
+<p class="titulo-cliente bg-vh-verde">{{ tituloCliente | uppercase }}</p>
+<div class="flex-container2 bg-vh-verde">
+    <button class="boton-menu" (click)="abrirMenu()">
+        <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
+    </button>
+    <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off (focus)="inputActive = true">
+    <button class="boton-filtros" (click)="abrirFiltros()">
+        <i class="fa fa-sliders icono-filtros"></i>
+    </button>
 </div>
 
-<li class="lista-resultado" *ngFor="let resultado of contratos | filter:search" (click)="llamarContrato(resultado.id)">
-    <div class="resultado-tipo-imagen"><img [src]="imagenTipoContrato" /></div>
-    <div class="resultado-tipo-contenido">
-        <div class="ocultar">{{ resultado.id }}</div>
-        <!-- NOMBRE DEL CONTRATISTA -->
-        {{ resultado.conNombre }}
-        <br>
-        <!-- CLASIFICACION -->
-        <div class="ocultar"> {{ resultado.categoria }}</div>
-        <br>
-        <!-- MONTOS -->
-        <i class="fa fa-money" aria-hidden="true"></i>
-        <!-- FECHA DE CREACION -->
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        <!-- 2012/05/20 -->
-        {{resultado.creadofecha}}
-        <br>
-        <!-- NÚMERO DE CONTRATO -->
-        NUMERO DE CONTRATO: {{ resultado.contrato }}
+<!-- MENU OPCIONES -->
+<div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral-blanco">
+    <!-- APARTADO USUARIO -->
+    <div class="bg-vh-verde contenedor-menu-lateral-verde">
+        <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
+        <button class="boton-cerrar-menu" (click)="cerrarMenu()">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+
+        <span class="usuario-rol">{{usuario.rol}}</span>
+        <span class="usuario-correo">{{usuario.correo}}</span>
     </div>
-</li>
+
+    <div *ngFor="let opcion of menuOpciones">
+        <ul>
+            <a [routerLink]="opcion.ruta" class="ruta-opciones">
+                <div>
+                    <li class="lista-opciones"><i [class]="opcion.icono"></i>{{opcion.nombre}}</li>
+                </div>
+            </a>
+        </ul>
+    </div>
+</div>
+<!--
+    <div class="flex-container">
+        <img [src]="logo1Celular" class="logo-1-celular">
+    </div>
+
+    <div class="flex-container">
+        <img [src]="logo2Celular" class="logo-2-celular">
+    </div> -->
+
+    
+<div class="flex-container3">
+    <div [ngClass]="{'flex-container3': inputActive, 'ocultar': !inputActive}"
+    class="capa-lista" *ngFor="let tipo of contratista | busquedaPipe | filter:search">
+        <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]" (click)="enviarnumero(tipo.id)">
+            <div>{{tipo.nombre}} {{tipo.numero}}</div>
+        </a>
+    </div>
+    <img [src]="logo1Pc" class="logo-1-pc">
+    <img [src]="logo2Pc" class="logo-2-pc">
+</div>
+
+<div class="menu-footer">
+    <img src="assets/imagenes/main/obras_icono.png" class="img1-menu-footer" (click)="enrutarObrasPublicasGenerales()"/>
+    <img src="assets/imagenes/main/adquisiciones_icono.png" class="img2-menu-footer" (click)="enrutarAdquisicionesGenerales()"/>
+    <img src="assets/imagenes/main/patrimonios_icono.png" class="img3-menu-footer" (click)="enrutarPatrimoniosGenerales()"/>
+</div>
+

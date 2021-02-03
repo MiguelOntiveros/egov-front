@@ -3,6 +3,7 @@ import { Contrato } from '../../interfaces/Contrato';
 import { Contratista } from '../../interfaces/Contratista';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ObrasService } from '../obras/obras.service';
+import { InicioService } from '../inicio/inicio.service';
 
 @Component({
   selector: 'app-obras-generales',
@@ -15,26 +16,54 @@ export class ObrasGeneralesComponent implements OnInit {
   contratista : Contratista[];
   search;
 
+  tituloCliente: string = 'valle hermoso';
+  mostrarMenu = false;
+  inputActive = false;
+  logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+  logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+
   imagenTipoContrato = 'assets/imagenes/main/obras_icono.png'
 
-  constructor(private obrasService: ObrasService, private router: Router, private activateRoute: ActivatedRoute) { }
+  constructor(private inicioService: InicioService, private obrasService: ObrasService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
-
-  getContratos(numero){
-    this.obrasService.getContratos(numero).subscribe((data: any) => {
-      this.contratos = data;
-      //console.log(data);
+    this.inicioService.getObrasPublicas().subscribe((data: any) => {
+      this.contratista = data;
     })
   }
 
-  llamarContrato(id) {
-    this.obrasService.llamarContrato(id).subscribe((data: any) => {    
-      this.router.navigate(['documentos', data.categoria]);
-      //console.log(data);
-      //console.log(data.categoria);
-    })
+  enrutarObrasPublicasGenerales(){
+    this.router.navigate(['obras-generales']);
+  }
+
+  enrutarAdquisicionesGenerales(){
+    this.router.navigate(['adquisiciones-generales']);
+  }
+
+  enrutarPatrimoniosGenerales(){
+    this.router.navigate(['patrimonios-generales']);
+  }
+
+  enviarnumero(id) {
+    this.inicioService.getContratista(id).subscribe((data: any) => {
+      this.contratista = data;
+      // primero se setea el contratista que se seleccionó
+      localStorage.setItem('contratista', JSON.stringify(data));
+    });
+  }
+
+  abrirMenu(){
+    console.log('Menu abierto');
+    this.mostrarMenu = true;
+  }
+
+  cerrarMenu(){
+    this.mostrarMenu = false;
+  }
+
+  abrirFiltros(){
+    console.log('Filtros abiertos');
+    this.router.navigate(['/filtros']);
   }
 
 }
