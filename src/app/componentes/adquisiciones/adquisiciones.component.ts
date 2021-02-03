@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdquisicionesService } from './adquisiciones.service';
 import { Contrato } from '../../interfaces/Contrato';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-adquisiciones',
@@ -16,18 +16,21 @@ export class AdquisicionesComponent implements OnInit {
 
   imagenTipoContrato = 'assets/imagenes/main/adquisiciones_icono.png';
 
-  constructor(private adquisicionesService: AdquisicionesService, private router: Router) { }
+  constructor(private adquisicionesService: AdquisicionesService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //var datos = localStorage.getItem('contratos');
-    //this.contratos = JSON.parse(datos);
-    //const numero = this.contratos['conNumero'];
+    this.activateRoute.params.subscribe((params) => {
+      // obtiene el parametro llamado numero
+      var numero = params['numero'];
+      console.log(numero);
+      this.getContratos(numero);
+    });
   }
 
   getContratos(numero){
     this.adquisicionesService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
-      console.log(data);
+      //console.log(data);
     })
   }
 

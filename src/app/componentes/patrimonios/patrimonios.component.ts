@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contrato } from '../../interfaces/Contrato';
 import { PatrimoniosService } from './patrimonios.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-patrimonios',
@@ -10,17 +10,26 @@ import { Router } from '@angular/router';
 })
 export class PatrimoniosComponent implements OnInit {
 
-  contrato: Contrato[];
+  contratos: Contrato[];
   search;
 
   imagenTipoContrato = 'assets/imagenes/main/patrimonios_icono.png';
 
-  constructor(private patrimoniosService: PatrimoniosService, private router: Router) { }
+  constructor(private patrimoniosService: PatrimoniosService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.patrimoniosService.getPatrimonios().subscribe((data: any) => {
-      this.contrato = data;
-      console.log(data);
+    this.activateRoute.params.subscribe((params) => {
+      // obtiene el parametro llamado numero
+      var numero = params['numero'];
+      console.log(numero);
+      this.getContratos(numero);
+    });
+  }
+
+  getContratos(numero){
+    this.patrimoniosService.getContratos(numero).subscribe((data: any) => {
+      this.contratos = data;
+      //console.log(data);
     })
   }
 
