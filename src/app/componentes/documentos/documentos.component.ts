@@ -14,37 +14,28 @@ export class DocumentosComponent implements OnInit {
 
   contrato: Contrato = {};
   configuracion: ConfiguracionWeb = {};
-  contratoReferencia: ContratoReferencia[];
+  contratoReferencia: ContratoReferencia = {};
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   
-    // obtiene el storage llamado contrato
-    var datos = localStorage.getItem('contrato1');
-    this.contrato = JSON.parse(datos);
-    const clave = this.contrato['categoria'];
-    this.getConfiguracion(clave);
-    console.log(clave);
-    /*this.activateRoute.params.subscribe((params) => {
-      // obtiene el parametro llamado categoría
+    this.activateRoute.params.subscribe((params) => {
+      // se obtienen los parametros
       var clave = params['categoria'];
-      this.getConfiguracion(clave);
-      console.log(clave);
-    });*/
-    const area = this.contrato['area'];
-    const tipo = this.contrato['tipo'];
-    const categoria = this.contrato['categoria'];
-    const folio = this.contrato['folio'];
-    const revision = this.contrato['revision'];
-
-      this.getSociosYRep(area, tipo, categoria, folio, revision);
+      var area = params['area'];
+      var tipo = params['tipo'];
+      var categoria = params['categoria'];
+      var folio = params['folio'];
+      var revision = params['revision'];
+      console.log('Clave:', clave);
       console.log('Area:', area);
       console.log('Tipo:', tipo);
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
-    
+      this.getConfiguracion(clave);
+      this.getSociosYRep(area, tipo, categoria, folio, revision);
+    });
   }
 
   getConfiguracion(clave) {

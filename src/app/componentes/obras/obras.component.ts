@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ObrasComponent implements OnInit {
 
   contratos: Contrato[];
+  contratos2: Contrato;
   contratista : Contratista[];
   search;
 
@@ -37,7 +38,8 @@ export class ObrasComponent implements OnInit {
 
   llamarContrato(id) {
     this.obrasService.llamarContrato(id).subscribe((data: any) => {    
-      this.router.navigate(['documentos', data.categoria]);
+      this.router.navigate(['documentos', data]);
+      //this.router.navigate(['documentos', data.categoria]);
       //console.log(data);
       //console.log(data.categoria);
     })

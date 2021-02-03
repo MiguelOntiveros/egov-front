@@ -50,7 +50,7 @@ export class InicioService {
   }
 
   getSociosYRep(area: string, tipo: string, categoria: string, folio: number, revision: number): Observable<any>{
-    return this.http.get('https://maikiki.herokuapp.com/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
+    return this.http.get('http://localhost:8083/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
 
   getOservaciones(area, tipo, categoria, folio, revision): Observable<any> {

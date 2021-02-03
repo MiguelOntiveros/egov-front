@@ -26,7 +26,7 @@ export class PatrimoniosService {
   }
 
   llamarContrato(id) {
-    return this.http.get<any>('https://maikiki.herokuapp.com/contrato/contrato', {
+    return this.http.get<any>('http://localhost:8083/contrato/contrato', {
       params: {
         id: id
       }
