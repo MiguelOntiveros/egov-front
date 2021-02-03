@@ -90,7 +90,7 @@
             </div>
 
             <div class="col-6">
-                <button class="boton-pdf" (click)="abrirDocumentosPadron()">
+                <button class="boton-pdf" (click)="abrirDocumentosPadron(contrato.id)">
                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                     <label>DOCUMENTOS PADRÓN</label>
                 </button>
@@ -101,14 +101,14 @@
         <div class="row">
 
             <div class="col-6">
-                <button class="boton-pdf" (click)="abrirAnexosOficiales()">
+                <button class="boton-pdf" (click)="abrirAnexosOficiales(contrato.id)">
                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                     <label>ANEXOS OFICIALES</label>
                 </button>
             </div>
 
             <div class="col-6">
-               <button class="boton-pdf" (click)="abrirImagenesContratosAnexos()">
+               <button class="boton-pdf" (click)="abrirImagenesContratosAnexos(contrato.id)">
                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                     <label>CONTRATOS Y ANEXOS</label>
                 </button>

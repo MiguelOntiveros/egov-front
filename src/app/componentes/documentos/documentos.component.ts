@@ -69,23 +69,32 @@ export class DocumentosComponent implements OnInit {
 
   /*
   Pagina oficial
-  https://www.npmjs.com/package/pdfmake-wrapper
+   this.router.navigate(['/imagenes-contratos-y-anexos']);
   */
 
-  abrirAnexosOficiales() {
-    this.router.navigate(['/anexos-oficiales']);
+  abrirAnexosOficiales(id) {
+    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => { 
+      localStorage.setItem('contrato1', JSON.stringify(data));   
+      this.router.navigate(['anexos-oficiales', data]);
+    })
   }
 
-  abrirDocumentosPadron() {
-    this.router.navigate(['/documentos-padron']);
+  abrirDocumentosPadron(id) {
+    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => { 
+      localStorage.setItem('contrato1', JSON.stringify(data));   
+      this.router.navigate(['documentos-padron', data]);
+    })
   }
 
   abrirFichaTecnica() {
     this.router.navigate(['/ficha-tecnica']);
   }
 
-  abrirImagenesContratosAnexos() {
-    this.router.navigate(['/imagenes-contratos-y-anexos']);
+  abrirImagenesContratosAnexos(id) {
+    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => { 
+      localStorage.setItem('contrato1', JSON.stringify(data));   
+      this.router.navigate(['imagenes-contratos-y-anexos', data]);
+    })
   }
 
   irInicio() {
