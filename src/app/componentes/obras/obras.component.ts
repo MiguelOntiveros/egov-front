@@ -37,7 +37,8 @@ export class ObrasComponent implements OnInit {
   }
 
   llamarContrato(id) {
-    this.obrasService.llamarContrato(id).subscribe((data: any) => {    
+    this.obrasService.llamarContrato(id).subscribe((data: any) => { 
+      localStorage.setItem('contrato1', JSON.stringify(data));   
       this.router.navigate(['documentos', data]);
       //this.router.navigate(['documentos', data.categoria]);
       //console.log(data);
