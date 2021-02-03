@@ -21,7 +21,7 @@ export class DocumentosComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((params) => {
-      // se obtienen los parametros
+      // se obtienen y se muestran en consola los parametros necesarios para hacer funcionar los servicios
       var id = params['id'];
       var clave = params['categoria'];
       var area = params['area'];
@@ -60,8 +60,11 @@ export class DocumentosComponent implements OnInit {
     })
   }
   
-  verSeguimiento() {
-    this.router.navigate(['/seguimientos']);
+  verSeguimiento(id) {
+    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => { 
+      localStorage.setItem('contrato1', JSON.stringify(data));   
+      this.router.navigate(['seguimientos', data]);
+    })
   }
 
   /*
