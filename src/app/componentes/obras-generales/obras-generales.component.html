@@ -46,7 +46,7 @@
     <div [ngClass]="{'flex-container3': inputActive, 'ocultar': !inputActive}"
     class="capa-lista" *ngFor="let tipo of contratista | busquedaPipe | filter:search">
         <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]" (click)="enviarnumero(tipo.id)">
-            <div>{{tipo.nombre}} {{tipo.numero}}</div>
+            <div>{{tipo.nombre}}</div>
         </a>
     </div>
     <img [src]="logo1Pc" class="logo-1-pc">
