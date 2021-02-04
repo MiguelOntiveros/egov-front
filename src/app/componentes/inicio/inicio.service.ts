@@ -49,6 +49,14 @@ export class InicioService {
     });
   }
 
+  getValorDelMonto(monto) {
+    return this.http.get<any>('http://localhost:8083/contratogeneraldato/valor', {
+      params: {
+        monto: monto
+      }
+    });
+  }
+
   getSociosYRep(area: string, tipo: string, categoria: string, folio: number, revision: number): Observable<any>{
     return this.http.get('http://localhost:8083/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }

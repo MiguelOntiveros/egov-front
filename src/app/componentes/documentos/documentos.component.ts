@@ -4,6 +4,7 @@ import { Contrato } from '../../interfaces/Contrato';
 import { InicioService } from '../inicio/inicio.service';
 import { ConfiguracionWeb } from '../../interfaces/ConfiguracionWeb';
 import { ContratoReferencia } from '../../interfaces/ContratoReferencias';
+import { ContratoGeneralDato } from '../../interfaces/ContratoGeneralDato';
 import { AdquisicionesService } from '../adquisiciones/adquisiciones.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class DocumentosComponent implements OnInit {
   contrato: Contrato = {};
   configuracion: ConfiguracionWeb = {};
   contratoReferencia: ContratoReferencia = {};
+  contratoGeneral : ContratoGeneralDato[];
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute, private adquisicionesService: AdquisicionesService) { }
 
@@ -36,15 +38,23 @@ export class DocumentosComponent implements OnInit {
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
+      console.log('ContratoGeneral:', this.contratoGeneral);
       this.getConfiguracion(clave);
       this.getSociosYRep(area, tipo, categoria, folio, revision);
       this.llamarContrato(id);
     });
+    this.getValorDelMonto(this.configuracion.monto);
   }
 
   getConfiguracion(clave) {
     this.inicio.getConfiguracion(clave).subscribe((data: any) => {
       this.configuracion = data;
+    });
+  }
+
+  getValorDelMonto(monto) {
+    this.inicio.getValorDelMonto(monto).subscribe((data: any) => {
+      this.contratoGeneral = data;
     });
   }
 
