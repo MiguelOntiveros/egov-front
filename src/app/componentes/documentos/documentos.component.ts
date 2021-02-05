@@ -17,7 +17,7 @@ export class DocumentosComponent implements OnInit {
   contrato: Contrato = {};
   configuracion: ConfiguracionWeb = {};
   contratoReferencia: ContratoReferencia = {};
-  contratoGeneral : ContratoGeneralDato[];
+  contratoGeneral : ContratoGeneralDato= {};
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute, private adquisicionesService: AdquisicionesService) { }
 
@@ -38,17 +38,16 @@ export class DocumentosComponent implements OnInit {
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
-      console.log('ContratoGeneral:', this.contratoGeneral);
-      this.getConfiguracion(clave);
       this.getSociosYRep(area, tipo, categoria, folio, revision);
       this.llamarContrato(id);
+      this.getConfiguracion(clave);
     });
-    this.getValorDelMonto(this.configuracion.monto);
   }
 
   getConfiguracion(clave) {
     this.inicio.getConfiguracion(clave).subscribe((data: any) => {
       this.configuracion = data;
+      this.getValorDelMonto(this.configuracion.monto);
     });
   }
 
