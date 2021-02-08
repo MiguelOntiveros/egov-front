@@ -11,6 +11,7 @@ export class DocumentosPadronComponent implements OnInit {
 
   contrato = null;
   documento: string;
+  ids:number;
 
   constructor(private inicio: InicioService, private router: Router, private activateRoute: ActivatedRoute) { }
 
@@ -31,10 +32,21 @@ export class DocumentosPadronComponent implements OnInit {
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
-      this.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision)
+      this.getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision)
     });
   }
 
+  getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
+    this.inicio.getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.ids = data;
+    });
+  }
+
+  getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
+    this.inicio.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.documento = data;
+    });
+  }
   verActaConstitutiva() {
     this.router.navigate(['/imagenes-d-p-acta-constitutiva']);
   }
@@ -57,12 +69,6 @@ export class DocumentosPadronComponent implements OnInit {
 
   verPoderLegal() {
     this.router.navigate(['/imagenes-d-p-poder-legal']);
-  }
-
-  getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
-    this.inicio.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
-      this.documento = data;
-    });
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { InicioService } from '../inicio/inicio.service';
-import { ContratoAnexoImagen } from '../../interfaces/ContratoAnexoImagen';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,6 +11,7 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
 
   contrato = null;
   documento: string;
+  ids: number;
 
   constructor(private inicio: InicioService, private router: Router, private activateRoute: ActivatedRoute) { }
 
@@ -32,8 +32,19 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
-      this.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision)
-      console.log(this.documento);
+      this.getIdsDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision)
+    });
+  }
+
+  getIdsDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
+    this.inicio.getIdsDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.ids = data;
+    });
+  }
+
+  getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
+    this.inicio.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.documento = data;
     });
   }
 
@@ -44,11 +55,4 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
   verSeguimiento1() {
     this.router.navigate(['/imagenes-c-a-seguimiento1']);
   }
-
-  getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
-    this.inicio.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
-      this.documento = data;
-    });
-  }
-
 }

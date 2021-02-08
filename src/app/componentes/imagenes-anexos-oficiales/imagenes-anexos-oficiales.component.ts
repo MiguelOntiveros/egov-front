@@ -12,6 +12,7 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
 
   contratoAlmacenado = null;
   documento: string;
+  ids: number;
 
   constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
 
@@ -32,7 +33,13 @@ export class ImagenesAnexosOficialesComponent implements OnInit {
       console.log('Categoria:', categoria);
       console.log('Folio:', folio);
       console.log('Revision:', revision);
-      this.getDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision)
+      this.getIdsDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision)
+    });
+  }
+
+  getIdsDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision) {
+    this.inicio.getIdsDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+      this.ids = data;
     });
   }
 

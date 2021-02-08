@@ -61,6 +61,42 @@ export class InicioService {
     return this.http.get('http://localhost:8083/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
 
+  getIdsDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
+    return this.http.get<any>('http://localhost:8083/contratoanexoimagen/ids', {
+      params: {
+        area: area,
+        tipo: tipo,
+        categoria: categoria,
+        folio: folio,
+        revision: revision
+      }
+    });
+  }
+
+  getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
+    return this.http.get<any>('http://localhost:8083/contratodocumentoimagen/ids', {
+      params: {
+        area: area,
+        tipo: tipo,
+        categoria: categoria,
+        folio: folio,
+        revision: revision
+      }
+    });
+  }
+
+  getIdsDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision) {
+    return this.http.get<any>('http://localhost:8083/contratooficialimagen/ids', {
+      params: {
+        area: area,
+        tipo: tipo,
+        categoria: categoria,
+        folio: folio,
+        revision: revision
+      }
+    });
+  }
+
   getObservaciones(area, tipo, categoria, folio, revision): Observable<any> {
     return this.http.get<any>('http://localhost:8083/contratoanexoimagen/observaciones?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
