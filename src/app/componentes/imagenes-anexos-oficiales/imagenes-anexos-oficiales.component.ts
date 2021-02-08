@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ContratoOficialImagen } from 'src/app/interfaces/ContratoOficialImagen';
-import { ImagenesAnexosOficialesService } from '../imagenes-anexos-oficiales/imagenes-anexos-oficiales.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InicioService } from '../inicio/inicio.service';
 
 @Component({
@@ -13,28 +11,34 @@ import { InicioService } from '../inicio/inicio.service';
 export class ImagenesAnexosOficialesComponent implements OnInit {
 
   contratoAlmacenado = null;
-  contratoOficialImagen: string[];
-  //ConfiguracionWeb = {};
+  documento: string;
 
-  constructor(private imagenesAnexas: ImagenesAnexosOficialesService, private router: Router, private inicio: InicioService) { }
+  constructor(private router: Router, private inicio: InicioService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // obtiene el storage llamado contrato
-    var contratoOriginal = localStorage.getItem('contrato');
-    this.contratoAlmacenado = JSON.parse(contratoOriginal);
-
-    const area = this.contratoAlmacenado['area'];
-    const tipo = this.contratoAlmacenado['tipo'];
-    const categoria = this.contratoAlmacenado['categoria'];
-    const folio = this.contratoAlmacenado['folio'];
-    const revision = this.contratoAlmacenado['revision'];
-    console.log(this.contratoOficialImagen);
-   
+    this.activateRoute.params.subscribe((params) => {
+      // se obtienen y se muestran en consola los parametros necesarios para hacer funcionar los servicios
+      var id = params['id'];
+      var clave = params['categoria'];
+      var area = params['area'];
+      var tipo = params['tipo'];
+      var categoria = params['categoria'];
+      var folio = params['folio'];
+      var revision = params['revision'];
+      console.log('Id:', id);
+      console.log('Clave:', clave);
+      console.log('Area:', area);
+      console.log('Tipo:', tipo);
+      console.log('Categoria:', categoria);
+      console.log('Folio:', folio);
+      console.log('Revision:', revision);
+      this.getDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision)
+    });
   }
 
   getDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision) {
     this.inicio.getDocumentosContratoOficialImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
-      this.contratoOficialImagen = data;
+      this.documento = data;
     });
   }
 

@@ -10,7 +10,7 @@ import { InicioService } from '../inicio/inicio.service';
 export class DocumentosPadronComponent implements OnInit {
 
   contrato = null;
-  contratoDocumentoImagen: string[];
+  documento: string;
 
   constructor(private inicio: InicioService, private router: Router, private activateRoute: ActivatedRoute) { }
 
@@ -61,7 +61,7 @@ export class DocumentosPadronComponent implements OnInit {
 
   getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
     this.inicio.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
-      this.contratoDocumentoImagen = data;
+      this.documento = data;
     });
   }
 
