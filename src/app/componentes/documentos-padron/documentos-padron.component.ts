@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InicioService } from '../inicio/inicio.service';
 
 @Component({
@@ -12,19 +12,27 @@ export class DocumentosPadronComponent implements OnInit {
   contrato = null;
   contratoDocumentoImagen: string[];
 
-  constructor(private inicio: InicioService, private router: Router) { }
+  constructor(private inicio: InicioService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    var info = localStorage.getItem('contrato');
-    this.contrato = JSON.parse(info);
-    console.log(this.contratoDocumentoImagen);
-    console.log(this.contrato);
-
-    const area = this.contrato['area'];
-    const tipo = this.contrato['tipo'];
-    const categoria = this.contrato['categoria'];
-    const folio = this.contrato['folio'];
-    const revision = this.contrato['revision'];
+    this.activateRoute.params.subscribe((params) => {
+      // se obtienen y se muestran en consola los parametros necesarios para hacer funcionar los servicios
+      var id = params['id'];
+      var clave = params['categoria'];
+      var area = params['area'];
+      var tipo = params['tipo'];
+      var categoria = params['categoria'];
+      var folio = params['folio'];
+      var revision = params['revision'];
+      console.log('Id:', id);
+      console.log('Clave:', clave);
+      console.log('Area:', area);
+      console.log('Tipo:', tipo);
+      console.log('Categoria:', categoria);
+      console.log('Folio:', folio);
+      console.log('Revision:', revision);
+      this.getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision)
+    });
   }
 
   verActaConstitutiva() {

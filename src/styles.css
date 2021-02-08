@@ -79,12 +79,11 @@ video {
 }
 
 .fondo {
-    background: rgb(110, 110, 110);
-    background: linear-gradient(90deg, rgba(110, 110, 110, 1) 0%, rgba(236, 236, 236, 1) 50%, rgba(110, 110, 110, 1) 100%);
+    background: white;
 }
 
 .bg-vh-verde {
-    background: rgb(160, 195, 13);
+    background: blue;
 }
 
 .bg-vh-celeste {
@@ -169,5 +168,5 @@ video {
 }
 
 body{
-    background-color: linear-gradient(90deg, rgba(110, 110, 110, 1) 0%, rgba(236, 236, 236, 1) 50%, rgba(110, 110, 110, 1) 100%);
+    background-color: white;
 }

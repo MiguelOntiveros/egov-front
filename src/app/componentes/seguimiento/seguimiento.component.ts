@@ -47,7 +47,7 @@ export class SeguimientoComponent implements OnInit {
   }
 
   getObservaciones(area, tipo, categoria, folio, revision) {
-    this.inicio.getOservaciones(area, tipo, categoria, folio, revision).subscribe((data: any) => {
+    this.inicio.getObservaciones(area, tipo, categoria, folio, revision).subscribe((data: any) => {
       this.observaciones = data;
     });
   }

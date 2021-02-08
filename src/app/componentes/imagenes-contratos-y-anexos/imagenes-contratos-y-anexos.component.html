@@ -4,14 +4,13 @@
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
             <label class="mensaje-regresar">Regresar a Inicio</label>
         </button>
-        <div class="empresa">{{contrato.con_nombre}}</div>
-        <h3 class="titulo-header">{{contrato.contrato}}</h3>
     </div>
 </div>
-<!--
-<div class="capa-lista flex-container3" *ngFor="let documento of contratoAnexoImagen | documentosContratoAnexoPipe">
-    <a class="ruta-tipo-busqueda" [routerLink]="[documento.enlace]">{{documento.nombre}}</a>
-</div> -->
 
+<div class="capa-lista flex-container3">
+    <a class="ruta-tipo-busqueda">{{documento}}</a>
+</div> 
+<!--
 <a href="http://localhost:8083//contratoanexoimagen/imagen?area={{contrato.area}}&tipo={{contrato.tipo}}&categoria={{contrato.categoria}}&folio={{contrato.folio}}&revision={{contrato.revision}}&documento=QR"><div class="flex-container-adjudicacion"><p class="texto">QR</p></div></a>
 <a href="http://localhost:8083//contratoanexoimagen/imagen?area={{contrato.area}}&tipo={{contrato.tipo}}&categoria={{contrato.categoria}}&folio={{contrato.folio}}&revision={{contrato.revision}}&documento=SEGUIMIENTO%201"><div class="flex-container-oficio"><p class="texto">SEGUIMIENTO1</p></div></a>
+-->

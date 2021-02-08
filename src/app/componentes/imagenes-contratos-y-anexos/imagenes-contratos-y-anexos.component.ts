@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InicioService } from '../inicio/inicio.service';
 import { ContratoAnexoImagen } from '../../interfaces/ContratoAnexoImagen';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-imagenes-contratos-y-anexos',
@@ -11,21 +11,30 @@ import { Router } from '@angular/router';
 export class ImagenesContratosYAnexosComponent implements OnInit {
 
   contrato = null;
-  contratoAnexoImagen: string[];
+  documento: string;
 
-  constructor(private inicio: InicioService, private router: Router) { }
+  constructor(private inicio: InicioService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    var info = localStorage.getItem('contrato');
-    this.contrato = JSON.parse(info);
-    console.log(this.contratoAnexoImagen);
-    console.log(this.contrato);
-
-    const area = this.contrato['area'];
-    const tipo = this.contrato['tipo'];
-    const categoria = this.contrato['categoria'];
-    const folio = this.contrato['folio'];
-    const revision = this.contrato['revision'];
+    this.activateRoute.params.subscribe((params) => {
+      // se obtienen y se muestran en consola los parametros necesarios para hacer funcionar los servicios
+      var id = params['id'];
+      var clave = params['categoria'];
+      var area = params['area'];
+      var tipo = params['tipo'];
+      var categoria = params['categoria'];
+      var folio = params['folio'];
+      var revision = params['revision'];
+      console.log('Id:', id);
+      console.log('Clave:', clave);
+      console.log('Area:', area);
+      console.log('Tipo:', tipo);
+      console.log('Categoria:', categoria);
+      console.log('Folio:', folio);
+      console.log('Revision:', revision);
+      this.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision)
+      console.log(this.documento);
+    });
   }
 
   verQr() {
@@ -38,7 +47,7 @@ export class ImagenesContratosYAnexosComponent implements OnInit {
 
   getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
     this.inicio.getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
-      this.contratoAnexoImagen = data;
+      this.documento = data;
     });
   }
 

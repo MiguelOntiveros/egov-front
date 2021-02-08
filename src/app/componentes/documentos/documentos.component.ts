@@ -47,7 +47,6 @@ export class DocumentosComponent implements OnInit {
   getConfiguracion(clave) {
     this.inicio.getConfiguracion(clave).subscribe((data: any) => {
       this.configuracion = data;
-      this.getValorDelMonto(this.configuracion.monto);
     });
   }
 

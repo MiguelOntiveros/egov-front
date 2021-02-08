@@ -61,13 +61,25 @@ export class InicioService {
     return this.http.get('http://localhost:8083/contratoreferencia/sociosyreplegal?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
 
-  getOservaciones(area, tipo, categoria, folio, revision): Observable<any> {
+  getObservaciones(area, tipo, categoria, folio, revision): Observable<any> {
     return this.http.get<any>('http://localhost:8083/contratoanexoimagen/observaciones?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
   }
 
-  getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision): Observable<any> {
-    return this.http.get<any>('http://localhost:8083/contratoanexoimagen/documentos?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
+  getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision) {
+    return this.http.get<any>('http://localhost:8083/contratoanexoimagen/documentos', {
+      params: {
+        area: area,
+        tipo: tipo,
+        categoria: categoria,
+        folio: folio,
+        revision: revision
+      }
+    });
   }
+
+  /*getDocumentosContratoAnexoImagen(area, tipo, categoria, folio, revision): Observable<any> {
+    return this.http.get<any>('http://localhost:8083/contratoanexoimagen/documentos?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
+  }*/
 
   getDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision): Observable<any> {
     return this.http.get<any>('http://localhost:8083/contratodocumentoimagen/documentos?area='+ area + '&tipo=' + tipo + '&categoria=' + categoria +  '&folio=' + folio + '&revision=' + revision);
