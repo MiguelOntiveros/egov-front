@@ -14,8 +14,8 @@
     <a class="ruta-tipo-busqueda">{{ids}}</a>
 </div> -->
 
-<div class="capa-lista" *ngFor="let id of ids">
-    <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}" class="imagen"/>
+<div *ngFor="let id of ids">
+    <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}"/>
 </div>
 
 <!--<div class="contenedor-header">

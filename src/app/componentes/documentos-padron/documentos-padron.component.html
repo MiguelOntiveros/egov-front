@@ -23,8 +23,10 @@
     <a class="ruta-tipo-busqueda">{{ids}}</a>
 </div>-->
 
-<div class="capa-lista" *ngFor="let id of ids">
-    <img src="http://localhost:8083/contratodocumentoimagen/imagenbyid?id={{id}}" class="imagen"/>
+<div *ngFor="let id of ids">
+    <div class="imagen">
+        <img src="http://localhost:8083/contratodocumentoimagen/imagenbyid?id={{id}}"/>
+    </div>
 </div>
 
 <!--
