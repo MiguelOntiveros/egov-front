@@ -9,8 +9,13 @@
     </div>
 </div>
 
+<!--
 <div class="capa-lista flex-container3">
     <a class="ruta-tipo-busqueda">{{ids}}</a>
+</div> -->
+
+<div class="capa-lista" *ngFor="let id of ids">
+    <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}" class="imagen"/>
 </div>
 
 <!--<div class="contenedor-header">

@@ -39,6 +39,7 @@ export class DocumentosPadronComponent implements OnInit {
   getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
     this.inicio.getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
       this.ids = data;
+      console.log('Método:', data);
     });
   }
 
