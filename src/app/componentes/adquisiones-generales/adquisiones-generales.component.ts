@@ -66,4 +66,8 @@ export class AdquisionesGeneralesComponent implements OnInit {
     this.router.navigate(['/filtros']);
   }
 
+  irinicio(){
+    this.router.navigate(['/inicio']);
+  }
+
 }
