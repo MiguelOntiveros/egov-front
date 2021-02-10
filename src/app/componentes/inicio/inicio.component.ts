@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Contratista } from '../../interfaces/Contratista';
 import { InicioService } from './inicio.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class InicioComponent implements OnInit {
 
-  contratista: Contratista[];
+  textoBuscar = '';
+  @Input('infoContratista') infoContratista: any;
+
+  contratistas: Contratista[];
   search;
   inputActive = false;
 
@@ -70,11 +73,31 @@ export class InicioComponent implements OnInit {
   constructor(private inicioService: InicioService, private router: Router) { }
 
   ngOnInit(): void {
-    this.inicioService.getContratistas().subscribe((data: any) => {
-      this.contratista = data;
-    })
+    //this.inicioService.getContratistas().subscribe((data: any) => {
+      //this.contratista = data;
+    //})
   }
 
+  buscarContratistas( event ) {
+
+    // SE OBTIENE EL VALOR DEL TEXTO AGREGADO EN EL INPUT DE BUSQUEDA GENERAL
+    const texto = event.target.value;
+    this.textoBuscar = texto;
+  
+    if(this.textoBuscar === '' || this.textoBuscar === null){
+      // EN CASO DE VALORES VACIOS O NULOS SE AVISA EN CONSOLA
+       return console.log('Ingresa un dato en la barra de busqueda. Input vacio');
+    }else{
+      /* MUESTRA RESPUESTA SI LA BUSQUEDA 
+         CONCUERDA CON LOS DATOS DE LA DB*/
+        this.infoContratista = this.inicioService.getContratistas(this.textoBuscar).subscribe((data:any) => {
+        this.contratistas = data;
+        console.log(data);
+      });
+    }
+  
+  
+     }
   enrutarObrasPublicasGenerales(){
     this.router.navigate(['obras-generales']);
   }
@@ -89,7 +112,7 @@ export class InicioComponent implements OnInit {
 
   enviarnumero(id) {
     this.inicioService.getContratista(id).subscribe((data: any) => {
-      this.contratista = data;
+      this.contratistas = data;
       // primero se setea el contratista que se seleccionó
       localStorage.setItem('contratista', JSON.stringify(data));
     });

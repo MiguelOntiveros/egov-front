@@ -15,11 +15,19 @@ export class InicioService {
 
   private url4 = 'http://localhost:8083/contratista/patrimonios';
 
+  private urlContratista = 'http://localhost:8083/contratista/search?nombre='
+
   constructor(private http: HttpClient) { }
 
+  getContratistas(nombre: string){
+    return this.http.get<any>(this.urlContratista + nombre);
+    
+  }
+
+  /*
   getContratistas(): Observable<any>{
     return this.http.get<any>(this.url);
-  }
+  }*/
 
   getObrasPublicas(): Observable<any>{
     return this.http.get<any>(this.url2);
