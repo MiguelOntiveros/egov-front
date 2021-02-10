@@ -78,26 +78,25 @@ export class InicioComponent implements OnInit {
     //})
   }
 
-  buscarContratistas( event ) {
+  buscarContratistas(event) {
 
     // SE OBTIENE EL VALOR DEL TEXTO AGREGADO EN EL INPUT DE BUSQUEDA GENERAL
     const texto = event.target.value;
     this.textoBuscar = texto;
-  
-    if(this.textoBuscar === '' || this.textoBuscar === null){
+
+    if (this.textoBuscar === '' || this.textoBuscar === null) {
       // EN CASO DE VALORES VACIOS O NULOS SE AVISA EN CONSOLA
-       return console.log('Ingresa un dato en la barra de busqueda. Input vacio');
-    }else{
+      return console.log('Ingresa un dato en la barra de busqueda. Input vacio');
+    } else {
       /* MUESTRA RESPUESTA SI LA BUSQUEDA 
          CONCUERDA CON LOS DATOS DE LA DB*/
-        this.infoContratista = this.inicioService.getContratistas(this.textoBuscar).subscribe((data:any) => {
+      this.infoContratista = this.inicioService.getContratistas(this.textoBuscar).subscribe((data: any) => {
         this.contratistas = data;
         console.log(data);
       });
     }
+  }
   
-  
-     }
   enrutarObrasPublicasGenerales(){
     this.router.navigate(['obras-generales']);
   }
