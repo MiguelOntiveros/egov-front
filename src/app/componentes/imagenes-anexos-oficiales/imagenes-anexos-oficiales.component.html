@@ -15,7 +15,9 @@
 </div> -->
 <div class="flex-container3">
     <div *ngFor="let id of ids">
-        <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}"/>
+        <a href="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}">
+            <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}"/>
+        </a>
     </div>
 </div>
 
