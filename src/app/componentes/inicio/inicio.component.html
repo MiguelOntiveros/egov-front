@@ -4,7 +4,7 @@
         <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
     </button>
     <!-- <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off (focus)="inputActive = true"> -->
-    <input type="search" placeholder="BUSQUEDA GENERAL" class="buscador" spellcheck="false" autocomplete=off
+    <input type="search" placeholder="BUSQUEDA GENERAL" class="buscador" spellcheck="false" autocomplete=off (keyup)="inputActive = true"
         (keyup)="buscarContratistas( $event )"><button class="boton-filtros" (click)="abrirFiltros()">
         <i class="fa fa-sliders icono-filtros"></i>
     </button>
@@ -54,12 +54,8 @@
             </a>
         </div>
     </div>
-    <!-- 'OPCIONAL' EN CASO DE ERROR, PUEDE APARECER ESTE MENSAJE DE ERROR -->
-    <div style="background: #CFE;" *ngIf="!textoBuscar">
-        <p style="text-align: center;">{{mensajeError}}</p>
-    </div>
-    <img [src]="logo1Pc" class="logo-1-pc">
-    <img [src]="logo2Pc" class="logo-2-pc">
+    <img [src]="logo1Pc" [ngClass]="{'ocultar': inputActive, 'logo-1-pc': !inputActive}">
+    <img [src]="logo2Pc" [ngClass]="{'ocultar': inputActive, 'logo-2-pc': !inputActive}">
 </div>
 
 <div class="menu-footer">
