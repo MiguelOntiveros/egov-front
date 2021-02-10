@@ -10,12 +10,13 @@
 </div>
 
 <!--
-<div class="capa-lista flex-container3">
+<div>
     <a class="ruta-tipo-busqueda">{{ids}}</a>
 </div> -->
-
-<div *ngFor="let id of ids">
-    <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}"/>
+<div class="flex-container3">
+    <div *ngFor="let id of ids">
+        <img src="http://localhost:8083/contratooficialimagen/imagenbyid?id={{id}}"/>
+    </div>
 </div>
 
 <!--<div class="contenedor-header">

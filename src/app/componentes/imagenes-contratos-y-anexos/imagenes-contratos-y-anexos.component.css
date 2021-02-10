@@ -17,10 +17,9 @@
 .flex-container3 {
     display: flex;
     align-items: center;
-    position: relative;
     flex-direction: column;
-    margin: 0 8vw 0 0;
-    z-index: 1;
+    position: relative;
+    margin-top: 2vh;
 }
 
 .flex-container2 {
