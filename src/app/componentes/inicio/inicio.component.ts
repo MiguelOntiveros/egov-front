@@ -12,9 +12,8 @@ export class InicioComponent implements OnInit {
 
   textoBuscar = '';
   @Input('infoContratista') infoContratista: any;
-
-  contratistas: Contratista[];
-  search;
+  mensajeError: string;
+  contratistas: Contratista[]
   inputActive = false;
 
   tituloCliente: string = 'valle hermoso';
@@ -73,30 +72,40 @@ export class InicioComponent implements OnInit {
   constructor(private inicioService: InicioService, private router: Router) { }
 
   ngOnInit(): void {
-    //this.inicioService.getContratistas().subscribe((data: any) => {
-      //this.contratista = data;
-    //})
   }
 
   buscarContratistas(event) {
-
     // SE OBTIENE EL VALOR DEL TEXTO AGREGADO EN EL INPUT DE BUSQUEDA GENERAL
     const texto = event.target.value;
     this.textoBuscar = texto;
-
-    if (this.textoBuscar === '' || this.textoBuscar === null) {
-      // EN CASO DE VALORES VACIOS O NULOS SE AVISA EN CONSOLA
-      return console.log('Ingresa un dato en la barra de busqueda. Input vacio');
-    } else {
-      /* MUESTRA RESPUESTA SI LA BUSQUEDA 
-         CONCUERDA CON LOS DATOS DE LA DB*/
-      this.infoContratista = this.inicioService.getContratistas(this.textoBuscar).subscribe((data: any) => {
+    // EN CASO DE QUE EL INPUT ESTE VACIO, SE MUESTREN LAS IMAGENES
+    this.infoContratista = this.inicioService.getContratistas(this.textoBuscar)
+      .subscribe((data: any) => {
         this.contratistas = data;
         console.log(data);
+
+        if (this.contratistas.length <= 0) {
+          // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
+          this.mensajeError = 'No se encontro resultados';
+          // SE MUESTRAN LOS LOGOS
+          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+
+        } else if (this.contratistas.length > 0) {
+          //  RESULTADO CON VALORES, ARRAY CON RESULTADOS
+          this.contratistas = data;
+          this.mensajeError = '';
+          // SE OCULTAN LOS LOGOS
+          this.logo1Pc = '';
+          this.logo2Pc = '';
+        }
+        if (this.textoBuscar === '') {
+          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+        }
       });
-    }
   }
-  
+
   enrutarObrasPublicasGenerales(){
     this.router.navigate(['obras-generales']);
   }
