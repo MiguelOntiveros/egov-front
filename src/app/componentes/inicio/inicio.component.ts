@@ -86,7 +86,7 @@ export class InicioComponent implements OnInit {
 
         if (this.contratistas.length <= 0) {
           // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
-          this.mensajeError = 'No se encontro resultados';
+          this.mensajeError = 'No se encontraron resultados';
           // SE MUESTRAN LOS LOGOS
           this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
           this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';

@@ -7,38 +7,30 @@ import { Observable } from 'rxjs';
 })
 export class InicioService {
 
-  private url = 'http://localhost:8083/contratista/contratistas';
-
-  private url2 = 'http://localhost:8083/contratista/obraspublicas';
-
-  private url3 = 'http://localhost:8083/contratista/adquisiciones';
-
-  private url4 = 'http://localhost:8083/contratista/patrimonios';
-
   private urlContratista = 'http://localhost:8083/contratista/search?nombre='
+
+  private urlObraPublica = 'http://localhost:8083/contratista/obraspublicas?nombre=';
+
+  private urlAdquisiciones = 'http://localhost:8083/contratista/adquisiciones?nombre=';
+
+  private urlPatrimonio = 'http://localhost:8083/contratista/patrimonios?nombre='
 
   constructor(private http: HttpClient) { }
 
   getContratistas(nombre: string){
     return this.http.get<any>(this.urlContratista + nombre);
-    
   }
 
-  /*
-  getContratistas(): Observable<any>{
-    return this.http.get<any>(this.url);
-  }*/
-
-  getObrasPublicas(): Observable<any>{
-    return this.http.get<any>(this.url2);
+  getObrasPublicas(nombre: string){
+    return this.http.get<any>(this.urlObraPublica + nombre);
   }
 
-  getAdquisiciones(): Observable<any>{
-    return this.http.get<any>(this.url3);
+  getAdquisiciones(nombre: string){
+    return this.http.get<any>(this.urlAdquisiciones + nombre);
   }
 
-  getPatrimonios(): Observable<any>{
-    return this.http.get<any>(this.url4);
+  getPatrimonios(nombre: string){
+    return this.http.get<any>(this.urlPatrimonio + nombre);
   }
 
   getContratista(id) {
