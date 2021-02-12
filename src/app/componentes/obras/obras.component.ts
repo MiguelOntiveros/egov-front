@@ -32,7 +32,7 @@ export class ObrasComponent implements OnInit {
   getContratos(numero){
     this.obrasService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
-      //console.log(data);
+      console.log(data);
     })
   }
 

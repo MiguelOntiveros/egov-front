@@ -12,6 +12,7 @@ export class AdquisicionesComponent implements OnInit {
 
   contratos: Contrato[];
   contratos2: Contrato[];
+  valor: string;
   search;
 
   imagenTipoContrato = 'assets/imagenes/main/adquisiciones_icono.png';
@@ -25,12 +26,20 @@ export class AdquisicionesComponent implements OnInit {
       console.log(numero);
       this.getContratos(numero);
     });
+    this.getValorDelMonto(this.contratos,this.contratos);
   }
 
   getContratos(numero){
     this.adquisicionesService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
-      //console.log(data);
+      console.log(data);
+    })
+  }
+
+  getValorDelMonto(tipo,categoria){
+    this.adquisicionesService.getValorDelMonto(tipo,categoria).subscribe((data: any) => {
+      this.valor = data;
+      console.log(data);
     })
   }
 
