@@ -5,6 +5,7 @@ export interface Contrato {
     categoria?: string;
     folio?: number;
     contrato?: string;
+    valor?: string;
     clasificacion?: string;
     ubicacion?: string;
     notas?: string;

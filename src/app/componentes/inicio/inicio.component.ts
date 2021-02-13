@@ -82,7 +82,7 @@ export class InicioComponent implements OnInit {
     this.infoContratista = this.inicioService.getContratistas(this.textoBuscar)
       .subscribe((data: any) => {
         this.contratistas = data;
-        console.log(data);
+        //console.log(data);
 
         if (this.contratistas.length <= 0) {
           // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS

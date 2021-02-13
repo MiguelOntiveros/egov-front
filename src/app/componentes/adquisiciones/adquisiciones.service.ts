@@ -19,6 +19,21 @@ export class AdquisicionesService {
 
   getValorDelMonto(tipo,categoria) {
     return this.http.get<any>('http://localhost:8083/contratogeneral/valor', {
+     // responseType: 'text',
+        params: {
+        tipo: tipo,
+          categoría: categoria
+        }
+      });
+  }
+
+ /* getValorDelMonto(tipo: string, categoria: string): Observable<any>{
+    return this.http.get('http://localhost:8083/contratogeneral/valor?' + '&tipo=' + tipo + '&categoria=' + categoria);
+  }*/
+
+
+  getDescripcionDelContrato(tipo,categoria) {
+    return this.http.get<any>('http://localhost:8083/contratogeneral/descripcion', {
       params: {
         tipo: tipo,
         categoria: categoria
