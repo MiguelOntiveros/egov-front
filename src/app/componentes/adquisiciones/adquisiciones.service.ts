@@ -22,7 +22,7 @@ export class AdquisicionesService {
      // responseType: 'text',
         params: {
         tipo: tipo,
-          categoría: categoria
+        categoria: categoria
         }
       });
   }
