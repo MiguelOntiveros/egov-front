@@ -13,12 +13,16 @@
     <div class="resultado-tipo-imagen"><img [src]="imagenTipoContrato" /></div>
     <div class="resultado-tipo-contenido">
         <div class="ocultar">{{ resultado.id }}</div>
+        <!-- NOMBRE DEL CONTRATISTA -->
         <div>{{ resultado.conNombre }}</div>
+        <!-- DESCRIPCION DEL CONTRATO -->
         <div> {{ resultado.conGiro }}</div>
         <div>
             <i class="fa fa-money" aria-hidden="true"></i>
+            <!-- VALOR DEL CONTRATO -->
             {{ resultado.conRepresentante }}
             <i class="fa fa-calendar" aria-hidden="true"></i>
+            <!-- FECHA DE CREACION DE CONTRATO -->
             {{resultado.creadofecha}}
         </div>
         <!-- NÚMERO DE CONTRATO -->
