@@ -32,24 +32,18 @@ export class AdquisicionesComponent implements OnInit {
   getContratos(numero){
     this.adquisicionesService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
-     //this.contratos.forEach(contrato => {      
-       //this.adquisicionesService.getValorDelMonto(this.contratos[0].tipo, this.contratos[0].categoria).subscribe((data2: any) => {
+      //this.contratos.forEach(contrato => {      
+       //this.adquisicionesService.getValorDelMonto(this.contratos[0].area,this.contratos[0].tipo, this.contratos[0].categoria, this.contratos[0].folio,this.contratos[0].revision).subscribe((data2: any) => {
         //this.contratos[0].valor= data2
          //console.log(this.contratos[0].valor);
      //}); 
-      //})
+     // })
     })
   }
 
-  getValorDelMonto(tipo,categoria){
-    this.adquisicionesService.getValorDelMonto(tipo,categoria).subscribe((data: any) => {
+  getValorDelMonto(area,tipo,categoria,folio,revision){
+    this.adquisicionesService.getValorDelMonto(area,tipo,categoria,folio,revision).subscribe((data: any) => {
       this.general = data;
-      this.general.forEach(contrato => {      
-        this.adquisicionesService.getValorDelMonto(contrato.tipo[0], contrato.categoria[0]).subscribe((data2: any) => {
-         contrato.valor= data2
-          // console.log(contrato.valor);
-        }); 
-       })
     })
   }
 

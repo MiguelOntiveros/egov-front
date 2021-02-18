@@ -13,20 +13,14 @@
     <div class="resultado-tipo-imagen"><img [src]="imagenTipoContrato" /></div>
     <div class="resultado-tipo-contenido">
         <div class="ocultar">{{ resultado.id }}</div>
-        <!-- NOMBRE DEL CONTRATISTA -->
-        {{ resultado.conNombre }}
-        <br>
-        <!-- CLASIFICACION 
-        <div> {{ resultado.tipo }}</div>
-        <div> {{ resultado.categoria }}</div> -->
-        <!-- MONTOS -->
-        <i class="fa fa-money" aria-hidden="true"></i>
-        <div> {{ resultado.valor }}</div>
-        <!-- FECHA DE CREACION -->
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        <!-- 2012/05/20 -->
-        {{resultado.creadofecha}}
-        <br>
+        <div>{{ resultado.conNombre }}</div>
+        <div> {{ resultado.conGiro }}</div>
+        <div>
+            <i class="fa fa-money" aria-hidden="true"></i>
+            {{ resultado.conRepresentante }}
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            {{resultado.creadofecha}}
+        </div>
         <!-- NÚMERO DE CONTRATO -->
         NUMERO DE CONTRATO: {{ resultado.contrato }}
     </div>

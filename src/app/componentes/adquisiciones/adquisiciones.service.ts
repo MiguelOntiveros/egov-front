@@ -17,12 +17,15 @@ export class AdquisicionesService {
     });
   }
 
-  getValorDelMonto(tipo,categoria) {
-    return this.http.get<any>('http://localhost:8083/contratogeneral/valor', {
+  getValorDelMonto(area,tipo,categoria,folio,revision) {
+    return this.http.get<any>('http://localhost:8083/contratogeneraldato/valor', {
      // responseType: 'text',
         params: {
+        area: area,
         tipo: tipo,
-        categoria: categoria
+        categoria: categoria,
+        folio: folio,
+        revision: revision
         }
       });
   }
