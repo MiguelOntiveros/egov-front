@@ -7,13 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ObrasService {
 
-  private urlObrasPublicas = 'https://maikiki.herokuapp.com/contrato/obraspublicas';
-
   constructor(private http: HttpClient) { }
-
-  getObrasPublicas(): Observable<any>{
-    return this.http.get<any>(this.urlObrasPublicas);
-  }
 
   getContratos(numero) {
     return this.http.get<any>('http://localhost:8083/contrato/contratos', {

@@ -14,19 +14,17 @@
     <div class="resultado-tipo-contenido">
         <div class="ocultar">{{ resultado.id }}</div>
         <!-- NOMBRE DEL CONTRATISTA -->
-        {{ resultado.con_nombre }}
-        <br>
-        <!-- CLASIFICACION -->
-        {{ resultado.categoria }}
-        <br>
-        <!-- MONTOS -->
-        <i class="fa fa-money" aria-hidden="true"></i>
-        5,000,000
-        <!-- FECHA DE CREACION -->
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        <!-- 2012/05/20 -->
-        {{resultado.creadofecha}}
-        <br>
+        <div>{{ resultado.conNombre }}</div>
+        <!-- DESCRIPCION DEL CONTRATO -->
+        <div> {{ resultado.conGiro }}</div>
+        <div>
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <!-- VALOR DEL CONTRATO -->
+            {{ resultado.conRepresentante }}
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <!-- FECHA DE CREACION DE CONTRATO -->
+            {{resultado.creadofecha}}
+        </div>
         <!-- NÚMERO DE CONTRATO -->
         NUMERO DE CONTRATO: {{ resultado.contrato }}
     </div>
