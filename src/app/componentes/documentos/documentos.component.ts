@@ -63,7 +63,7 @@ export class DocumentosComponent implements OnInit {
   }
 
   llamarContrato(id) {
-    this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
+    this.adquisicionesService.obtenerContratoCompleto(id).subscribe((data: any) => {
       this.contrato = data;
     })
   }

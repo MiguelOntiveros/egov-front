@@ -47,4 +47,12 @@ export class AdquisicionesService {
     });
   }
 
+  obtenerContratoCompleto(id) {
+    return this.http.get<any>('http://localhost:8083/contrato/contratocompleto', {
+      params: {
+        id: id
+      }
+    });
+  }
+
 }
