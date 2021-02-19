@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PatrimoniosComponent implements OnInit {
 
+  mensaje: string;
   contratos: Contrato[];
   search;
 
@@ -29,7 +30,12 @@ export class PatrimoniosComponent implements OnInit {
   getContratos(numero){
     this.patrimoniosService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
-      //console.log(data);
+      console.log(data);
+      if(this.contratos.length <= 0){
+        this.mensaje = 'No se encontraron resultados';
+      }else if(this.contratos.length > 0){
+        this.mensaje = '';
+      }
     })
   }
 

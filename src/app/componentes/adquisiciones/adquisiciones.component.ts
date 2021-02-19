@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AdquisicionesComponent implements OnInit {
 
+  mensaje: string;
   contratos: Contrato[];
   contratos2: Contrato[];
   general: ContratoGeneral[];
@@ -32,6 +33,11 @@ export class AdquisicionesComponent implements OnInit {
   getContratos(numero){
     this.adquisicionesService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
+      if(this.contratos.length <= 0){
+        this.mensaje = 'No se encontraron resultados';
+      }else if(this.contratos.length > 0){
+        this.mensaje = '';
+      }
       //this.contratos.forEach(contrato => {      
        //this.adquisicionesService.getValorDelMonto(this.contratos[0].area,this.contratos[0].tipo, this.contratos[0].categoria, this.contratos[0].folio,this.contratos[0].revision).subscribe((data2: any) => {
         //this.contratos[0].valor= data2
@@ -47,8 +53,6 @@ export class AdquisicionesComponent implements OnInit {
     })
   }
 
-     //console.log(this.contratos[0].tipo);
-      //console.log(data);
   getDescripcionDelContrato(tipo,categoria){
     this.adquisicionesService.getDescripcionDelContrato(tipo,categoria).subscribe((data: any) => {
       this.general = data;

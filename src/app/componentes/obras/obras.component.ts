@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ObrasComponent implements OnInit {
 
+  mensaje: string;
   contratos: Contrato[];
   contratos2: Contrato;
   contratista : Contratista[];
@@ -33,6 +34,11 @@ export class ObrasComponent implements OnInit {
     this.obrasService.getContratos(numero).subscribe((data: any) => {
       this.contratos = data;
       console.log(data);
+      if(this.contratos.length <= 0){
+        this.mensaje = 'No se encontraron resultados';
+      }else if(this.contratos.length > 0){
+        this.mensaje = '';
+      }
     })
   }
 

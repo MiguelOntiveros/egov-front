@@ -33,6 +33,18 @@ ul {
     cursor: pointer;
 }
 
+.contenedor-mensaje {
+    background: transparent;
+}
+
+.mensaje{
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color:#F9A54B;
+}
+
 .ocultar{
     display: none;
 }
@@ -63,7 +75,7 @@ ul {
     margin: 2vh 0 2vh 15vw;
     background: white;
     border-radius: 15px;
-    border-color:#AABED6;
+    border-color:#F9BB94;
     border-width: 2px;
     border-style: solid;
     width: 70%;
