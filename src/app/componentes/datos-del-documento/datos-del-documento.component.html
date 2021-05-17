@@ -1,0 +1,35 @@
+<!-- HEADER -->
+<div class="bg-vh-azul contenedor-header">
+    <div class="flex-container2">
+        <button class="boton-regresar" (click)="regresarAtras()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <label class="mensaje-regresar">Regresar</label>
+        </button>
+        <!-- <div class="empresa">{{contrato.con_nombre}}</div>
+        <h3 class="titulo-header">{{contrato.contrato}}</h3> -->
+        <div class="empresa">CORPORATIVO HLM, S. DE R.L. DE C.V. </div>
+        <h3 class="titulo-header">DATOS DEL DOCUMENTO</h3>
+    </div>
+</div>
+
+<!-- INFORMACIÓN DE PRUEBA -->
+<div class="" *ngFor="let datos of datosDelDocumentoArray">
+
+    <!-- <p> {{ datos.area }} </p>
+    <p> {{ datos.tipo }}</p>
+    <p> {{ datos.categoria }}</p>
+    <p> {{ datos.folio }}</p>
+    <p> {{ datos.revision }}</p> -->
+    <p> {{ datos.documento }}</p>
+    <p> {{ datos.nombre }}</p>
+    <p> {{ datos.clave }}</p>
+    <p> {{ datos.dato }}</p>
+    <p> {{ datos.valor }}</p>
+    <p> {{ datos.formato }}</p>
+    <p> {{ datos.orden }}</p>
+    <br/>
+    <hr>
+
+
+
+</div>

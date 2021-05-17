@@ -1,10 +1,10 @@
-<div class="bg-vh-verde contenedor-header">
+<div class="bg-vh-azul contenedor-header">
     <div class="flex-container2">
-        <button class="boton-regresar" routerLink="/inicio">
+        <button class="boton-regresar" (click)="regresarAtras()">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <label class="mensaje-regresar">Regresar a Inicio</label>
+            <label class="mensaje-regresar">Regresar</label>
         </button>
-       <!-- <div class="empresa">{{contrato.con_nombre}}</div>
+        <!-- <div class="empresa">{{contrato.con_nombre}}</div>
         <h3 class="titulo-header">{{contrato.contrato}}</h3>-->
     </div>
 </div>
@@ -25,9 +25,15 @@
 
 <div class="flex-container3">
     <div *ngFor="let id of ids">
-        <a href="http://localhost:8083/contratodocumentoimagen/imagenbyid?id={{id}}">
-            <img src="http://localhost:8083/contratodocumentoimagen/imagenbyid?id={{id}}" />
-        </a>
+        <div *ngIf="id">
+            <a href="http://complise.dyndns.org/egov-api/contratodocumentoimagen/imagenbyid?id={{id}}">
+                <img class="imagen-contenido" src="http://complise.dyndns.org/egov-api/contratodocumentoimagen/imagenbyid?id={{id}}" />
+            </a>
+        </div>
+        <div>
+            <p class="sin-documentos">{{mensaje}}</p>
+        </div>
+
     </div>
 </div>
 

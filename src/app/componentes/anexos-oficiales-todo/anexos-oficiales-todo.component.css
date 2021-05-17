@@ -1,0 +1,142 @@
+.flex-container3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-top: 2vh;
+}
+
+.boton-regresar {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    width: 5%;
+    margin: 2%;
+}
+
+.titulo-header {
+    color: white;
+    font-family: 'Arial';
+    float: right;
+    margin: 2%;
+    font-size: 2vw;
+}
+
+.mensaje-regresar {
+    cursor: pointer;
+    margin-left: 2%;
+}
+
+
+/* BOTON DE VOLVER ARRIBA */
+
+.boton-ir-arriba {
+    background: #3276B5;
+    border-radius: 50%;
+    border: 0px;
+    outline: none;
+    position: fixed;
+    left: 93%;
+    bottom: 3%;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.boton-ir-arriba:hover {
+    background: #95c2eb;
+    transform: scale(1.2);
+}
+
+.flecha-arriba {
+    margin: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.sin-documentos {
+    font-weight: bold;
+    color: red;
+}
+
+.imagen-contenido {
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+
+@media (max-width: 575px) {
+    .imagen-contenido {
+        width: 100%;
+    }
+    .boton-ir-arriba {
+        left: 80%;
+        bottom: 3%;
+    }
+    .boton-regresar {
+        width: 25%;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .imagen-contenido {
+        width: 100%;
+    }
+    .boton-ir-arriba {
+        left: 90%;
+        bottom: 3%;
+    }
+    .boton-regresar {
+        width: 25%;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .imagen-contenido {
+        width: 100%;
+    }
+    .boton-ir-arriba {
+        left: 90%;
+        bottom: 3%;
+    }
+    .boton-regresar {
+        width: 20%;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .imagen-contenido {
+        width: 100%;
+    }
+    .boton-ir-arriba {
+        left: 90%;
+        bottom: 3%;
+    }
+    .boton-regresar {
+        width: 15%;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .titulo-header {
+        margin: 1%;
+        font-size: 2vw;
+    }
+    .imagen-contenido {
+        width: 100%;
+    }
+    .boton-ir-arriba {
+        left: 90%;
+        bottom: 3%;
+    }
+    .boton-regresar {
+        width: 10%;
+        margin: 1%;
+        font-size: 15px;
+    }
+}

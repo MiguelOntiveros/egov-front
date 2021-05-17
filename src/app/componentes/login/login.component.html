@@ -1,38 +1,45 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Iniciando sesión...</p>
+</ngx-spinner>
 
-    <div class="flex-container2">
-        <img [src]="imagenCelular" class="imagen-login-celular">
-    </div>
-    <div class="flex-container2">
-        <img [src]="imagenCelular" class="imagen-login-pc">
-    </div>
-    <div class="flex-container2">
-        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+<!-- <ngx-spinner>
+</ngx-spinner> -->
 
-            <div class="flex-container2">
-                <div class="iconos-usuario">
-                    <i class="fa fa-user"></i>
+<div class="flex-container2">
+    <img [src]="imagenCelular" class="imagen-login-celular">
+</div>
 
-                </div>
-                <input type="text" class="campo-usuario uppercase" placeholder="Usuario" formControlName="usuario" required>
-            
+<!-- <div class="flex-container2">
+    <img [src]="imagenCelular" class="imagen-login-pc">
+</div> -->
+
+<div class="flex-container2">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+
+        <div class="flex-container2">
+            <div class="iconos-usuario">
+                <i class="fa fa-user"></i>
             </div>
-            <div class="flex-container2">
-                <div class="iconos-usuario">
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                </div>
-                <input type="password" class="campo-contraseña" placeholder="Contraseña" formControlName="password" required>
+            <input type="text" class="campo-usuario uppercase" placeholder="USUARIO" formControlName="usuario" required>
+
+        </div>
+        <div class="flex-container2">
+            <div class="iconos-usuario">
+                <i class="fa fa-lock" aria-hidden="true"></i>
             </div>
+            <input type="password" class="campo-contraseña" placeholder="CONTRASEÑA" formControlName="password" required>
+        </div>
 
-            <div class="flex-container">
-                <input type="submit" value="Entrar" [disabled]="loginForm.invalid" class="boton-ingresar">
-            </div>
+        <div class="flex-container">
+            <input type="submit" value="Entrar" [disabled]="loginForm.invalid" class="boton-ingresar">
+        </div>
 
-            <p class="animate__animated animate__fadeIn mensaje-datos-incorrectos">{{mensaje}}</p>
+        <p class="animate__animated animate__fadeIn mensaje-datos-incorrectos">{{mensaje}}</p>
 
-        </form>
+    </form>
 
-    </div>
-   <!-- <div class="flex-container">
+</div>
+<!-- <div class="flex-container">
         <img [src]="imagenCelular" class="imagen-login-celular">
     </div>
    
@@ -76,7 +83,3 @@
             </div>
         </form>
     </div> -->
-  
-       
-
-    

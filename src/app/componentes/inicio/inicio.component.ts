@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Contratista } from '../../interfaces/Contratista';
 import { InicioService } from './inicio.service';
-import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-inicio',
@@ -11,9 +13,16 @@ import { Router } from '@angular/router';
 export class InicioComponent implements OnInit {
 
   textoBuscar = '';
+  textoBuscar2 = '';
+
   @Input('infoContratista') infoContratista: any;
+  @Input('infoContratista2') infoContratista2: any;
+
   mensajeError: string;
-  contratistas: Contratista[]
+  
+  contratistas: Contratista[];
+  contratistas2: Contratista[];
+
   inputActive = false;
 
   tituloCliente: string = 'valle hermoso';
@@ -28,48 +37,32 @@ export class InicioComponent implements OnInit {
       ruta: '/inicio'
     },
     {
-      nombre: 'Configuraciones',
-      icono: 'fa fa-cog',
-      ruta: '/configuraciones'
-    },
-    {
       nombre: 'Acerca de...',
       icono: 'fa fa-lightbulb-o',
       ruta: '/acerca-de'
     },
     {
-      nombre: 'Sugerencias',
-      icono: 'fa fa-exclamation-circle',
-      ruta: '/sugerencias'
-    },
-    {
       nombre: 'Terminos de Uso',
       icono: 'fa fa-question-circle',
       ruta: '/terminos'
-    },
-    {
-      nombre: 'Cerrar Sesión',
-      icono: 'fa fa-sign-out',
-      ruta: '/login'
-    },
-    // {
-    //   nombre: 'Tablas',
-    //   icono: 'fa fa-table',
-    //   ruta: '/tablas'
-    // }
-    // {
-    //   nombre: 'Lista-Documentos',
-    //   icono: 'fa fa-list',
-    //   ruta: '/lista-documentos'
-    // }
+    }
   ];
+
+  cerrarSesion = {
+    nombre: 'Cerrar Sesión',
+    icono: 'fa fa-sign-out',
+    ruta: '/login'
+  }
 
   logo1Celular = 'assets/imagenes/ValleHermoso/logo_centro_1_celular.png';
   logo2Celular = 'assets/imagenes/ValleHermoso/logo_centro_2_celular.png';
   logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
   logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
 
-  constructor(private inicioService: InicioService, private router: Router) { }
+  constructor(
+    private inicioService: InicioService, 
+    private router: Router,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
@@ -78,44 +71,120 @@ export class InicioComponent implements OnInit {
     // SE OBTIENE EL VALOR DEL TEXTO AGREGADO EN EL INPUT DE BUSQUEDA GENERAL
     const texto = event.target.value;
     this.textoBuscar = texto;
-    // EN CASO DE QUE EL INPUT ESTE VACIO, SE MUESTREN LAS IMAGENES
-    this.infoContratista = this.inicioService.getContratistas(this.textoBuscar)
-      .subscribe((data: any) => {
-        this.contratistas = data;
-        //console.log(data);
 
-        if (this.contratistas.length <= 0) {
-          // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
-          this.mensajeError = 'No se encontraron resultados';
-          // SE MUESTRAN LOS LOGOS
-          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
-
-        } else if (this.contratistas.length > 0) {
-          //  RESULTADO CON VALORES, ARRAY CON RESULTADOS
+    // CASO ESPECIAL PARA CONTRATISTA M&M
+      if(this.textoBuscar.length > 1 && this.textoBuscar === 'm&' || this.textoBuscar.length > 1 && this.textoBuscar === 'm&m' ){
+        // || this.textoBuscar.length > 1 && this.textoBuscar === 'm&m'
+        console.log('Servicio3 M&M');
+        // this.contratistas = [];
+        this.infoContratista = this.inicioService.getContratistas('m%26m').subscribe((data: any) => {
           this.contratistas = data;
-          this.mensajeError = '';
-          // SE OCULTAN LOS LOGOS
-          this.logo1Pc = '';
-          this.logo2Pc = '';
-        }
-        if (this.textoBuscar === '') {
-          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
-        }
-      });
+          console.log('Servicio3 M&M');
+          console.log(data);
+        })
+    }
+    
+    // EN CASO DE QUE EL INPUT ESTE VACIO, SE MUESTREN LAS IMAGENES
+
+    if(this.textoBuscar.length === 0 || this.textoBuscar === ''){
+      this.contratistas = [];
+      this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+      this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
   }
 
+  if(this.textoBuscar.length >= 2 && this.textoBuscar !== 'm&'){
+    if(this.textoBuscar.length >= 2 && this.textoBuscar !== 'm&m'){
+      // || this.textoBuscar.length >= 2 && this.textoBuscar !== 'm&m'
+    console.log('Servicio2');
+
+    this.infoContratista = this.inicioService.getContratistas2(this.textoBuscar).subscribe((data: any) => {
+
+      this.contratistas = data;
+
+      if (this.contratistas.length <= 0) {
+
+        // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
+        this.mensajeError = 'No se encontraron resultados';
+        // SE MUESTRAN LOS LOGOS
+        this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+        this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+        console.log(this.contratistas);
+
+      } else if (this.contratistas.length > 0) {
+        //  RESULTADO CON VALORES, ARRAY CON RESULTADOS
+        this.contratistas = data;
+        this.mensajeError = '';
+        // SE OCULTAN LOS LOGOS
+        this.logo1Pc = '';
+        this.logo2Pc = '';
+        console.log(this.contratistas);
+      }
+    });
+
+    }
+
+  }else if(this.textoBuscar.length === 1 && this.textoBuscar !== 'm&'){
+    
+    if(this.textoBuscar.length === 1 && this.textoBuscar !== 'm&m'){
+      // || this.textoBuscar.length === 1 && this.textoBuscar !== 'm&m'
+    console.log('Servicio1');
+
+    this.infoContratista = this.inicioService.getContratistas(this.textoBuscar)
+    .subscribe((data: any) => {
+
+      this.contratistas = data;
+      //console.log(data);
+
+      if (this.contratistas.length <= 0) {
+
+        // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
+        this.mensajeError = 'No se encontraron resultados';
+        // SE MUESTRAN LOS LOGOS
+        this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
+        this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+        console.log(this.contratistas);
+
+      } else if (this.contratistas.length > 0) {
+        //  RESULTADO CON VALORES, ARRAY CON RESULTADOS
+        this.contratistas = data;
+        this.mensajeError = '';
+        // SE OCULTAN LOS LOGOS
+        this.logo1Pc = '';
+        this.logo2Pc = '';
+        console.log(this.contratistas);
+      } 
+    });
+
+    }
+  }
+
+  }
+
+  // buscarContratistas2(event){
+  //   const texto2 = event.target.value;
+  //   this.textoBuscar2 = texto2;
+
+  //   this.infoContratista2 = this.inicioService.getContratistas2(this.textoBuscar2.toUpperCase()).subscribe((data: any) => {
+
+  //   console.log('Servicio2');
+  //   console.log(data);
+
+  //   this.contratistas2 = data;
+
+  //   })
+
+  // }
+
   enrutarObrasPublicasGenerales(){
-    this.router.navigate(['obras-generales']);
+    this.router.navigate(['./obras-generales']);
   }
 
   enrutarAdquisicionesGenerales(){
-    this.router.navigate(['adquisiciones-generales']);
+    this.router.navigate(['./adquisiciones-generales']);
   }
 
   enrutarPatrimoniosGenerales(){
-    this.router.navigate(['patrimonios-generales']);
+    this.router.navigate(['./patrimonios-generales']);
   }
 
   enviarnumero(id) {
@@ -137,7 +206,7 @@ export class InicioComponent implements OnInit {
 
   abrirFiltros(){
     console.log('Filtros abiertos');
-    this.router.navigate(['/filtros']);
+    this.router.navigate(['./filtros']);
   }
 
   irinicio(){

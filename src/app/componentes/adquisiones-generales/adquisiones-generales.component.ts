@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Contrato } from '../../interfaces/Contrato';
-import { Contratista } from '../../interfaces/Contratista';
 import { Router } from '@angular/router';
-import { AdquisicionesService } from '../adquisiciones/adquisiciones.service';
+
+import { Contratista } from 'src/app/interfaces/Contratista';
+import { Contrato } from '../../interfaces/Contrato';
 import { InicioService } from '../inicio/inicio.service';
+import { AdquisicionesService } from '../adquisiciones/adquisiciones.service';
 
 @Component({
   selector: 'app-adquisiones-generales',
@@ -19,13 +20,46 @@ export class AdquisionesGeneralesComponent implements OnInit {
   contratistas : Contratista[];
   search;
 
-  tituloCliente: string = 'valle hermoso';
   mostrarMenu = false;
   inputActive = false;
-  logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-  logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+  
+  logoCentro: string = 'assets/imagenes/main/adquisiciones.png';
 
-  imagenTipoContrato = 'assets/imagenes/main/obras_icono.png'
+  // MENU opciones
+  usuario = { rol: 'Administrador', correo: 'admin@hotmail.com' };
+
+  menuOpciones = [
+    {
+      nombre: 'Inicio',
+      icono: 'fa fa-home',
+      ruta: '/inicio'
+    },
+    {
+      nombre: 'Configuraciones',
+      icono: 'fa fa-cog',
+      ruta: '/configuraciones'
+    },
+    {
+      nombre: 'Acerca de...',
+      icono: 'fa fa-lightbulb-o',
+      ruta: '/acerca-de'
+    },
+    {
+      nombre: 'Sugerencias',
+      icono: 'fa fa-exclamation-circle',
+      ruta: '/sugerencias'
+    },
+    {
+      nombre: 'Terminos de Uso',
+      icono: 'fa fa-question-circle',
+      ruta: '/terminos'
+    },
+    {
+      nombre: 'Cerrar Sesión',
+      icono: 'fa fa-sign-out',
+      ruta: '/login'
+    },
+  ];
 
   constructor(private inicioService: InicioService, private adquisicionesService: AdquisicionesService, private router: Router) { }
 
@@ -37,32 +71,44 @@ export class AdquisionesGeneralesComponent implements OnInit {
     // SE OBTIENE EL VALOR DEL TEXTO AGREGADO EN EL INPUT DE BUSQUEDA GENERAL
     const texto = event.target.value;
     this.textoBuscar = texto;
-    // EN CASO DE QUE EL INPUT ESTE VACIO, SE MUESTREN LAS IMAGENES
-    this.infoContratista = this.inicioService.getAdquisiciones(this.textoBuscar)
-      .subscribe((data: any) => {
+
+    if (this.textoBuscar.length === 0 && this.textoBuscar === '') {
+      this.logoCentro = 'assets/imagenes/main/adquisiciones.png';
+    }
+    
+    if(this.textoBuscar.length > 1 && this.textoBuscar === 'm&' || this.textoBuscar === 'm&m'){
+      this.infoContratista = this.inicioService.getAdquisiciones('m%26m').subscribe((data: any) => {
         this.contratistas = data;
         console.log(data);
+      });
+    }
 
-        if (this.contratistas.length <= 0) {
+    if(this.textoBuscar.length === 1 && this.textoBuscar !== 'm&'){
+      if(this.textoBuscar.length === 1 && this.textoBuscar !== 'm&m'){
+      // EN CASO DE QUE EL INPUT ESTE VACIO, SE MUESTREN LAS IMAGENES
+      this.infoContratista = this.inicioService.getAdquisiciones(this.textoBuscar)
+      .subscribe((data: any) => {
+      this.contratistas = data;
+      console.log(data);
+
+          if (this.contratistas.length <= 0) {
           // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
           this.mensajeError = 'No se encontraron resultados';
           // SE MUESTRAN LOS LOGOS
-          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+          this.logoCentro = 'assets/imagenes/main/adquisiciones.png';
+          this.contratistas = [];
 
         } else if (this.contratistas.length > 0) {
           //  RESULTADO CON VALORES, ARRAY CON RESULTADOS
           this.contratistas = data;
           this.mensajeError = '';
-          // SE OCULTAN LOS LOGOS
-          this.logo1Pc = '';
-          this.logo2Pc = '';
-        }
-        if (this.textoBuscar === '') {
-          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+            // SE OCULTAN LOS LOGOS
+          this.logoCentro = ''
         }
       });
+      }
+    }
+    
   }
 
   enrutarObrasPublicasGenerales(){

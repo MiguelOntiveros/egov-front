@@ -29,13 +29,17 @@
 
 /* RESPUESTA SEGUIMIENTO */
 
-.respuesta-obra {
-    /* background: rgba(0, 255, 100, 0.5); */
-    background: rgba(255, 255, 255, 1);
-    width: 1rem;
-    height: 1rem;
-    margin-left: 2%;
-    margin-bottom: 1%;
+.contenedor-respuesta {
+    border: solid #ccc 2px;
+    width: 2vw;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 5%;
+}
+
+.respuesta-seguimiento {
+    margin-left: 5%;
 }
 
 
@@ -43,25 +47,46 @@
 
 .titulo-observaciones {
     margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .contenedor-observaciones {
-    margin-left: 3%;
-    width: 70%;
-    max-width: 80%;
     min-width: 50%;
     min-height: 5vw;
-    max-height: 20vw;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: all linear 0.2s;
+}
+
+.contenedor-observaciones:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.contenido-observaciones {
+    margin: 2%;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.contenedor-respuesta {
+    border: solid #ccc 2px;
+    width: 3vw;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 5%;
 }
 
 
 /* IMAGENES DEL SEGUIMIENTO */
 
 .imagen-seguimientos {
-    min-width: 40vw;
-    max-width: 50vw;
-    min-height: 15vw;
-    max-height: 20vw;
+    min-width: 50%;
+    max-width: 75vw;
+    min-height: 20vw;
+    max-height: 25vw;
     padding: 2%;
     margin-right: 2%;
 }
@@ -85,4 +110,36 @@ html {
 body {
     margin: 0;
     margin-bottom: 40px;
+}
+
+@media only screen and (min-device-width: 220px) and (max-device-width: 319px) {
+    .contenedor-respuesta {
+        width: 11vw;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .contenedor-respuesta {
+        width: 9vw;
+    }
+    .imagen-seguimientos {
+        min-width: 50%;
+        max-width: 60vw;
+        min-height: 40vw;
+        max-height: 50vw;
+        padding: 2%;
+        margin-right: 2%;
+    }
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 780px) {
+    .contenedor-respuesta {
+        width: 7vw;
+    }
+}
+
+@media only screen and (min-device-width: 800px) and (max-device-width: 1200px) {
+    .contenedor-respuesta {
+        width: 5vw;
+    }
 }

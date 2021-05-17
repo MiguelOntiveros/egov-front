@@ -14,7 +14,7 @@ export interface Contrato {
     bloqueado?: string;
     con_numero?: number;
     con_nombregenero?: string;
-    conNombre?: string;
+    con_nombre?: string;
     con_rfc?: string;
     con_persona?: string;
     con_registro?: string;

@@ -1,9 +1,9 @@
 export interface ContratistaDocumentoImagen {
-    id: number;
-    numero: number;
-    documento: string;
-    nombre: string;
-    folio: number;
+    id?: number;
+    numero?: number;
+    documento?: string;
+    nombre?: string;
+    folio?: number;
     // imagen: byte[];
-    extension: string;
+    extension?: string;
 }

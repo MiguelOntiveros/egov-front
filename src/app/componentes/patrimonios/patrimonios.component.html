@@ -1,35 +1,57 @@
-<div class="bg-vh-verde contenedor-header">
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Cargando datos...</p>
+</ngx-spinner>
+
+<div class="bg-vh-azul contenedor-header">
     <div class="flex-container2">
         <button class="boton-regresar" routerLink="/inicio">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <label class="mensaje-regresar">Regresar a Inicio</label>
+            <i class="fa fa-arrow-left arrow-padding" aria-hidden="true"></i>
+            <label class="mensaje-regresar">Regresar</label>
         </button>
-        <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off>
+        <input type="input" placeholder="Busqueda General" class="buscador-general" [(ngModel)]=search autocomplete=off>
         <h3 class="titulo-header">PATRIMONIOS</h3>
+
+        <button class="boton-filtros" (click)="abrirFiltros()">
+            <!-- <i class="fa fa-sliders icono-filtros"></i> -->
+            Filtrar
+        </button>
+
     </div>
 </div>
 
-<li class="lista-resultado" *ngFor="let resultado of contratos | filter:search" (click)="llamarContrato(resultado.id)">
-    <div class="resultado-tipo-imagen"><img [src]="imagenTipoContrato" /></div>
-    <div class="resultado-tipo-contenido">
-        <div class="ocultar">{{ resultado.id }}</div>
-        <!-- NOMBRE DEL CONTRATISTA -->
-        <div>{{ resultado.conNombre }}</div>
-        <!-- DESCRIPCION DEL CONTRATO -->
-        <div> {{ resultado.conGiro }}</div>
-        <div>
-            <i class="fa fa-money" aria-hidden="true"></i>
-            <!-- VALOR DEL CONTRATO -->
-            {{ resultado.conRepresentante }}
-            <i class="fa fa-calendar" aria-hidden="true"></i>
-            <!-- FECHA DE CREACION DE CONTRATO -->
-            {{resultado.creadofecha}}
+<div>
+
+    <div class="row contenedor-resultado" *ngFor="let resultado of contratos | filter:search" (click)="llamarContrato(resultado.id)">
+        <div class="col-3 col-md-3 col-lg-3 col-xl-3">
+            <img class="imagen-contrato" [src]="imagenTipoContrato">
         </div>
-        <!-- NÚMERO DE CONTRATO -->
-        NUMERO DE CONTRATO: {{ resultado.contrato }}
+
+        <div class="col-9 col-md-9 col-lg-9 col-xl-9">
+            <div class="resultado-tipo-contenido">
+                <!-- <div class="ocultar">{{ resultado.id }}</div> -->
+                <!-- NOMBRE DEL CONTRATISTA -->
+                <div class="contenido-contrato">{{ resultado.conNombre }}</div>
+                <!-- DESCRIPCION DEL CONTRATO -->
+                <div class="contenido-contrato"> {{ resultado.conGiro }}</div>
+                <div class="contenido-contrato">
+                    <i class="fa fa-money" aria-hidden="true"></i>
+                    <!-- VALOR DEL CONTRATO -->
+                    {{ resultado.conRepresentante }}
+                    <i class="fa fa-calendar calendario" aria-hidden="true"></i>
+                    <!-- FECHA DE CREACION DE CONTRATO -->
+                    {{resultado.creadofecha}}
+                </div>
+                <div class="contenido-contrato">
+                    <!-- NÚMERO DE CONTRATO -->
+                    Número de contrato: {{ resultado.contrato }}
+                </div>
+            </div>
+        </div>
+
     </div>
-</li>
+
+</div>
 
 <div *ngIf="mensaje" class="contenedor-mensaje">
     <p class="mensaje">{{mensaje}}</p>
-</div> 
+</div>

@@ -1,41 +1,96 @@
 <!-- PAGINA SEGUIMIENTO -->
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Cargando datos...</p>
+</ngx-spinner>
+
 <app-header-titulo titulo="Seguimientos"></app-header-titulo>
 
 <div class="contenedor-seguimientos">
 
+    <!-- RESPONSABLE -->
     <div class="contenido">
-        
+        <label style="font-weight: bold;">
+            {{responsableTexto}}
+        </label>
+
+        <div *ngIf="responsable ? responsable : 'Sin responsable'">
+            {{responsable}}
+        </div>
+
     </div>
 
-    <div class="contenido">
-       
+    <div *ngFor="let seguimiento of informacionSeguimiento">
+
+        <!-- FECHA -->
+        <div class="contenido">
+            <label style="font-weight: bold;">
+                    Fecha:
+                </label>
+            <span>
+                    {{seguimiento.fecha_creado}}
+                </span>
+        </div>
+
+        <!-- HORA -->
+        <div class="contenido">
+            <label style="font-weight: bold;">
+                Hora:
+            </label>
+            <span>
+                {{seguimiento.hora_creado}}
+            </span>
+        </div>
+
+
+        <!-- ESTATUS / PREGUNTAS SOBRE SEGUIMIENTO -->
+
+        <div>
+            <p class="pregunta-seguimiento">¿La obra sigue en ejecución?</p>
+
+            <div class="contenedor-respuesta">
+                <p class="respuesta-seguimiento">{{ seguimiento.area }}</p>
+            </div>
+        </div>
+
+        <div>
+            <p class="pregunta-seguimiento">¿Se esta cumpliendo la obra a lo establecido en el contrato?</p>
+            <div class="contenedor-respuesta">
+                <p class="respuesta-seguimiento">{{ seguimiento.tipo }}</p>
+            </div>
+        </div>
+
+        <!-- OBSERVACIONES -->
+
+        <h4 class="titulo-observaciones">Observaciones</h4>
+
+        <!-- <textarea class="contenedor-observaciones">
+{{seguimiento.observaciones}}
+        </textarea> -->
+
+        <div class="contenedor-observaciones">
+            <p class="contenido-observaciones">
+                {{seguimiento.observaciones}}
+            </p>
+        </div>
+
+        <br />
     </div>
-
-    <div class="contenido">
-        
-    </div>
-
-
-    <!-- ESTATUS / PREGUNTAS SOBRE SEGUIMIENTO -->
-
-    <div>
-        <p class="pregunta-seguimiento">¿La obra sigue en ejecución?</p>
-    
-    </div>
-
-    <div>
-        <p class="pregunta-seguimiento">¿Se esta cumpliendo la obra a lo establecido en el contrato?</p>
-      
-    </div>
-
-    <!-- OBSERVACIONES -->
-
-    <h4 class="titulo-observaciones">Observaciones</h4>
-      <!-- <textarea class="contenedor-observaciones"></textarea>-->
-      {{observaciones}}
-    <br />
 
     <!-- IMAGENES DEL SEGUIMIENTO -->
+    <div *ngFor="let id of ids">
+
+        <div *ngIf="!id">
+
+        </div>
+
+        <div *ngIf="id">
+            <a href="http://complise.dyndns.org/egov-api/contratoanexoimagen/imagenbyid?id={{id}}">
+                <img class="imagen-seguimientos" src="http://complise.dyndns.org/egov-api/contratoanexoimagen/imagenbyid?id={{id}}" />
+            </a>
+        </div>
+    </div>
+
 </div>
 
-<app-boton-footer></app-boton-footer>
+<!-- <app-boton-footer></app-boton-footer> -->

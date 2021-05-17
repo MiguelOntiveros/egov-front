@@ -4,14 +4,13 @@ import { Injectable } from '@angular/core';
 export class Red {
 
     // Red del Servidor Local
-    localhost = 'http://localhost:8086';
+    servidorLocal = 'http://localhost:8083';
 
 
-    /* Servidor de Complise
-        localhost = 'http://cat.servi2k.mx';
+    // Servidor de Complise
+    // localhost = 'http://cat.servi2k.mx'
 
-        Servidor de M&M (mayagoitia abogados)
-        localhost = 'http://complise.dyndns.org';
-    */
+    // Servidor de M&M (mayagoitia abogados)
+    servidorMayagoitia = 'http://complise.dyndns.org/egovi-api/';
 
 }

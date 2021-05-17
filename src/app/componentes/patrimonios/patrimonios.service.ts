@@ -10,19 +10,23 @@ export class PatrimoniosService {
   constructor(private http: HttpClient) { }
 
   getContratos(numero) {
-    return this.http.get<any>('http://localhost:8083/contrato/contratos', {
+    return this.http.get<any>('http://complise.dyndns.org/egov-api/contrato/contratos', {
       params: {
         numero: numero
       }
     });
+    // http://complise.dyndns.org/egov-api/contrato/contratos
+    // http://localhost:8083/contrato/contratos
   }
 
   llamarContrato(id) {
-    return this.http.get<any>('http://localhost:8083/contrato/contrato', {
+    return this.http.get<any>('http://complise.dyndns.org/egov-api/contrato/contrato', {
       params: {
         id: id
       }
     });
+    // http://complise.dyndns.org/egov-api/contrato/contrato
+    // http://localhost:8083/contrato/contrato
   }
 
 }

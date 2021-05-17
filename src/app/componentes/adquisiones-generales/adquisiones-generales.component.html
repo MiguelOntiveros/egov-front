@@ -1,19 +1,23 @@
-<p class="titulo-cliente bg-vh-verde">ADQUISICIONES</p>
-<div class="flex-container2 bg-vh-verde">
+<p class="titulo-cliente bg-vh-azul">ADQUISICIONES</p>
+<div class="flex-container2 bg-vh-azul">
     <button class="boton-menu" (click)="abrirMenu()">
-        <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
+        <!-- -- <img class="imagen-menu" src="assets/imagenes/ValleHermoso/logo_VH_icono.png"> -->
+        <div class="abrir-menu-lateral">
+            <label class="sesion-menu">SESIÓN</label>
+            <i class="fa fa-bars icono-menu"></i>
+        </div>
     </button>
-    <input type="search" placeholder="BUSQUEDA GENERAL" class="buscador" spellcheck="false" autocomplete=off
-    (keyup)="inputActive = true" (keyup)="buscarContratistas( $event )"><button class="boton-filtros"
-    (click)="abrirFiltros()">
-    <i class="fa fa-sliders icono-filtros"></i>
-</button>
+    <!-- <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off (focus)="inputActive = true"> -->
+    <input class="buscador-general uppercase" type="search" placeholder="BUSQUEDA GENERAL" spellcheck="false" autocomplete=off (keyup)="inputActive = true" (keyup)="buscarContratistas( $event )">
+    <button class="boton-filtros" (click)="abrirFiltros()">
+        <i class="fa fa-sliders icono-filtros"></i>
+    </button>
 </div>
 
 <!-- MENU OPCIONES -->
 <div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral-blanco">
     <!-- APARTADO USUARIO -->
-    <div class="bg-vh-verde contenedor-menu-lateral-verde">
+    <div class="bg-vh-azul contenedor-menu-lateral">
         <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
         <button class="boton-cerrar-menu" (click)="cerrarMenu()">
             <i class="fa fa-arrow-left"></i>
@@ -33,36 +37,42 @@
         </ul>
     </div>
 </div>
-<!--
-    <div class="flex-container">
-        <img [src]="logo1Celular" class="logo-1-celular">
-    </div>
 
-    <div class="flex-container">
-        <img [src]="logo2Celular" class="logo-2-celular">
-    </div> -->
-
-<div class="flex-container3">
+<div>
     <div *ngIf="textoBuscar">
-        <div class="capa-lista" *ngFor="let tipo of contratistas | busquedaPipe">
-                <!-- CASO 3 / ARRAY CON DATOS -->
-                <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]">
-                    <div>{{tipo.nombre}}</div>
-                </a>
+        <div class="card container-fluid" *ngFor="let tipo of contratistas | busquedaPipe">
+            <!-- CASO 3 / ARRAY CON DATOS -->
+            <div class="card-body">
+                <div class="lista-resultado container col-12 col-sm-10 col-md-10 col-xl-10">
+                    <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]">
+                        <p class="nombre">{{tipo.nombre}}</p>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- CASO 2 / ARRAY VACIO -->
         <div class="flex-container-mensaje">
-        <p class="mensaje-error">{{mensajeError}}</p>
+            <p class="mensaje-error">{{mensajeError}}</p>
         </div>
     </div>
     <!-- CASO 1 / INPUT VACIO -->
-    <img [src]="logo1Pc" class="logo-1-pc">
-    <img [src]="logo2Pc" class="logo-2-pc">
-</div>    
-
-<div class="menu-footer">
-    <img src="assets/imagenes/main/inicio_icono.png" class="img0-menu-footer" (click)="irinicio()"/>
-    <img src="assets/imagenes/main/obras_icono.png" class="img1-menu-footer" (click)="enrutarObrasPublicasGenerales()"/>
-    <img src="assets/imagenes/main/adquisiciones_icono.png" class="img2-menu-footer" (click)="enrutarAdquisicionesGenerales()"/>
-    <img src="assets/imagenes/main/patrimonios_icono.png" class="img3-menu-footer" (click)="enrutarPatrimoniosGenerales()"/>
+    <img [src]="logoCentro" class="imagen-centro">
 </div>
+
+<footer class="menu-footer">
+    <div class="row">
+        <div class="col-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/inicio_icono.png" class="inicio-menu-footer" (click)="irinicio()" />
+        </div>
+        <div class="col-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/obras_icono.png" class="obras-menu-footer" (click)="enrutarObrasPublicasGenerales()" />
+        </div>
+        <div class="col-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/adquisiciones_icono.png" class="adq-menu-footer" (click)="enrutarAdquisicionesGenerales()" />
+        </div>
+        <div class="col-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/patrimonios_icono.png" class="pat-menu-footer" (click)="enrutarPatrimoniosGenerales()" />
+        </div>
+    </div>
+
+</footer>

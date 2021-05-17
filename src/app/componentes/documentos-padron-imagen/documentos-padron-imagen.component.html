@@ -1,0 +1,42 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Cargando datos...</p>
+</ngx-spinner>
+
+<div class="bg-vh-azul contenedor-header">
+    <div class="flex-container2">
+        <button class="boton-regresar" (click)="regresarAtras()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <label class="mensaje-regresar">Regresar</label>
+        </button>
+        <h3 class="titulo-header">VIENDO GRUPO DE IMAGENES</h3>
+    </div>
+</div>
+
+<!-- <div class="flex-container3">
+    <div *ngFor="let id of ids">
+        <div *ngIf="id">
+            <a href="http://localhost:8083/contratodocumentoimagen/imagenbyid?id={{id}}">
+                <img class="imagen-contenido" src="http://localhost:8083/contratodocumentoimagen/imagenbyid?id={{id}}" />
+            </a>
+        </div>
+        MENSAJE EN CASO DE QUE NO EXISTAN IMAGENES EN LA DB
+        <div>
+            <p class="sin-documentos">{{mensaje}}</p>
+        </div>
+    </div>
+</div> -->
+
+<div class="flex-container3 ">
+    <div *ngFor="let id of ids">
+        <div *ngIf="id">
+            <a href="http://complise.dyndns.org/egov-api/contratodocumentoimagen/imagenbyid?id={{id}}">
+                <img class="imagen-contenido" src="http://complise.dyndns.org/egov-api/contratodocumentoimagen/imagenbyid?id={{id}}" />
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<button class="boton-ir-arriba" type="button" name="button" (click)="irArriba()">
+    <i class="fa fa-chevron-up fa-2x flecha-arriba" aria-hidden="true"></i>
+</button>

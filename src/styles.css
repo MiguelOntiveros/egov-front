@@ -82,17 +82,18 @@ video {
     background: white;
 }
 
-.bg-vh-verde {
-    background:#3276B5;
+.bg-vh-azul {
+    background: #3276B5;
 }
 
 .bg-vh-celeste {
     background: rgb(69, 170, 226);
 }
 
-.bg-vh-azul {
+
+/* .bg-vh-azul {
     background: rgb(4, 85, 151);
-}
+} */
 
 .row {
     --bs-gutter-y: 0;
@@ -167,6 +168,6 @@ video {
     width: 100%;
 }
 
-body{
+body {
     background-color: white;
 }

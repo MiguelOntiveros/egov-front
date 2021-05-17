@@ -1,9 +1,10 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { Contrato } from '../../interfaces/Contrato';
-import { Contratista } from '../../interfaces/Contratista';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { ObrasService } from '../obras/obras.service';
 import { InicioService } from '../inicio/inicio.service';
+import { Contratista } from 'src/app/interfaces/Contratista';
+import { Contrato } from '../../interfaces/Contrato';
 
 @Component({
   selector: 'app-obras-generales',
@@ -19,13 +20,47 @@ export class ObrasGeneralesComponent implements OnInit {
   contratistas : Contratista[];
   search;
 
-  tituloCliente: string = 'valle hermoso';
   mostrarMenu = false;
   inputActive = false;
-  logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-  logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
 
-  imagenTipoContrato = 'assets/imagenes/main/obras_icono.png'
+  logoCentro: string = 'assets/imagenes/main/obras.png';
+
+  // MENU opciones
+  usuario = { rol: 'Administrador', correo: 'admin@hotmail.com' };
+
+  menuOpciones = [
+    {
+      nombre: 'Inicio',
+      icono: 'fa fa-home',
+      ruta: '/inicio'
+    },
+    {
+      nombre: 'Configuraciones',
+      icono: 'fa fa-cog',
+      ruta: '/configuraciones'
+    },
+    {
+      nombre: 'Acerca de...',
+      icono: 'fa fa-lightbulb-o',
+      ruta: '/acerca-de'
+    },
+    {
+      nombre: 'Sugerencias',
+      icono: 'fa fa-exclamation-circle',
+      ruta: '/sugerencias'
+    },
+    {
+      nombre: 'Terminos de Uso',
+      icono: 'fa fa-question-circle',
+      ruta: '/terminos'
+    },
+    {
+      nombre: 'Cerrar Sesión',
+      icono: 'fa fa-sign-out',
+      ruta: '/login'
+    },
+  ];
+
 
   constructor(private inicioService: InicioService, private obrasService: ObrasService, private router: Router, private activateRoute: ActivatedRoute) { }
 
@@ -43,23 +78,20 @@ export class ObrasGeneralesComponent implements OnInit {
         console.log(data);
 
         if (this.contratistas.length <= 0) {
-          // ERRROR CON MENSAJE DE ERROR, ARRAY SIN RESULTADOS
+          // ERROR CON MENSAJE, ARRAY SIN RESULTADOS
           this.mensajeError = 'No se encontraron resultados';
           // SE MUESTRAN LOS LOGOS
-          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+          this.logoCentro = 'assets/imagenes/main/obras.png';
 
         } else if (this.contratistas.length > 0) {
           //  RESULTADO CON VALORES, ARRAY CON RESULTADOS
           this.contratistas = data;
           this.mensajeError = '';
           // SE OCULTAN LOS LOGOS
-          this.logo1Pc = '';
-          this.logo2Pc = '';
+          this.logoCentro = '';
         }
         if (this.textoBuscar === '') {
-          this.logo1Pc = 'assets/imagenes/ValleHermoso/logo_centro_1_pc.png';
-          this.logo2Pc = 'assets/imagenes/ValleHermoso/logo_centro_2_pc.png';
+          this.logoCentro = 'assets/imagenes/main/obras.png';
         }
       });
   }

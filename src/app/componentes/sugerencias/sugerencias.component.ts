@@ -21,10 +21,8 @@ export class SugerenciasComponent implements OnInit {
     });
   }
 
-
   ngOnInit(): void {
   }
-
    // SE ENVIA EL ASUNTO Y LA SUGERENCIA
   // TAMBIEN SE UTILIZA UN MENSAJE PARA INDICAR QUE TUVO EXITO
   enviarSugerencia(){
@@ -35,5 +33,4 @@ export class SugerenciasComponent implements OnInit {
     console.log(asunto, sugerencia);
     this.router.navigate(['/inicio']);
   }
-
 }

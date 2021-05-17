@@ -1,0 +1,92 @@
+.flex-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+}
+
+.boton-regresar {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+}
+
+.titulo-header {
+    color: white;
+    font-family: 'Arial';
+    float: right;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font-size: 3vw;
+}
+
+.contenedor-opciones {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
+
+/* BOTON VER TODO */
+
+.contenedor-ver-todo {
+    margin: auto;
+    display: block;
+}
+
+.boton-ver-todo {
+    background: #ccc;
+    margin: auto;
+    width: 30%;
+    display: block;
+    padding: 2%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+.ruta-ver-todo {
+    text-decoration: none;
+}
+
+.ver-todo {
+    color: black;
+    cursor: pointer;
+}
+
+
+/* VER OPCION DOCUMENTO */
+
+.contenedor-opciones {
+    margin: auto;
+    display: block;
+}
+
+.lista-opcion {
+    list-style: none;
+    cursor: pointer;
+}
+
+.boton-opcion-documento {
+    background: #ccc;
+    margin: auto;
+    display: block;
+    padding: 2%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+.ruta-opcion-documento {
+    text-decoration: none;
+}
+
+.ver-documento {
+    color: black;
+    cursor: pointer;
+}

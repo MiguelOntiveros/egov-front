@@ -1,0 +1,271 @@
+.flex-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.boton-regresar {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+}
+
+.empresa {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.titulo-header {
+    color: white;
+    font-family: 'Arial';
+    float: right;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    font-size: 2vw;
+}
+
+.mensaje-regresar {
+    cursor: pointer;
+    margin-left: 2%;
+}
+
+.contenedor-opciones {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
+
+/* BOTON VER TODO */
+
+.contenedor-ver-todo {
+    margin: auto;
+    display: block;
+}
+
+.boton-ver-todo {
+    background: #ccc;
+    margin: auto;
+    width: 30%;
+    display: block;
+    padding: 2%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    cursor: pointer;
+    background: #f9a54b7e;
+    border-radius: 10px;
+    border-bottom: 3px solid black;
+    transition: all linear 0.3s;
+}
+
+.boton-ver-todo:hover {
+    transform: scale(1.1);
+}
+
+.boton-ver-todo:focus {
+    outline: none;
+}
+
+.ruta-ver-todo {
+    text-decoration: none;
+}
+
+.ver-todo {
+    color: black;
+    cursor: pointer;
+    border: 10px;
+}
+
+
+/* VER OPCION DOCUMENTO */
+
+.contenedor-opciones {
+    margin: auto;
+    display: block;
+}
+
+.lista-opcion {
+    list-style: none;
+}
+
+
+/* COLOR NARANJA
+ background: #F9A54B; 
+ COLOR AZUL
+ #background: #3276B5;
+ */
+
+.boton-opcion-documento {
+    background: #3276b585;
+    margin: auto;
+    display: block;
+    padding: 2%;
+    margin-top: 3%;
+    width: 25%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    border-bottom: 3px solid black;
+    transition: all linear 0.1s;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.boton-opcion-documento:hover {
+    transform: scale(1.1);
+}
+
+.boton-opcion-documento:focus {
+    outline: none;
+}
+
+.ruta-opcion-documento {
+    text-decoration: none;
+    color: black
+}
+
+.ver-documento {
+    color: black;
+    cursor: pointer;
+}
+
+.mensaje-lista-vacia {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 575px) {
+    .boton-regresar {
+        width: 10rem;
+        height: 3rem;
+    }
+    .titulo-header {
+        padding-right: 1vw;
+        padding-left: 1vw;
+        font-size: 2vw;
+    }
+    .mensaje-regresar {
+        margin-left: 2%;
+    }
+    .contenedor-opciones {
+        width: 80%;
+    }
+    .boton-ver-todo {
+        width: 75%;
+        padding: 2%;
+    }
+    .boton-opcion-documento {
+        width: 60%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .boton-regresar {
+        width: 10rem;
+        height: 3rem;
+    }
+    .titulo-header {
+        padding-right: 1vw;
+        padding-left: 1vw;
+        font-size: 2vw;
+    }
+    .mensaje-regresar {
+        margin-left: 2%;
+    }
+    .contenedor-opciones {
+        width: 80%;
+    }
+    .boton-ver-todo {
+        width: 75%;
+        padding: 2%;
+    }
+    .boton-opcion-documento {
+        width: 60%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .boton-regresar {
+        width: 10rem;
+        height: 3rem;
+    }
+    .titulo-header {
+        padding-right: 1vw;
+        padding-left: 1vw;
+        font-size: 2vw;
+    }
+    .mensaje-regresar {
+        margin-left: 2%;
+    }
+    .contenedor-opciones {
+        width: 80%;
+    }
+    .boton-ver-todo {
+        width: 60%;
+        padding: 2%;
+    }
+    .boton-opcion-documento {
+        width: 50%;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .boton-regresar {
+        width: 10rem;
+        height: 3rem;
+    }
+    .titulo-header {
+        padding-right: 1vw;
+        padding-left: 1vw;
+        font-size: 2vw;
+    }
+    .mensaje-regresar {
+        margin-left: 2%;
+    }
+    .contenedor-opciones {
+        width: 80%;
+    }
+    .boton-ver-todo {
+        width: 35%;
+        padding: 2%;
+    }
+    .boton-opcion-documento {
+        width: 30%;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .boton-regresar {
+        width: 10rem;
+        height: 3rem;
+    }
+    .titulo-header {
+        padding-right: 1vw;
+        padding-left: 1vw;
+        font-size: 2vw;
+    }
+    .mensaje-regresar {
+        margin-left: 2%;
+    }
+    .contenedor-opciones {
+        width: 80%;
+    }
+    .boton-ver-todo {
+        width: 35%;
+        padding: 2%;
+    }
+    .boton-opcion-documento {
+        width: 30%;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,69 @@
+<div class="animate__animated animate__fadeIn fondo">
+
+    <!-- HEADER -->
+    <div class="bg-vh-azul contenedor-header">
+        <div class="flex-container2">
+            <button class="boton-regresar" (click)="regresarAtras()">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <label class="mensaje-regresar">Regresar</label>
+            </button>
+            <!-- <div class="empresa">{{contrato.con_nombre}}</div>
+            <h3 class="titulo-header">{{contrato.contrato}}</h3>-->
+            <div class="empresa">CONTRATO NOMBRE EMPRESA</div>
+            <h3 class="titulo-header">CONTRATO</h3>
+        </div>
+    </div>
+
+
+    <!-- CONTENIDO IMAGENES -->
+
+    <div class="contenedor-opciones">
+
+        <div class="contenedor-ver-todo">
+            <button class="boton-ver-todo" (click)="abrirDocumento()">
+            <a class="ruta-ver-todo">
+                <p class="ver-todo">
+                    VER TODO
+                </p>
+            </a>
+            </button>
+        </div>
+
+
+        <div class="contenedor-opciones">
+
+            <li class="lista-opcion" (click)="abrirDocumento()">
+                <button class="boton-opcion-documento">
+                    <a class="ruta-opcion-documento">
+                        <p class="ver-documento">
+                            ACTA CONSTITUITIVA        
+                        </p>
+                    </a>
+                </button>
+            </li>
+
+            <li class="lista-opcion" (click)="abrirDocumento()">
+                <button class="boton-opcion-documento">
+                    <a class="ruta-opcion-documento" routerLink="/filtros">
+                        <p class="ver-documento">
+                            ACTA CONSTITUITIVA        
+                        </p>
+                    </a>
+                </button>
+            </li>
+
+            <li class="lista-opcion" (click)="abrirDocumento()">
+                <button class="boton-opcion-documento">
+                    <a class="ruta-opcion-documento" routerLink="/filtros">
+                        <p class="ver-documento">
+                            ACTA CONSTITUITIVA        
+                        </p>
+                    </a>
+                </button>
+            </li>
+
+        </div>
+
+    </div>
+
+</div>

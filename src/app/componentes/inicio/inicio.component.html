@@ -1,20 +1,43 @@
-<p class="titulo-cliente bg-vh-verde">{{ tituloCliente | uppercase }}</p>
-<div class="flex-container2 bg-vh-verde">
+<p class="titulo-cliente bg-vh-azul">{{ tituloCliente | uppercase }}</p>
+<div class="flex-container2 bg-vh-azul">
     <button class="boton-menu" (click)="abrirMenu()">
-        <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-menu">
+        <!-- -- <img class="imagen-menu" src="assets/imagenes/ValleHermoso/logo_VH_icono.png"> -->
+        <div class="abrir-menu-lateral">
+            <label class="sesion-menu">SESIÓN</label>
+            <i class="fa fa-bars icono-menu"></i>
+        </div>
     </button>
     <!-- <input type="input" placeholder="Busqueda General" class="buscador" [(ngModel)]=search autocomplete=off (focus)="inputActive = true"> -->
-    <input type="search" placeholder="BUSQUEDA GENERAL" class="buscador" spellcheck="false" autocomplete=off
-        (keyup)="inputActive = true" (keyup)="buscarContratistas( $event )"><button class="boton-filtros"
-        (click)="abrirFiltros()">
+    <input class="buscador-general uppercase" type="search" placeholder="BUSQUEDA GENERAL" spellcheck="false" autocomplete=off (keyup)="inputActive = true" (keyup)="buscarContratistas( $event )" autofocus="true">
+    <button class="boton-filtros" (click)="abrirFiltros()">
         <i class="fa fa-sliders icono-filtros"></i>
     </button>
 </div>
 
+<!-- <div class="row">
+    <div class="col-3">
+        <button class="boton-menu" (click)="abrirMenu()">
+         <img class="imagen-menu" src="assets/imagenes/ValleHermoso/logo_VH_icono.png"> 
+        <div>
+            <label style="color: white; display: inline-flex;">SESIÓN</label><i class="fa fa-bars"></i>
+        </div>
+    </button>
+    </div>
+    <div class="col-3">
+        <input class="buscador-general" type="search" placeholder="BUSQUEDA GENERAL" spellcheck="false" autocomplete=off (keyup)="inputActive = true" (keyup)="buscarContratistas( $event )">
+    </div>
+    <div class="col-3">
+        <button class="boton-filtros" (click)="abrirFiltros()">
+        <i class="fa fa-sliders icono-filtros"></i>
+    </button>
+    </div>
+</div> -->
+
+
 <!-- MENU OPCIONES -->
 <div *ngIf="mostrarMenu === true" class="contenedor-menu-lateral-blanco">
     <!-- APARTADO USUARIO -->
-    <div class="bg-vh-verde contenedor-menu-lateral-verde">
+    <div class="bg-vh-azul contenedor-menu-lateral">
         <img src="assets/imagenes/ValleHermoso/logo_ValleHermoso.jpg" class="imagen-menu-lateral">
         <button class="boton-cerrar-menu" (click)="cerrarMenu()">
             <i class="fa fa-arrow-left"></i>
@@ -24,37 +47,56 @@
         <span class="usuario-correo">{{usuario.correo}}</span>
     </div>
 
-    <div *ngFor="let opcion of menuOpciones">
-        <ul>
-            <a [routerLink]="opcion.ruta" class="ruta-opciones">
-                <div>
+    <div>
+        <div *ngFor="let opcion of menuOpciones">
+            <ul>
+                <a [routerLink]="opcion.ruta" class="ruta-opciones">
                     <li class="lista-opciones"><i [class]="opcion.icono"></i>{{opcion.nombre}}</li>
-                </div>
+                </a>
+            </ul>
+        </div>
+        <hr/>
+        <span class="sesion-titulo">SESIÓN</span>
+        <ul>
+            <a [routerLink]="cerrarSesion.ruta" class="ruta-opciones">
+                <li class="lista-opciones">
+                    <i [class]="cerrarSesion.icono"></i> {{cerrarSesion.nombre}}
+                </li>
             </a>
         </ul>
-    </div>
-</div>
-<!--
-    <div class="flex-container3">
-    <div [ngClass]="{'flex-container3': inputActive, 'ocultar': !inputActive}"
-    class="capa-lista" *ngFor="let tipo of contratistas | busquedaPipe">
-        <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]">
-            <div>{{tipo.nombre}}</div>
-        </a>
-    </div>
-    <img [src]="logo1Pc" class="logo-1-pc">
-    <img [src]="logo2Pc" class="logo-2-pc">
-</div>
--->
 
-<div class="flex-container3">
-    <div *ngIf="textoBuscar">
-        <div class="capa-lista" *ngFor="let tipo of contratistas | busquedaPipe">
-            <!-- CASO 3 / ARRAY CON DATOS -->
-            <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]">
-                <div>{{tipo.nombre}}</div>
-            </a>
+    </div>
+
+
+</div>
+
+<div>
+    <div>
+        <div>
+            <div class="card container-fluid" *ngFor="let tipo of contratistas | busquedaPipe">
+                <!-- CASO 3 / ARRAY CON DATOS -->
+                <div class="card-body">
+                    <div class="lista-resultado container col-12 col-sm-10 col-md-10 col-xl-10">
+                        <a class="ruta-tipo-busqueda" [routerLink]="[tipo.link, tipo.numero]">
+                            <p class="nombre">{{tipo.nombre}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- <div *ngIf="textoBuscar2.length > 1">
+            <div class="card container-fluid" *ngFor="let tipo2 of contratistas2 | busquedaPipe">
+                CASO 3 / ARRAY CON DATOS
+                <div class="card-body">
+                    <div class="lista-resultado container col-12 col-sm-10 col-md-10 col-xl-10">
+                        <a class="ruta-tipo-busqueda" [routerLink]="[tipo2.link, tipo2.numero]">
+                            <p class="nombre">{{tipo2.nombre}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
         <!-- CASO 2 / ARRAY VACIO -->
         <div class="flex-container-mensaje">
             <p class="mensaje-error">{{mensajeError}}</p>
@@ -65,12 +107,20 @@
     <img [src]="logo2Pc" class="logo-2-pc">
 </div>
 
-<div class="menu-footer">
-    <img src="assets/imagenes/main/inicio_icono.png" class="img0-menu-footer" (click)="irinicio()" />
-    <img src="assets/imagenes/main/obras_icono.png" class="img1-menu-footer"
-        (click)="enrutarObrasPublicasGenerales()" />
-    <img src="assets/imagenes/main/adquisiciones_icono.png" class="img2-menu-footer"
-        (click)="enrutarAdquisicionesGenerales()" />
-    <img src="assets/imagenes/main/patrimonios_icono.png" class="img3-menu-footer"
-        (click)="enrutarPatrimoniosGenerales()" />
-</div>
+<footer class="menu-footer">
+    <div class="row">
+        <div class="col-3 col-sm-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/inicio_icono.png" class="inicio-menu-footer" (click)="irinicio()" />
+        </div>
+        <div class="col-3 col-sm-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/obras_icono.png" class="obras-menu-footer" (click)="enrutarObrasPublicasGenerales()" />
+        </div>
+        <div class="col-3 col-sm-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/adquisiciones_icono.png" class="adq-menu-footer" (click)="enrutarAdquisicionesGenerales()" />
+        </div>
+        <div class="col-3 col-sm-3 col-xl-3 col-md-3">
+            <img src="assets/imagenes/main/patrimonios_icono.png" class="pat-menu-footer" (click)="enrutarPatrimoniosGenerales()" />
+        </div>
+    </div>
+
+</footer>

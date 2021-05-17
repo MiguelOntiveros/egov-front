@@ -1,83 +1,269 @@
 <!-- PAGINA FILTROS  -->
 
 <!-- ANIMACION -->
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Cargando datos...</p>
+</ngx-spinner>
+
 <div class="animate__animated animate__fadeIn fondo">
 
-    <app-header-titulo titulo="Filtros"></app-header-titulo>
+    <!-- <app-header-titulo></app-header-titulo> -->
 
-    <!-- FOTO CLIENTE -->
+    <header style="position: fixed; width: 100%; top: 0;">
+        <nav class="bg-vh-azul contenedor-header">
+            <button class="boton-regresar" (click)="regresar()">
+                <i class="fa fa-arrow-left arrow-padding" aria-hidden="true"></i>
+                <label class="mensaje-regresar">Regresar</label>
+            </button>
+            <!-- FOTO CLIENTE -->
+            <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" style="float: right;" class="imagen-cliente">
+        </nav>
+    </header>
 
-    <div class="flex-container">
-        <img src="assets/imagenes/ValleHermoso/logo_VH_icono.png" class="imagen-cliente" />
-    </div>
 
     <!-- OPCIONES BÚSQUEDA -->
+    <form [formGroup]="filtrosForm" (ngSubmit)="activarFiltros()" class="filtros-fixed">
 
-    <div class="flex-container">
+        <p class="titulo-filtros">Filtros</p>
+        <!-- OPCIONES CHECKBOX -->
+        <div class="contenedor-opciones">
 
-        <input type="checkbox" class="" checked/>
-        <label class="">Contratistas</label>
+            <div class="opcion-checkbox">
+                <label class="form-check-label opciones-nombre">
+                    <input type="checkbox" class="form-check-input " formControlName="tr"/>
+                    Tipo de registro
+                </label>
+            </div>
 
-        <input type="checkbox" class="" checked/>
-        <label class="">Socios</label>
+            <div class="opcion-checkbox">
+                <label class="form-check-label opciones-nombre">
+                    <input type="checkbox" class="form-check-input" formControlName="so"/>
+                    Socios
+                </label>
+            </div>
 
-        <input type="checkbox" class="" checked/>
-        <label class="">Contratos</label>
+            <div class="opcion-checkbox">
+                <label class="opciones-nombre">
+                    <input type="checkbox" class="form-check-input" formControlName="rep"/>
+                    Rep. Legal
+                </label>
+            </div>
 
+            <div class="opcion-checkbox">
+                <label class="opciones-nombre">
+                    <input type="checkbox" class="form-check-input" formControlName="td"/>
+                    Tipo de Documento
+                </label>
+            </div>
+
+            <div class="opcion-checkbox">
+                <label class="opciones-nombre">
+                    <input type="checkbox" class="form-check-input" formControlName="cat"/>
+                    Categoría
+                </label>
+            </div>
+
+            <div class="opcion-checkbox">
+                <label class="opciones-nombre">
+                    <input type="checkbox" class="form-check-input" formControlName="des"/>
+                    Descripción
+                </label>
+            </div>
+
+        </div>
+
+        <!-- CAMPO FILTRAR POR DESCRIPCION O PALABRA CLAVE -->
+
+        <input type="text" formControlName="campo" placeholder="Descripción / Palabra clave" class="campo-descripcion">
+
+        <!-- FECHAS -->
+        <h3 class="titulo-seccion">Fechas</h3>
+
+        <!-- INICIO -->
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <label class="fecha-titulo-inicio">Inicio</label>
+            </div>
+            <div class="col-sm-1 col-md-4 col-lg-4 col-xl-4">
+                <input type="date" class="calendario" formControlName="fechaInicio">
+            </div>
+        </div>
+        <!-- FIN -->
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <label class="fecha-titulo-fin">Fin</label>
+            </div>
+            <div class="col-sm-1 col-md-4 col-lg-4 col-xl-4">
+                <input type="date" class="calendario" formControlName="fechaFin">
+            </div>
+        </div>
+
+
+        <!-- MONTOS -->
+        <h3 class="titulo-seccion">Montos</h3>
+
+        <div class="contenedor-monto">
+            <span class="titulo-monto-minimo">Monto mínimo</span>
+            <input class="rango-montos" formControlName="montoMinimo" min="0" max="1000000" step="10000" type="number">
+        </div>
+
+        <div class="contenedor-monto">
+            <span class="titulo-monto-maximo">Monto máximo</span>
+            <input class="rango-montos" formControlName="montoMaximo" min="0" max="1000000" step="10000" type="number">
+            <!-- <input type="text" pattern="[0-9]" maxlength="2" name="documento" id="documento" placeholder="Solo caracteres Numericos" class="form-control" required autocomplete="off" /> -->
+        </div>
+
+
+        <h3 class="titulo-seccion">Organizar</h3>
+
+        <!-- <div class="flex-container">
+            <span class="texto-mayor-menor">Buscar conforme a filtros seleccionados</span>
+        </div> -->
+        <div class="flex-container">
+            <!-- REVISAR ESTE APARTADO / PENDIENTE POR HACER
+                <select class="select-mayor-menor" name="montoRangos">
+                <option value="{{menorMayor}}" (click)="verValor1()">
+                    Monto menor a mayor
+                </option>
+                <option value="{{mayorMenor}}" (click)="verValor2()">
+                    Monto mayor a menor
+                </option>
+            </select> -->
+            <!-- <select>
+                <option formControlName="orden1" (click)="verOrden1()">
+                    Monto menor a mayor
+                </option>
+                <option formControlName="orden2" (click)="verOrden2()">
+                    Monto mayor a menor
+                </option>
+            </select> -->
+
+            <!-- IDEA 1 -->
+
+            <!-- <input checked (click)="usarOrdenMenorMayor()" class="checkbox-orden" type="checkbox">
+            <label class="texto-orden">Menor a mayor</label> -->
+
+            <!-- 
+            <input (click)="usarOrdenMayorMenor()" class="checkbox-orden" type="checkbox">
+            <label class="texto-orden">Mayor a menor</label> -->
+
+            <div class="contenedor-checkbox">
+                <input type="checkbox" checked/>
+                <label class="opcion-texto-orden">De menor a mayor</label>
+            </div>
+
+            <div class="contenedor-checkbox">
+                <input type="checkbox" />
+                <label class="opcion-texto-orden">De mayor a menor</label>
+            </div>
+
+            <div class="col-2">
+                <button type="submit" class="boton-filtrar">Filtrar</button>
+            </div>
+
+        </div>
+    </form>
+    <!-- LISTA DE RESULTADOS POR FILTROS -->
+
+    <p class="mensaje-validacion">{{ mensajeError }}</p>
+
+    <div class="col-8 resultados-scroll">
+
+        <div class="contenedor-lista-resultados" *ngIf="contrato">
+
+            <!-- <h2 class="texto-lista-resultados">{{listaResultadosTitulo}}</h2> -->
+
+            <div class="lista-resultados" *ngFor="let c of contrato">
+                <!-- (click)="llamarContrato(c.id)" -->
+                <a class="ruta-resultados">
+
+                    <p class="contenido-resultados">
+                        <span class="contenido">{{c.con_nombre}}</span>
+                    </p>
+
+                    <p class="contenido-resultados">
+                        <span class="contenido">Descripción: {{c.con_padron}}</span>
+                    </p>
+                    <p class="contenido-resultados">
+                        <span class="monto-contenido">
+                            <i class="fa fa-money icono-monto" aria-hidden="true"></i>
+                            {{c.con_registro}}
+                        </span>
+                        <span class="fecha-contenido">
+                            <i class="fa fa-calendar icono-fecha" aria-hidden="true"></i>
+                            {{c.creadofecha}}
+                        </span>
+                    </p>
+
+                    <div class="row col-12">
+
+                        <div class="col-12">
+                            <div [ngClass]="verMasInformacion ? 'mostrar-info' : 'ocultar-info'">
+                                <p class="contenido-resultados">
+                                    <span class="contenido">Número de Contrato: {{c.contrato}}</span>
+                                </p>
+
+                                <p class="contenido-resultados">
+                                    <span class="contenido">Tipo de registro: {{c.con_inscripcion}}</span>
+                                </p>
+
+                                <!-- EN CASO DE QUE EL REPRESENTANTE VENGA EN VACIO, SE MUESTRA EL MENSAJE -->
+                                <div *ngIf="c.con_giro === '    ' ">
+                                    <p class="contenido-resultados">
+                                        <span class="contenido">Representantes: Contrato sin representante(s)</span>
+                                    </p>
+                                </div>
+
+                                <div *ngIf="c.con_giro !== '    '">
+                                    <p class="contenido-resultados">
+                                        <span class="contenido">Representates: {{c.con_giro}}</span>
+                                    </p>
+                                </div>
+
+                                <!-- EN CASO DE QUE EL SOCIO VENGA EN VACIO, SE MUESTRA EL MENSAJE -->
+                                <div>
+                                    <div *ngIf="c.con_representante === '    '">
+                                        <p class="contenido-resultados">
+                                            <span class="contenido">Socios: Contrato sin socio(s)</span>
+                                        </p>
+                                    </div>
+
+                                    <div *ngIf="c.con_representante !== '    '">
+                                        <p class="contenido-resultados">
+                                            <span class="contenido">Socios: {{c.con_representante}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="contenido-resultados">
+                                    <span class="contenido">Tipo de documento: {{c.con_contacto}}</span>
+                                </p>
+
+                            </div>
+
+                            <div *ngIf="!verMasInformacion">
+                                <a type="button" (click)="verMas()">{{opcionMensaje}}</a>
+                            </div>
+
+                            <div *ngIf="verMasInformacion">
+                                <a type="button" (click)="verMenos()">{{opcionMensaje}}</a>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <a type="button" (click)="llamarContratoId(c.area, c.tipo, c.categoria, c.folio, c.revision)">Ver documentos del contrato</a>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div class="flex-container">
-
-        <input type="checkbox" class="" checked/>
-        <label class="">Rep.Legal</label>
-
-        <input type="checkbox" class="" checked/>
-        <label class="">Descripcion</label>
-
-    </div>
-
-    <!-- FECHAS -->
-    <h3 class="titulo-seccion">Fechas</h3>
-    <div class="flex-container">
-
-        <label class="fecha-titulo">Inicio</label>
-        <input type="date" class="calendario">
-
-        <label class="fecha-titulo">Fin</label>
-        <input type="date" class="calendario">
-
-    </div>
-
-
-    <!-- MONTOS -->
-
-    <h3 class="titulo-seccion">Montos</h3>
-    <div class="" style="text-align: center;">
-        <p>Rango de Intervalo mínimo: {{ valorMinimo | currency }}</p>
-        <p>Rango de Intervalo máximo: {{ valorMaximo | currency }}</p>
-    </div>
-
-    <div class="flex-container">
-        <input type="range" [(ngModel)]="valorMinimo" step="100000" min="0" max="10000000" />
-        <input type="range" [(ngModel)]="valorMaximo" step="100000" min="0" max="10000000" />
-    </div>
-
-    <h3 class="titulo-seccion">Organizar</h3>
-
-    <div class="flex-container">
-        <span>Buscar conforme a filtros seleccionados</span>
-        <select name="montoRangos">
-            <option value="montoMayorMenor">
-                Monto mayor a menor
-            </option>
-            <option value="montoMenorMayor">
-                Monto menor a mayor
-            </option>
-        </select>
-
-        <button class="boton-filtrar" (click)="activarFiltros()">Filtrar</button>
-
-    </div>
-
-    <app-boton-footer></app-boton-footer>
-</div>
+    <!-- AGREGAR FOOTER / PENDIENTE PERO SOLO PEQUEÑO DETALLE 
+        <footer class="footer">
+        <button class="boton-footer" (click)="irInicio()">
+                Inicio
+        </button>
+    </footer> -->

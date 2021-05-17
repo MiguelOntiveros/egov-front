@@ -20,11 +20,6 @@ export class MenuComponent implements OnInit {
       ruta: '/inicio'
     },
     {
-      nombre: 'Configuraciones',
-      icono: 'fa fa-cog',
-      ruta: '/configuraciones'
-    },
-    {
       nombre: 'Acerca de...',
       icono: 'fa fa-lightbulb-o',
       ruta: '/acerca-de'

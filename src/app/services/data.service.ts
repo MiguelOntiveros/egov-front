@@ -18,7 +18,7 @@ export class DataService {
     private http: HttpClient,
     private red: Red
     ) {
-    this.localhost = red.localhost;
+    this.localhost = red.servidorLocal;
   }
 
   /* CONTRATO  */

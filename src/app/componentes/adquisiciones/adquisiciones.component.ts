@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AdquisicionesService } from './adquisiciones.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Contrato } from '../../interfaces/Contrato';
 import { ContratoGeneral } from '../../interfaces/ContratoGeneral';
-import { ActivatedRoute, Router } from '@angular/router';
+import { AdquisicionesService } from './adquisiciones.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-adquisiciones',
@@ -19,7 +21,11 @@ export class AdquisicionesComponent implements OnInit {
 
   imagenTipoContrato = 'assets/imagenes/main/adquisiciones_icono.png';
 
-  constructor(private adquisicionesService: AdquisicionesService, private router: Router, private activateRoute: ActivatedRoute) { }
+  constructor(
+    private adquisicionesService: AdquisicionesService, 
+    private router: Router, 
+    private activateRoute: ActivatedRoute,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((params) => {
@@ -32,18 +38,21 @@ export class AdquisicionesComponent implements OnInit {
 
   getContratos(numero){
     this.adquisicionesService.getContratos(numero).subscribe((data: any) => {
-      this.contratos = data;
-      if(this.contratos.length <= 0){
+      
+      this.spinner.show();
+
+      if(data.length <= 0){
+
         this.mensaje = 'No se encontraron resultados';
-      }else if(this.contratos.length > 0){
+        this.spinner.hide();
+
+      }else if(data.length > 0){
+
+        this.spinner.hide();
+        this.contratos = data;
         this.mensaje = '';
+     
       }
-      //this.contratos.forEach(contrato => {      
-       //this.adquisicionesService.getValorDelMonto(this.contratos[0].area,this.contratos[0].tipo, this.contratos[0].categoria, this.contratos[0].folio,this.contratos[0].revision).subscribe((data2: any) => {
-        //this.contratos[0].valor= data2
-         //console.log(this.contratos[0].valor);
-     //}); 
-     // })
     })
   }
 
@@ -63,9 +72,14 @@ export class AdquisicionesComponent implements OnInit {
   llamarContrato(id) {
     this.adquisicionesService.llamarContrato(id).subscribe((data: any) => {
     //primero se setea el contrato que se seleccionó
-    localStorage.setItem('contrato1', JSON.stringify(data));
+    // localStorage.setItem('contrato1', JSON.stringify(data));
     this.router.navigate(['documentos', data]);
    // console.log(data);
     })
+  }
+
+  abrirFiltros(){
+    console.log('Filtros abiertos');
+    this.router.navigate(['/filtros']);
   }
 }

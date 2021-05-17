@@ -1,9 +1,12 @@
+.card {
+    border: transparent;
+}
+
 .flex-container2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    margin-top: 0px;
 }
 
 .flex-container3 {
@@ -11,7 +14,6 @@
     align-items: center;
     position: relative;
     flex-direction: column;
-    margin: 0 8vw 0 0;
     z-index: 1;
 }
 
@@ -38,64 +40,53 @@
 .mensaje-error {
     padding: 20px;
     font-size: 1.5rem;
-    color: blue;
+    color: #F9A54B;
 }
 
-.logo-1-celular {
-    width: auto;
-    z-index: 3;
-    position: relative;
-    margin: 20vh 0 0 0;
+.imagen-centro {
+    width: 100%;
+    margin: auto;
+    display: block;
 }
 
-.logo-2-celular {
-    width: auto;
-    z-index: 3;
-    margin: 80vh 0 0 0;
-    position: relative;
-}
 
-.logo-1-pc {
-    width: 50%;
-    margin: 10vh 0 0 0;
-    position: absolute;
-    z-index: 0;
-}
-
-.logo-2-pc {
-    width: 50%;
-    margin: 30vh 0 0 0;
-    position: absolute;
-    z-index: 0;
-}
+/* MENU FOOTER */
 
 .menu-footer {
     width: 100%;
-    height: 15vh;
-    margin: 0 0 0 0;
-    position: absolute;
-    z-index: 0;
-    background:black;
+    position: fixed;
+    bottom: 0;
+    height: 10vh;
+    z-index: 10;
+    background: black;
 }
 
-.img0-menu-footer {
-    padding-left: 5vw;
-    height: 100%;
+.inicio-menu-footer {
+    width: 100%;
+    margin: auto;
+    display: block;
+    cursor: pointer;
 }
 
-.img1-menu-footer {
-    padding-left: 17vw;
-    height: 100%;
+.obras-menu-footer {
+    width: 100%;
+    margin: auto;
+    display: block;
+    cursor: pointer;
 }
 
-.img2-menu-footer {
-    padding-left: 19vw;
-    height: 100%;
+.adq-menu-footer {
+    width: 100%;
+    margin: auto;
+    display: block;
+    cursor: pointer;
 }
 
-.img3-menu-footer {
-    padding-left: 21vw;
-    height: 100%;
+.pat-menu-footer {
+    width: 100%;
+    margin: auto;
+    display: block;
+    cursor: pointer;
 }
 
 .menu-footer2 {
@@ -105,6 +96,7 @@
     z-index: 0;
     background: rgb(160, 195, 13);
 }
+
 .menu-footer-activo {
     width: 100%;
     margin: 3vh 0 0 0;
@@ -116,27 +108,20 @@
     align-items: center;
 }
 
+
+/* LISTA DE RESULTADOS */
+
 .ruta-tipo-busqueda {
     text-decoration: none;
     color: black;
-    background-color: white;
-    width: 100%; /*se agregó*/
-    height: 200%; /*se agregó*/
-    padding: 16px 0 0 0; /*se agregó*/
+    background-color: transparent;
 }
 
-.capa-lista{
-    border-color:transparent;
-    border-style: solid;
-    border-width: 2px;
-    border-top-style:none;
-    border-right-style:none;
-    border-left-style:none;
+.capa-lista {
+    max-width: 90%;
+    min-width: 80%;
     font-weight: bold;
-    margin: 2vh 0 0 7vw;
-    width: 80vw;
-    height: 7vh;
-    background-color: transparent;
+    margin: 2%;
     position: relative;
     z-index: 5;
 }
@@ -145,41 +130,30 @@
     background: rgba(110, 110, 110, 0.4);
 }
 
-.ocultar{
+.ocultar {
     display: none;
 }
 
-/* Desktops and laptops ESTE ES EL BUENO ----------- */
-@media only screen and (min-device-width: 300px) and (max-device-width: 400px) {
-
-    .logo-1-pc {
-        margin: 5vh 0 0 0;
-    }
-
-    .logo-2-pc {
-        margin: 30vh 0 0 0;
-    }
-
-    .menu-footer {
-        margin: 33vh 0 0 0;
-    }
+.lista-resultado {
+    list-style: none;
+    border: 3px solid #F9BB94;
+    transition: all linear 0.3s;
+    padding: 10px;
+    width: 100%;
 }
 
-/* Desktops and laptops ESTE TAMBIEN----------- */
-@media only screen and (min-device-width: 700px) and (max-device-width: 1500px) {
-
-    .logo-1-pc {
-        margin: 3vh 0 0 0;
-    }
-
-    .logo-2-pc {
-        margin: 40vh 0 0 0;
-    }
-
-    .menu-footer {
-        margin: 143vh 0 0 0;
-    }
+.lista-resultado:hover {
+    background: rgba(0, 0, 0, 0.2);
 }
+
+.nombre {
+    font-size: 10px;
+    text-align: center;
+    word-wrap: break-all;
+}
+
+
+/*  */
 
 .imagen-menu {
     width: 5rem;
@@ -214,6 +188,7 @@
     height: 3rem;
     margin-right: 2%;
     outline: none;
+    cursor: pointer;
 }
 
 .icono-filtros {
@@ -230,8 +205,8 @@
 /* USUARIO DATOS */
 
 .imagen-menu-lateral {
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
     display: block;
     padding-left: 20%;
     padding-top: 5%;
@@ -254,27 +229,19 @@
 /* OPCIONES MENU */
 
 .contenedor-menu-lateral {
-    position: absolute;
-    top: 0px;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 5;
-    width: auto;
-}
-
-.contenedor-menu-lateral-verde {
     top: 0px;
     border: 1px solid #ccc;
-    width: 52vw;
+    width: 100%;
     z-index: 5;
 }
 
 .contenedor-menu-lateral-blanco {
     background: white;
-    width: 52vw;
+    width: 50%;
     top: 0px;
     position: absolute;
     z-index: 5;
+    border: 1px solid #ccc;
 }
 
 .ruta-opciones {
@@ -282,13 +249,13 @@
     text-decoration: none;
 }
 
-.capa-correctiva{
+.capa-correctiva {
     margin: 22vh 0 0 0;
 }
 
 ul {
     margin: 20px;
-    background: white;
+    background: transparent;
 }
 
 .lista-opciones {
@@ -305,113 +272,8 @@ ul {
     cursor: pointer;
 }
 
-
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .titulo-cliente {
-        font-size: 1.5rem;
-    }
-    .imagen-menu {
-        width: 3.5rem;
-        height: 3rem;
-    }
-    .boton-menu {
-        margin: -3%;
-    }
-    .boton-filtros {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-}
-
-
-/* Nexus 5 -------------*/
-
-@media only screen and (device-width: 360px) and (device-height: 640px) {
-    .contenedor-menu-lateral {
-        height: 100vh;
-        width: 8rem;
-    }
-}
-
-
-/* iPads ----------- */
-
-@media only screen and (device-width: 768px) and (device-height: 1024px) {
-    /* MENU HEADER */
-    .contenedor-menu {
-        height: 160px;
-    }
-    .imagen-menu {
-        width: 7rem;
-        height: 6rem;
-        margin-left: 50px;
-        z-index: 1;
-    }
-    .boton-filtros {
-        width: 5rem;
-        height: 5rem;
-        border-radius: 50%;
-    }
-    /* MENU LATERAL */
-    .contenedor-menu-lateral {
-        width: 14rem;
-    }
-    .imagen-menu-lateral {
-        width: 8rem;
-        height: 8rem;
-    }
-    /* INFORMACION DEL CLIENTE */
-    .usuario-rol {
-        font-size: 18px;
-    }
-    .usuario-correo {
-        font-size: 18px;
-    }
-    .lista-opciones {
-        font-size: 18px;
-    }
-    .boton-cerrar-menu {
-        left: 80%;
-        font-size: 20px;
-    }
-
-    .contenedor-menu-lateral-verde {
-        width: 22vw;
-    }
-    
-    .contenedor-menu-lateral-blanco {
-        width: 22vw;
-    }
-}
-
-
-/* Desktops and laptops ----------- */
-
-@media only screen and (min-width: 1224px) {
-    .boton-filtros {
-        margin-right: 3%;
-    }
-
-    .contenedor-menu-lateral-verde {
-        width: 19vw;
-    }
-    
-    .contenedor-menu-lateral-blanco {
-        width: 19vw;
-    }
-}
-
-
-/* Large screens ----------- */
-
-@media only screen and (min-width: 1824px) {
-    /* Styles */
-}
-
-.buscador {
-    width: 35rem;
+.buscador-general {
+    width: 100%;
     height: 2.2rem;
     border-radius: 10px;
     border: none;
@@ -425,36 +287,169 @@ ul {
 }
 
 
-/* Smartphones (portrait and landscape) ----------- */
+/* BOTON SESION MENU */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    /* Styles */
-    .buscador {
-        width: 11rem;
-        height: 2.2rem;
+.sesion-titulo {
+    font-weight: bold;
+    padding-left: 10%;
+    font-size: 20px;
+}
+
+.sesion-menu {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.abrir-menu-lateral {
+    color: white;
+    display: inline-flex;
+}
+
+.icono-menu {
+    font-size: 12px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+/* Desktops and laptops ESTE ES EL BUENO ----------- */
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 480px) {
+    .buscador-general {
+        width: 50%;
+        font-size: 15px;
+    }
+    /* .icono-menu {
+        width: 2rem;
+        height: 2rem;
+    } */
+    .boton-filtros {
+        width: 12%;
+        height: 11vw;
+        margin-bottom: 2%;
+    }
+    .imagen-centro {
+        width: 70%;
+    }
+    .contenedor-menu-lateral-blanco {
+        height: 100vh;
+    }
+    .inicio-menu-footer {
+        width: 70%;
+        height: 100%;
+    }
+    .obras-menu-footer {
+        width: 70%;
+        height: 100%;
+    }
+    .adq-menu-footer {
+        width: 70%;
+        height: 100%;
+    }
+    .pat-menu-footer {
+        width: 70%;
+        height: 100%;
+    }
+    .boton-menu {
+        color: white;
+        font-size: 15px;
+    }
+    .icono-menu {
+        font-size: 20px;
+    }
+    .sesion-menu {
+        font-size: 15px;
+        margin-right: 15%;
     }
 }
 
 
-/* Surface Duo */
+/* iPads ----------- */
 
-@media only screen and (min-device-width: 540px) and (max-device-width: 720px) {
-    /* Styles */
-    .buscador {
-        width: 20rem;
-        height: 2.2rem;
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) {
+    .buscador-general {
+        width: 60%;
     }
-}
-
-
-/* iPads (portrait and landscape) ----------- */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* Styles */
-    .buscador {
-        width: 26rem;
+    /* MENU HEADER */
+    .contenedor-menu {
+        height: 160px;
+    }
+    /* .icono-menu {
+        width: 4rem;
         height: 3rem;
+    } */
+    .boton-filtros {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    /* MENU LATERAL */
+    .contenedor-menu-lateral {
+        width: 14rem;
+    }
+    .imagen-menu-lateral {
+        width: 10rem;
+        height: 10rem;
+    }
+    /* INFORMACION DEL CLIENTE */
+    .usuario-rol {
+        font-size: 20px;
+    }
+    .usuario-correo {
+        font-size: 20px;
+    }
+    .lista-opciones {
+        font-size: 20px;
+    }
+    .boton-cerrar-menu {
+        left: 80%;
+        font-size: 20px;
+    }
+    .contenedor-menu-lateral {
+        width: 100%;
+    }
+    .contenedor-menu-lateral-blanco {
+        width: 30%;
+        height: 100vh;
+    }
+    /* LOGOS CENTRO */
+    .imagen-centro {
+        width: 50%;
+        margin-top: 10%;
+    }
+    /* FOOTER */
+    .inicio-menu-footer {
+        width: 60%;
+        height: 80%;
+    }
+    .obras-menu-footer {
+        width: 60%;
+        height: 80%;
+    }
+    .adq-menu-footer {
+        width: 60%;
+        height: 80%;
+    }
+    .pat-menu-footer {
+        width: 60%;
+        height: 80%;
+    }
+    .lista-resultado {
+        max-width: 50%;
+        min-width: 40%;
+    }
+    .nombre {
+        font-size: 1rem;
+    }
+    .icono-menu {
         font-size: 30px;
+    }
+    .sesion-menu {
+        font-size: 25px;
+        margin-right: 15%;
     }
 }
 
@@ -462,9 +457,99 @@ ul {
 /* Desktops and laptops ----------- */
 
 @media only screen and (min-width: 1224px) {
-    /* Styles */
-    .buscador {
-        width: 50rem;
-        height: 2.2rem;
+    .buscador-general {
+        width: 60%;
+    }
+    .imagen-centro {
+        width: 30%;
+    }
+    /* MENU HEADER */
+    .contenedor-menu {
+        height: 160px;
+    }
+    .boton-filtros {
+        width: 3rem;
+        height: 3rem;
+    }
+    .imagen-centro {
+        width: 20%;
+        margin-top: 05%;
+    }
+    /* MENU LATERAL */
+    .contenedor-menu-lateral {
+        width: 14rem;
+    }
+    .imagen-menu-lateral {
+        width: 10rem;
+        height: 10rem;
+    }
+    /* INFORMACION DEL CLIENTE */
+    .contenedor-menu-lateral {
+        width: 100%;
+    }
+    .contenedor-menu-lateral-blanco {
+        width: 15%;
+    }
+    .imagen-menu-lateral {
+        width: 9rem;
+        height: 8rem;
+    }
+    .usuario-rol {
+        font-size: 16px;
+    }
+    .usuario-correo {
+        font-size: 16px;
+    }
+    .lista-opciones {
+        font-size: 15px;
+    }
+    .boton-cerrar-menu {
+        left: 80%;
+        font-size: 20px;
+    }
+    /* FOOTER */
+    .menu-footer {
+        height: 10%;
+    }
+    /* FOOTER */
+    .inicio-menu-footer {
+        width: 25%;
+        height: 60%;
+        margin-top: 2%;
+    }
+    .obras-menu-footer {
+        width: 25%;
+        height: 60%;
+        margin-top: 2%;
+    }
+    .adq-menu-footer {
+        width: 25%;
+        height: 60%;
+        margin-top: 2%;
+    }
+    .pat-menu-footer {
+        width: 25%;
+        height: 60%;
+        margin-top: 2%;
+    }
+    .lista-resultado {
+        max-width: 50%;
+        min-width: 40%;
+    }
+    .nombre {
+        font-size: 14px;
+    }
+    .sesion-menu {
+        font-size: 20px;
+        margin-right: 15%;
+    }
+    .abrir-menu-lateral {
+        margin-left: 50%;
+    }
+    .icono-menu {
+        font-size: 25px;
+    }
+    .nombre {
+        font-size: 14px;
     }
 }

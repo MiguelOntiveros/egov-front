@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InicioService } from '../inicio/inicio.service';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-documentos-padron',
   templateUrl: './documentos-padron.component.html',
@@ -9,11 +11,18 @@ import { InicioService } from '../inicio/inicio.service';
 })
 export class DocumentosPadronComponent implements OnInit {
 
+  mensaje: string;
+
   contrato = null;
   documento: string;
   ids:number;
 
-  constructor(private inicio: InicioService, private router: Router, private activateRoute: ActivatedRoute) { }
+  constructor(
+    private inicio: InicioService, 
+    private router: Router, 
+    private activateRoute: ActivatedRoute,
+    private location: Location
+    ) { }
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((params) => {
@@ -25,20 +34,33 @@ export class DocumentosPadronComponent implements OnInit {
       var categoria = params['categoria'];
       var folio = params['folio'];
       var revision = params['revision'];
-      console.log('Id:', id);
-      console.log('Clave:', clave);
-      console.log('Area:', area);
-      console.log('Tipo:', tipo);
-      console.log('Categoria:', categoria);
-      console.log('Folio:', folio);
-      console.log('Revision:', revision);
+      // console.log('Id:', id);
+      // console.log('Clave:', clave);
+      // console.log('Area:', area);
+      // console.log('Tipo:', tipo);
+      // console.log('Categoria:', categoria);
+      // console.log('Folio:', folio);
+      // console.log('Revision:', revision);
       this.getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision)
     });
+    
   }
 
   getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision) {
     this.inicio.getIdsDocumentosContratoDocumentoImagen(area, tipo, categoria, folio, revision).subscribe((data: any) => {
       this.ids = data;
+
+      if(data.length <= 0){
+        this.mensaje = 'NO HAY DOCUMENTOS O IMAGENES';
+        this.ids = 0;
+        console.log('Sin documentos');
+      }else if(data.length > 0){
+        this.mensaje = '';
+        this.ids = data;
+        console.log('Con documentos');
+      }
+
+
       console.log('Método:', data);
     });
   }
@@ -48,6 +70,7 @@ export class DocumentosPadronComponent implements OnInit {
       this.documento = data;
     });
   }
+
   verActaConstitutiva() {
     this.router.navigate(['/imagenes-d-p-acta-constitutiva']);
   }
@@ -70,6 +93,10 @@ export class DocumentosPadronComponent implements OnInit {
 
   verPoderLegal() {
     this.router.navigate(['/imagenes-d-p-poder-legal']);
+  }
+
+  regresarAtras(){
+    this.location.back();
   }
 
 }
